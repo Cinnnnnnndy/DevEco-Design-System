@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StatusBar · DevEco</title>
+  <link rel="stylesheet" href="../tokens/index.css?v=20261123c">
+  <link rel="stylesheet" href="../chrome.css?v=20261123c">
+  <link rel="stylesheet" href="docs.css?v=20261123c">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidenav"><a class="brand" href="index.html">DevEco 组件</a>
+<a href="../preview/index.html">总预览</a>
+<a href="../compare/index.html">对照</a>
+<a href="../SKILL.md">SKILL.md</a>
+<h2>通用核心组件</h2>
+<a href="button.html">Button</a>
+<a href="icon-button.html">IconButton</a>
+<a href="search-field.html">SearchField</a>
+<a href="text-input.html">TextInput</a>
+<a href="selection.html">Select / Checkbox / Radio / Switch / Segmented</a>
+<a href="dialog.html">Dialog / Notification / Banner</a>
+<a href="menu.html">Menu</a>
+<a href="tooltip.html">Tooltip</a>
+<a href="tabs.html">Tabs</a>
+<a href="code-editor.html">CodeEditor</a>
+<a href="tree.html">Tree</a>
+<a href="toolbar.html">Toolbar</a>
+<a href="nav-list.html">NavList</a>
+<a href="chip.html">Chip</a>
+<a href="tag.html">Tag</a>
+<a href="window-frame.html">WindowFrame</a>
+<a href="status-bar.html" aria-current="page">StatusBar</a>
+<h2>AI 与工具窗口</h2>
+<a href="ai-status.html">AiStatus</a>
+<a href="message-bar.html">MessageBar</a>
+<a href="tool-menu.html">ToolMenu</a>
+<a href="tool-stripe.html">ToolStripe</a>
+<h2>示例</h2>
+<a href="../examples/file-window.html">HarmonyIdeWindow</a>
+<a href="../examples/studio-tool-window.html">StudioToolWindow</a>
+</nav>
+    <main class="content">
+      <p class="kicker">鸿蒙 3.2底部栏 + 3.5 LSP进度条 & PC/Mac Status Bar</p>
+      <h1>StatusBar</h1>
+      <p class="desc">IDE 底部状态栏（鸿蒙端高 32vp，PC/Mac 端高 24px），左侧放置面包屑（3.4面包屑），右侧放置 LSP 服务进度胶囊（3.5 LSP进度条）与编码信息。</p>
+      <h2>示例</h2>
+      <div class="demo-bar">
+        <button type="button" data-set-system="harmony">鸿蒙原生 (HDesign 2.0)</button>
+        <button type="button" data-set-system="pc-mac">PC / Mac (NewUI)</button>
+        <button type="button" data-set-theme="dark">深色</button>
+        <button type="button" data-set-theme="light">浅色</button>
+        <button type="button" data-set-theme="light-contrast">浅色高对比</button>
+      </div>
+      <div id="stage" class="stage" data-system="harmony" data-theme="dark">
+        <footer class="de-statusbar">
+      <span class="de-crumb">Healthy_life › entry › src › main › ets › <strong>EntryAbility.ets</strong></span>
+      <span class="de-statusbar__group">
+        <span class="de-lsp-pill"><span class="de-lsp-pill__dot">2</span> LSP Service</span>
+        <span>134/2,275</span>
+        <span>UTF-8</span>
+        <span>Clang-idle</span>
+      </span>
+    </footer>
+      </div>
+      <h2>用法</h2>
+      <pre><code>import { StatusBar } from &quot;./status-bar&quot;;
+import { LspPill } from &quot;./code-editor&quot;;</code></pre>
+      <h2>API</h2>
+      <table>
+        <thead><tr><th>Prop / 组件</th><th>类型</th><th>默认</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><code>StatusBar</code></td><td><code>children</code></td><td>—</td><td>3.2底部栏（鸿蒙 32vp / PC-Mac 24px）</td></tr><tr><td><code>LspPill</code></td><td><code>count, children</code></td><td>2</td><td>3.5 LSP进度条（5% 叠加底 r=4vp）</td></tr>
+        </tbody>
+      </table>
+      <h2>Pixso 源文件对齐说明</h2>
+      <ul>
+        <li>对齐 3.2底部栏（1302×32）与 3.5Lsp进度条（单进程/多进程胶囊）。</li>
+      </ul>
+      
+    </main>
+  </div>
+  <script src="docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudioToolWindow 示例 · DevEco</title>
+  <link rel="stylesheet" href="../tokens/index.css?v=20261123c">
+  <link rel="stylesheet" href="../chrome.css?v=20261123c">
+  <link rel="stylesheet" href="../docs/docs.css?v=20261123c">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidenav"><a class="brand" href="../docs/index.html">DevEco 组件</a>
+<a href="../preview/index.html">总预览</a>
+<a href="../compare/index.html">对照</a>
+<a href="../SKILL.md">SKILL.md</a>
+<h2>PC / Mac &amp; 鸿蒙通用</h2>
+<a href="../docs/button.html">Button</a>
+<a href="../docs/icon-button.html">IconButton</a>
+<a href="../docs/search-field.html">SearchField</a>
+<a href="../docs/text-input.html">TextInput</a>
+<a href="../docs/menu.html">Menu</a>
+<a href="../docs/tooltip.html">Tooltip</a>
+<a href="../docs/tabs.html">Tabs</a>
+<a href="../docs/tree.html">Tree</a>
+<a href="../docs/toolbar.html">Toolbar</a>
+<a href="../docs/nav-list.html">NavList</a>
+<a href="../docs/chip.html">Chip</a>
+<a href="../docs/tag.html">Tag</a>
+<a href="../docs/window-frame.html">WindowFrame</a>
+<a href="../docs/status-bar.html">StatusBar</a>
+<a href="../docs/ai-status.html">AiStatus</a>
+<a href="../docs/message-bar.html">MessageBar</a>
+<h2>IDE 工具窗</h2>
+<a href="../docs/tool-menu.html">ToolMenu</a>
+<a href="../docs/tool-stripe.html">ToolStripe</a>
+<h2>示例</h2>
+<a href="file-window.html">HarmonyIdeWindow</a>
+<a href="studio-tool-window.html" aria-current="page">StudioToolWindow</a>
+</nav>
+    <main class="content content--wide">
+      <p class="kicker"><a href="../docs/index.html">组件索引</a> · 工作流 C · 当代桌面端工具窗与弹窗</p>
+      <h1>StudioToolWindow</h1>
+      <p class="desc">严格对齐 <code>【NewUI】鸿蒙IDE-当代.pix</code> + <code>icon.pix</code> + <code>DevEco Studio（当代）chat.pix</code>：包含左侧图标条（ToolStripe）、工具菜单（ToolMenu）、Customize Main Toolbar 弹窗（Dialog）与 Notification 通知气泡。</p>
+      <div class="demo-bar">
+        <button type="button" data-set-system="harmony">鸿蒙原生 (HDesign 2.0)</button>
+        <button type="button" data-set-system="pc-mac">PC / Mac (NewUI)</button>
+        <button type="button" data-set-theme="dark">深色</button>
+        <button type="button" data-set-theme="light">浅色</button>
+        <button type="button" data-set-theme="light-contrast">浅色高对比</button>
+      </div>
+      <div id="stage" class="stage" data-system="pc-mac" data-theme="dark">
+        <section class="de-window de-studio" style="min-height:440px">
+          <nav class="de-stripe" aria-label="工具">
+            <button type="button" class="de-icon-button de-icon-button--m" aria-label="构建">
+              <svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
+            </button>
+            <button type="button" class="de-icon-button de-icon-button--m" aria-label="运行" aria-pressed="true">
+              <svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg>
+            </button>
+            <button type="button" class="de-icon-button de-icon-button--m" aria-label="调试">
+              <svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg>
+            </button>
+            <button type="button" class="de-icon-button de-icon-button--m" aria-label="终端">
+              <svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg>
+            </button>
+          </nav>
+          <div class="de-main">
+            <div class="de-pad" style="flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:20px">
+              <ul class="de-menu de-tool-menu" role="menu">
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-ic-ide-refresh"/></svg></span><span class="de-menu__label">API Change Assistant</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#nu-toolwindow-profiler"/></svg></span><span class="de-menu__label">API参考</span></button></li>
+              </ul>
+
+              <div class="de-dialog" style="flex:1 1 320px;min-width:0;max-width:440px">
+                <header class="de-dialog__header">
+                  <h3 class="de-dialog__title">Customize Main Toolbar</h3>
+                </header>
+                <div class="de-dialog__body">
+                  <label class="de-search">
+                    <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="../icons/sprite.svg#nu-general-search"/></svg></span>
+                    <input type="search" placeholder="Search actions..." aria-label="Search actions">
+                  </label>
+                  <div class="de-field">
+                    <span class="de-field__label">Icon</span>
+                    <span class="de-select">
+                      <select aria-label="Icon">
+                        <option>Default icon (OpenRemoteDevelopment)</option>
+                        <option>Custom SVG / PNG...</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="de-row">
+                    <label class="de-choice"><input type="checkbox" class="de-checkbox" checked /> <span>开启 AI 辅助功能</span></label>
+                    <label class="de-choice"><input type="checkbox" role="switch" class="de-switch" checked /> <span>自动同步索引</span></label>
+                  </div>
+                </div>
+                <footer class="de-dialog__footer">
+                  <button type="button" class="de-button de-button--secondary de-button--m">Cancel</button>
+                  <button type="button" class="de-button de-button--primary de-button--m">OK</button>
+                </footer>
+              </div>
+
+              <article class="de-notification">
+                <header class="de-notification__header">
+                  <span style="color:var(--color-success)">●</span> Build Completed (6.3 Notification)
+                </header>
+                <div class="de-notification__body">
+                  Hvigor 组装 HAP 成功（耗时 2.4s），已准备好推送到 MyPC 模拟器。
+                </div>
+                <footer class="de-notification__actions">
+                  <button type="button">Run EntryAbility</button>
+                  <button type="button">查看构建日志</button>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+      <h2>复用了哪些组件</h2>
+      <p>ToolStripe、IconButton、ToolMenu、Dialog、SearchField、SelectField、Checkbox、Switch、Button（Primary / Secondary）、Notification。全部使用从 <code>.pix</code> 提取的真实 Token。</p>
+      <p class="note">对应源码：<code>patterns/studio-tool-window.tsx</code>。</p>
+    </main>
+  </div>
+  <script src="../docs/docs.js"></script>
+</body>
+</html>

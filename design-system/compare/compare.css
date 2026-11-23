@@ -1,0 +1,69 @@
+/* 对照页的并排。左边是 Pixso 预览，右边是本库真实组件。
+   导航和索引在 ../chrome.css。这里不改 de-* 皮肤，也不改两列结构。 */
+
+.wrap {
+  box-sizing: border-box;
+  max-width: 1360px;
+  padding: 48px 40px 80px;
+}
+
+.wrap .content {
+  padding: 24px 0 36px;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.pair > * {
+  min-width: 0;
+}
+
+figure {
+  margin: 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--docs-quiet, #6a6a6a);
+  padding: 8px 4px 2px;
+}
+
+.rebuild {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 0;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+@media (max-width: 1180px) {
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .wrap { padding: 24px 16px 64px; }
+  .pair { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WindowFrame · DevEco</title>
+  <link rel="stylesheet" href="../tokens/index.css?v=20261123c">
+  <link rel="stylesheet" href="../chrome.css?v=20261123c">
+  <link rel="stylesheet" href="docs.css?v=20261123c">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidenav"><a class="brand" href="index.html">DevEco 组件</a>
+<a href="../preview/index.html">总预览</a>
+<a href="../compare/index.html">对照</a>
+<a href="../SKILL.md">SKILL.md</a>
+<h2>通用核心组件</h2>
+<a href="button.html">Button</a>
+<a href="icon-button.html">IconButton</a>
+<a href="search-field.html">SearchField</a>
+<a href="text-input.html">TextInput</a>
+<a href="selection.html">Select / Checkbox / Radio / Switch / Segmented</a>
+<a href="dialog.html">Dialog / Notification / Banner</a>
+<a href="menu.html">Menu</a>
+<a href="tooltip.html">Tooltip</a>
+<a href="tabs.html">Tabs</a>
+<a href="code-editor.html">CodeEditor</a>
+<a href="tree.html">Tree</a>
+<a href="toolbar.html">Toolbar</a>
+<a href="nav-list.html">NavList</a>
+<a href="chip.html">Chip</a>
+<a href="tag.html">Tag</a>
+<a href="window-frame.html" aria-current="page">WindowFrame</a>
+<a href="status-bar.html">StatusBar</a>
+<h2>AI 与工具窗口</h2>
+<a href="ai-status.html">AiStatus</a>
+<a href="message-bar.html">MessageBar</a>
+<a href="tool-menu.html">ToolMenu</a>
+<a href="tool-stripe.html">ToolStripe</a>
+<h2>示例</h2>
+<a href="../examples/file-window.html">HarmonyIdeWindow</a>
+<a href="../examples/studio-tool-window.html">StudioToolWindow</a>
+</nav>
+    <main class="content">
+      <p class="kicker">鸿蒙 2.布局组件 / 3.1顶部栏 & PC/Mac Main Window</p>
+      <h1>WindowFrame</h1>
+      <p class="desc">IDE 窗口外壳与顶部主工具栏（鸿蒙端高 44vp、外圆角 16vp；PC/Mac 端高 40px、外圆角 8px）。</p>
+      <h2>示例</h2>
+      <div class="demo-bar">
+        <button type="button" data-set-system="harmony">鸿蒙原生 (HDesign 2.0)</button>
+        <button type="button" data-set-system="pc-mac">PC / Mac (NewUI)</button>
+        <button type="button" data-set-theme="dark">深色</button>
+        <button type="button" data-set-theme="light">浅色</button>
+        <button type="button" data-set-theme="light-contrast">浅色高对比</button>
+      </div>
+      <div id="stage" class="stage" data-system="harmony" data-theme="dark">
+        <section class="de-window" style="min-height:160px">
+      <header class="de-titlebar">
+        <span class="de-titlebar__mark">A</span>
+        <span class="de-titlebar__title">Healthy_life — EntryAbility.ets</span>
+        <span class="de-titlebar__spacer"></span>
+        <div class="de-window__controls" aria-hidden="true">
+          <button type="button" tabindex="-1">□</button>
+          <button type="button" tabindex="-1">–</button>
+          <button type="button" tabindex="-1" data-close>×</button>
+        </div>
+      </header>
+      <div class="de-pad">窗口主体内容区（2.布局组件）</div>
+    </section>
+      </div>
+      <h2>用法</h2>
+      <pre><code>import { WindowFrame, WindowBody } from &quot;./window-frame&quot;;</code></pre>
+      <h2>API</h2>
+      <table>
+        <thead><tr><th>Prop / 组件</th><th>类型</th><th>默认</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><code>title</code></td><td><code>ReactNode</code></td><td>必填</td><td>窗口标题</td></tr><tr><td><code>children</code></td><td><code>ReactNode</code></td><td>—</td><td>窗口内容</td></tr>
+        </tbody>
+      </table>
+      <h2>Pixso 源文件对齐说明</h2>
+      <ul>
+        <li>对齐 2.布局组件（1642×1094 r=16vp）与 3.1顶部栏（高 44vp）。</li>
+      </ul>
+      
+    </main>
+  </div>
+  <script src="docs.js"></script>
+</body>
+</html>

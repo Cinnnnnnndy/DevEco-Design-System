@@ -1,0 +1,113 @@
+/* 文档页自己的栏宽和示例框。导航、字号、链接在 ../chrome.css。
+   组件外观只来自 ../tokens/。不用 Inter。 */
+
+* { box-sizing: border-box; }
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--docs-nav) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.content {
+  padding: 48px 48px 96px;
+  max-width: var(--docs-measure);
+}
+
+.content--wide {
+  max-width: var(--docs-measure-wide);
+}
+
+.demo-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.demo-bar button {
+  font: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--docs-ink);
+  background: var(--docs-panel);
+  border: 1px solid var(--docs-line);
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.demo-bar button[aria-pressed="true"] {
+  background: #e7effc;
+  border-color: #c5d4f6;
+}
+
+.stage {
+  background: var(--surface-window, #12141a);
+  color: var(--text-primary, inherit);
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 120px;
+}
+
+.stage[data-theme="dark"] {
+  background: var(--surface-window, #202224);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.stage[data-theme="light"],
+.stage[data-theme="light-contrast"] {
+  background: var(--surface-window, #f7f8fa);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.stage-lite {
+  background: var(--docs-panel);
+  border: 1px solid var(--docs-line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+pre {
+  background: #1c1c1c;
+  color: #f2f2f2;
+  border-radius: 8px;
+  padding: 12px 14px;
+  overflow: auto;
+  font-family: ui-monospace, "Sarasa Mono SC", "Noto Sans Mono", monospace;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--docs-line);
+}
+
+th {
+  background: #f6f6f6;
+  font-weight: 500;
+  color: var(--docs-body);
+}
+
+code {
+  font-family: ui-monospace, "Sarasa Mono SC", "Noto Sans Mono", monospace;
+  font-size: 0.92em;
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .content,
+  .content--wide { padding: 24px 16px 64px; max-width: none; }
+}

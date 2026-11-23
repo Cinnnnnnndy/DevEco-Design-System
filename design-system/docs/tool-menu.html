@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToolMenu · DevEco</title>
+  <link rel="stylesheet" href="../tokens/index.css?v=20261123c">
+  <link rel="stylesheet" href="../chrome.css?v=20261123c">
+  <link rel="stylesheet" href="docs.css?v=20261123c">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidenav"><a class="brand" href="index.html">DevEco 组件</a>
+<a href="../preview/index.html">总预览</a>
+<a href="../compare/index.html">对照</a>
+<a href="../SKILL.md">SKILL.md</a>
+<h2>通用核心组件</h2>
+<a href="button.html">Button</a>
+<a href="icon-button.html">IconButton</a>
+<a href="search-field.html">SearchField</a>
+<a href="text-input.html">TextInput</a>
+<a href="selection.html">Select / Checkbox / Radio / Switch / Segmented</a>
+<a href="dialog.html">Dialog / Notification / Banner</a>
+<a href="menu.html">Menu</a>
+<a href="tooltip.html">Tooltip</a>
+<a href="tabs.html">Tabs</a>
+<a href="code-editor.html">CodeEditor</a>
+<a href="tree.html">Tree</a>
+<a href="toolbar.html">Toolbar</a>
+<a href="nav-list.html">NavList</a>
+<a href="chip.html">Chip</a>
+<a href="tag.html">Tag</a>
+<a href="window-frame.html">WindowFrame</a>
+<a href="status-bar.html">StatusBar</a>
+<h2>AI 与工具窗口</h2>
+<a href="ai-status.html">AiStatus</a>
+<a href="message-bar.html">MessageBar</a>
+<a href="tool-menu.html" aria-current="page">ToolMenu</a>
+<a href="tool-stripe.html">ToolStripe</a>
+<h2>示例</h2>
+<a href="../examples/file-window.html">HarmonyIdeWindow</a>
+<a href="../examples/studio-tool-window.html">StudioToolWindow</a>
+</nav>
+    <main class="content">
+      <p class="kicker">Studio 工具窗口菜单 (icon.pix)</p>
+      <h1>ToolMenu</h1>
+      <p class="desc">Studio 工具窗口快速切换菜单（提交 / Bookmarks / 查找 / 运行 / 调试 / API Change Assistant）。</p>
+      <h2>示例</h2>
+      <div class="demo-bar">
+        <button type="button" data-set-system="harmony">鸿蒙原生 (HDesign 2.0)</button>
+        <button type="button" data-set-system="pc-mac">PC / Mac (NewUI)</button>
+        <button type="button" data-set-theme="dark">深色</button>
+        <button type="button" data-set-theme="light">浅色</button>
+        <button type="button" data-set-theme="light-contrast">浅色高对比</button>
+      </div>
+      <div id="stage" class="stage" data-system="pc-mac" data-theme="dark">
+        <ul class="de-menu de-tool-menu" role="menu">
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="../icons/sprite.svg#nu-vcs-branch"/></svg> </span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="../icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
+    </ul>
+      </div>
+      <h2>用法</h2>
+      <pre><code>import { ToolMenu, ToolMenuItem } from &quot;./tool-menu&quot;;</code></pre>
+      <h2>API</h2>
+      <table>
+        <thead><tr><th>Prop / 组件</th><th>类型</th><th>默认</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><code>current</code></td><td><code>boolean</code></td><td>false</td><td>当前选中工具窗</td></tr><tr><td><code>shortcut</code></td><td><code>string</code></td><td>—</td><td>右侧快捷键</td></tr><tr><td><code>icon</code></td><td><code>ReactNode</code></td><td>—</td><td>16px 线性图标</td></tr>
+        </tbody>
+      </table>
+      <h2>Pixso 源文件对齐说明</h2>
+      <ul>
+        <li>对齐 icon.pix 中的 Studio 工具菜单帧。</li>
+      </ul>
+      
+    </main>
+  </div>
+  <script src="docs.js"></script>
+</body>
+</html>

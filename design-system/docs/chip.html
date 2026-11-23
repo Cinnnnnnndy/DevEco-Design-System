@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chip · DevEco</title>
+  <link rel="stylesheet" href="../tokens/index.css?v=20261123c">
+  <link rel="stylesheet" href="../chrome.css?v=20261123c">
+  <link rel="stylesheet" href="docs.css?v=20261123c">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidenav"><a class="brand" href="index.html">DevEco 组件</a>
+<a href="../preview/index.html">总预览</a>
+<a href="../compare/index.html">对照</a>
+<a href="../SKILL.md">SKILL.md</a>
+<h2>通用核心组件</h2>
+<a href="button.html">Button</a>
+<a href="icon-button.html">IconButton</a>
+<a href="search-field.html">SearchField</a>
+<a href="text-input.html">TextInput</a>
+<a href="selection.html">Select / Checkbox / Radio / Switch / Segmented</a>
+<a href="dialog.html">Dialog / Notification / Banner</a>
+<a href="menu.html">Menu</a>
+<a href="tooltip.html">Tooltip</a>
+<a href="tabs.html">Tabs</a>
+<a href="code-editor.html">CodeEditor</a>
+<a href="tree.html">Tree</a>
+<a href="toolbar.html">Toolbar</a>
+<a href="nav-list.html">NavList</a>
+<a href="chip.html" aria-current="page">Chip</a>
+<a href="tag.html">Tag</a>
+<a href="window-frame.html">WindowFrame</a>
+<a href="status-bar.html">StatusBar</a>
+<h2>AI 与工具窗口</h2>
+<a href="ai-status.html">AiStatus</a>
+<a href="message-bar.html">MessageBar</a>
+<a href="tool-menu.html">ToolMenu</a>
+<a href="tool-stripe.html">ToolStripe</a>
+<h2>示例</h2>
+<a href="../examples/file-window.html">HarmonyIdeWindow</a>
+<a href="../examples/studio-tool-window.html">StudioToolWindow</a>
+</nav>
+    <main class="content">
+      <p class="kicker">鸿蒙 4.7筛选标签 & PC/Mac Filter Chip</p>
+      <h1>Chip</h1>
+      <p class="desc">筛选标签（高 28vp，鸿蒙端圆角 4vp、默认 5% 叠加底、选中 40% 品牌蓝；PC/Mac 端圆角 8px 描边胶囊）。</p>
+      <h2>示例</h2>
+      <div class="demo-bar">
+        <button type="button" data-set-system="harmony">鸿蒙原生 (HDesign 2.0)</button>
+        <button type="button" data-set-system="pc-mac">PC / Mac (NewUI)</button>
+        <button type="button" data-set-theme="dark">深色</button>
+        <button type="button" data-set-theme="light">浅色</button>
+        <button type="button" data-set-theme="light-contrast">浅色高对比</button>
+      </div>
+      <div id="stage" class="stage" data-system="harmony" data-theme="dark">
+        <div class="de-chip-row">
+      <button type="button" class="de-chip" aria-pressed="true">Info (全部)</button>
+      <button type="button" class="de-chip" aria-pressed="false">Errors (2)</button>
+      <button type="button" class="de-chip" aria-pressed="false">Warnings (5)</button>
+      <button type="button" class="de-chip" aria-pressed="false" disabled>Disabled</button>
+    </div>
+      </div>
+      <h2>用法</h2>
+      <pre><code>import { Chip } from &quot;./chip&quot;;
+
+&lt;Chip pressed&gt;Info&lt;/Chip&gt;
+&lt;Chip&gt;Warnings&lt;/Chip&gt;</code></pre>
+      <h2>API</h2>
+      <table>
+        <thead><tr><th>Prop / 组件</th><th>类型</th><th>默认</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><code>pressed</code></td><td><code>boolean</code></td><td>false</td><td>选中态（aria-pressed）</td></tr><tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>置灰态（5% 底 + 10% 描边）</td></tr>
+        </tbody>
+      </table>
+      <h2>Pixso 源文件对齐说明</h2>
+      <ul>
+        <li>修正了旧版误用文件管理器 999px 椭圆胶囊的问题，对齐 4.7筛选标签（70×28 r=4vp，单字母定宽 28×28 r=4vp）。</li>
+      </ul>
+      
+    </main>
+  </div>
+  <script src="docs.js"></script>
+</body>
+</html>
