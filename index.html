@@ -1,12 +1,156 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=design-system/preview/index.html">
-  <title>DevEco Design System</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DevEco Design System · 双系统规范与组件库启动页</title>
+<meta name="description" content="基于 Pixso 矢量 AST（133,622 节点）提取构建的 DevEco 双设计系统：鸿蒙原生端 HDesign 2.0 与 PC/Mac IntelliJ NewUI，含 320 色卡、995 原生图标、12 套页面脚手架、23 组件集与跨模型 Skill 门禁。">
+<link rel="icon" type="image/svg+xml" href="deveco-intui-kit/icons/deveco-code-logo.svg">
+<link rel="stylesheet" href="deveco-intui-kit/src/tokens.css?v=20261123c">
+<link rel="stylesheet" href="site/launcher.css?v=20261123c">
+<style>
+  .hero{padding:12px 0 28px;display:flex;flex-direction:column;gap:14px}
+  .hero h2{margin:0;font-size:28px;line-height:36px;letter-spacing:-.02em;color:var(--ui-fg)}
+  .hero p{margin:0;font-size:15px;line-height:26px;color:var(--ui-fg-info);max-width:76ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:99px;background:var(--ui-fg);color:var(--ui-editor-bg);font:500 13px/36px var(--font-ui);text-decoration:none}
+  .btn-primary:hover{opacity:.9;text-decoration:none}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:99px;background:var(--ui-editor-bg);color:var(--ui-fg);border:1px solid var(--ui-border);font:500 13px/34px var(--font-ui);text-decoration:none}
+  .btn-ghost:hover{border-color:var(--ui-fg);text-decoration:none}
+  .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:8px 0 28px}
+  .stat{background:var(--ui-editor-bg);border-radius:18px;padding:16px 18px}
+  .stat b{display:block;font-size:22px;line-height:28px;font-weight:700;color:var(--ui-fg);font-variant-numeric:tabular-nums}
+  .stat span{display:block;font-size:12px;line-height:18px;color:var(--ui-fg-info);margin-top:4px}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .nav-card{display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:22px 24px;border-radius:24px;background:var(--ui-editor-bg);text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
+  .nav-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.08);text-decoration:none}
+  .nav-card .k{display:inline-flex;align-items:center;gap:6px;font:600 11px/20px var(--font-code);color:var(--ui-accent);letter-spacing:.02em}
+  .nav-card h3{margin:6px 0 6px;font-size:17px;line-height:24px;font-weight:600;color:var(--ui-fg)}
+  .nav-card p{margin:0;font-size:13px;line-height:21px;color:var(--ui-fg-info)}
+  .nav-card .foot{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--ui-fg-info);padding-top:10px;border-top:1px solid var(--ui-border)}
+  .nav-card .foot code{font-family:var(--font-code);font-size:11px;color:var(--ui-fg)}
+  @media (max-width:980px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <p>正在跳转到 <a href="design-system/preview/index.html">DevEco Design System 总览页</a>…</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-moon" viewBox="0 0 16 16"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7Z" stroke="currentColor" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" stroke="currentColor" fill="none"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M3.4 12.6l1.4-1.4M11.2 4.8l1.4-1.4" stroke="currentColor" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<div class="page">
+  <header class="mast">
+    <h1>DevEco Design System<small>HarmonyOS NEXT HDesign 2.0 &amp; PC/Mac IntelliJ NewUI</small></h1>
+    <span class="grow"></span>
+    <a class="tbtn" href="design-system/preview/index.html"><span>进入完整总览页</span></a>
+    <a class="tbtn" href="https://github.com/Cinnnnnnndy/DevEco-Design-System" target="_blank" rel="noopener"><span>GitHub 仓库</span></a>
+    <button type="button" class="tbtn" id="theme-btn" title="切换深色 / 浅色外观"><svg><use href="#i-moon"/></svg><span id="theme-label">深色</span></button>
+  </header>
+
+  <section class="hero">
+    <h2>Pixso 矢量 AST 双设计系统与跨模型高还原度工程体系</h2>
+    <p>从本地 7 份 Pixso 源文件（133,622 矢量节点）全量解码提取，并吸收开源 JetBrains IntelliJ NewUI（ExpUI）与 <code>openharmony-sig/deveco-code</code> AI Agent IDE 组件。人机共用一套 Token、原生 SVG 图标库、12 套整页脚手架与 14 项自动化门禁。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="design-system/preview/index.html">打开设计系统总览页 →</a>
+      <a class="btn-ghost" href="design-system/preview/index.html#scaffolds">浏览 12 套页面脚手架</a>
+      <a class="btn-ghost" href="design-system/preview/index.html#icons">检索 995 个 Pixso 图标</a>
+      <a class="btn-ghost" href="design-system/preview/index.html#skill-guide">查看 Skill 与门禁用法</a>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="设计系统资产规模">
+    <div class="stat"><b>320</b><span>全量可复制色卡（鸿蒙 + NewUI 8 色系）</span></div>
+    <div class="stat"><b>995</b><span>Pixso 原生 SVG 图标（零重绘 + Token）</span></div>
+    <div class="stat"><b>12</b><span>官方页面脚手架（整窗/分屏/弹窗/抽屉）</span></div>
+    <div class="stat"><b>23</b><span>核心组件集（含 ExpUI &amp; AI Agent）</span></div>
+    <div class="stat"><b>14</b><span>自动化还原度硬门禁（0 报错通过）</span></div>
+  </section>
+
+  <section class="grid" aria-label="核心模块入口">
+    <a class="nav-card" href="design-system/preview/index.html#tokens">
+      <div>
+        <span class="k">01 · TOKENS &amp; PALETTES</span>
+        <h3>双系统全量色卡与字阶</h3>
+        <p>鸿蒙 HDesign 2.0（695 样式、叠灰阶、44 色多彩色板）与 PC/Mac NewUI（Dark 97 色 + Light 89 色、9 级字阶与 10 项代码语法色），全部一键复制 HEX。</p>
+      </div>
+      <div class="foot"><code>#tokens · #official-names</code><span>进入 →</span></div>
+    </a>
+
+    <a class="nav-card" href="design-system/preview/index.html#icons">
+      <div>
+        <span class="k">02 · PIXSO VECTOR ICONS</span>
+        <h3>Pixso 原生图标库（995）</h3>
+        <p>直接从 <code>icon.pix</code> 矢量 AST 无损提取（354 鸿蒙 NEXT + 641 PC/Mac NewUI），单色与语义色自动绑定 CSS Token，支持关键词检索与一键复制 SVG / <code>&lt;use&gt;</code>。</p>
+      </div>
+      <div class="foot"><code>icons/sprite.svg</code><span>进入 →</span></div>
+    </a>
+
+    <a class="nav-card" href="design-system/preview/index.html#scaffolds">
+      <div>
+        <span class="k">03 · PAGE SCAFFOLDS</span>
+        <h3>12 套 Pixso 核准页面脚手架</h3>
+        <p>按整窗工作台、左右/上下分屏（代码+预览、Diff 审查、诊断分屏）、设置/表单/告警弹窗、右侧抽屉与命令面板分类，逐像素对齐 Pixso 原稿并支持一键复制骨架。</p>
+      </div>
+      <div class="foot"><code>scaffolds/scaffolds.json</code><span>进入 →</span></div>
+    </a>
+
+    <a class="nav-card" href="design-system/preview/index.html#components">
+      <div>
+        <span class="k">04 · COMPONENTS &amp; SPECIMENS</span>
+        <h3>23 个核心组件与双系统工作台</h3>
+        <p>涵盖传统 IDE 基础控件、开源 IntelliJ ExpUI 深化组件与 <code>openharmony-sig/deveco-code</code> AI Agent 工具调用/Diff 统计/Token 占用组件，支持实时切换 5 主题。</p>
+      </div>
+      <div class="foot"><code>#specimens · #components</code><span>进入 →</span></div>
+    </a>
+
+    <a class="nav-card" href="design-system/preview/index.html#compare">
+      <div>
+        <span class="k">05 · PIXSO 1:1 COMPARE</span>
+        <h3>Pixso 原稿对照与实战示例</h3>
+        <p>6 组 Pixso 原稿并排对照帧、2 套整窗 Pattern（HarmonyIdeWindow / StudioToolWindow）以及基于 Skill 实战生成的 AI 冷启动诊断工作台 Demo。</p>
+      </div>
+      <div class="foot"><code>#compare · examples/</code><span>进入 →</span></div>
+    </a>
+
+    <a class="nav-card" href="design-system/preview/index.html#skill-guide">
+      <div>
+        <span class="k">06 · CROSS-MODEL SKILL &amp; GATE</span>
+        <h3>跨模型 Skill 与 14 项自动化门禁</h3>
+        <p>供 Claude / Codex / Cursor / Gemini 直接遵循的 <code>SKILL.md</code> 规范与 <code>verify-fidelity.js</code> 校验脚本，自动拦截手绘图标、反色画布、宿主样式穿透与布局误用。</p>
+      </div>
+      <div class="foot"><code>SKILL.md · verify-fidelity.js</code><span>进入 →</span></div>
+    </a>
+  </section>
+
+  <footer>
+    <span>DevEco Design System · Standalone Repository</span>
+    <span>命令校验：<code>node design-system/scripts/verify-fidelity.js</code></span>
+    <span>数据源：Pixso Vector AST · JetBrains ExpUI · openharmony-sig/deveco-code</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("theme-btn");
+  var lbl = document.getElementById("theme-label");
+  function sync(t) {
+    root.setAttribute("data-theme", t);
+    if (lbl) lbl.textContent = t === "dark" ? "浅色" : "深色";
+    var u = btn && btn.querySelector("use");
+    if (u) u.setAttribute("href", t === "dark" ? "#i-sun" : "#i-moon");
+  }
+  var saved = localStorage.getItem("deveco-docs-theme");
+  if (saved === "dark" || saved === "light") sync(saved);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      var cur = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      localStorage.setItem("deveco-docs-theme", cur);
+      sync(cur);
+    });
+  }
+})();
+</script>
 </body>
 </html>
