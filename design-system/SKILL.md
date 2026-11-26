@@ -181,6 +181,11 @@ description: 使用 DevEco 双设计系统（鸿蒙原生端 HarmonyOS NEXT HDes
 - **图标颜色继承铁律**：`.de-svg-icon` 必须保持 `color: inherit`（禁止在图标类本身写死 `color: var(--icon)`），保证蓝色激活态、主按钮、深色顶栏内图标自动反白。
 - **AI Agent IDE 实战组件与工程细节（吸收自 `gitcode.com/openharmony-sig/deveco-code`）**：
   - 工具调用折叠卡用 `.de-tool-call`（`<details>` + `.de-tool-call__trigger`），工具报错重试用 `.de-tool-error`，Diff 增删统计用 `.de-diff-changes`（配 5 格红绿条），快捷键键帽统一用 `<kbd class="de-kbd">`，会话 Token 占用用 `.de-context-pill`，AI 思考流光用 `.de-shimmer`，轻提示用 `.de-toast-inline`。
+  - **Agent 四层 GUI 对话元件体系（共 38 类，参考 DevKit TUI 四层架构并针对 GUI IDE 深化）**：
+    - `01 对话流基元（16 类）`：`.de-unit-user`（不折）、`.de-chat-bubble`、`.de-unit-thinking`（默认单行）、`ContextToolGroup`、`.de-unit-action`（固定 24px 三段式）、`.de-unit-result`（封顶 200px 内滚）、行内 Diff 预览卡、`.de-unit-plan`、`.de-unit-approval`（永不折）、`.de-tool-error`（永不折）、`.de-ai-status`、`.de-progress`、`.de-compaction`、`.de-unit-footer`、GUI 多媒体/真机预览卡、门禁验证证据卡。
+    - `02 编排类元件（8 类）`：角色归属徽标、`.de-subagent` 子 Agent 任务卡、并行泳道摘要、后台任务胶囊、跨 Agent 交接分隔线、审批队列条、`.de-phase-bar` 阶段时间线、中断恢复锚点。
+    - `03 输入区单元（6 类）`：`.de-composer` 多行富输入栏、上下文引用芯片栏、Agent/Plan/Ask 模式与模型选择器、`.de-queued` 队列预备条、`.de-context-pill` 环形上下文占用、斜杠命令补全条。
+    - `04 页面级元件（8 类）`：会话头部状态栏、会话侧栏运行蓝点/待审琥珀点（`.de-dot-status`）、折叠时机偏好、权限策略开关、MCP/技能连接开关、变更文件审查头、快捷键速查条、底栏全局状态锚点。
   - 所有耗时、Token 计数、Diff 行数必须声明 `font-variant-numeric: tabular-nums` 防止数字跳动；动效必须提供 `@media (prefers-reduced-motion: reduce)` 降级。
 
 ---

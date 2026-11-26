@@ -9,6 +9,7 @@
 - **PC/Mac NewUI 全量色阶与字阶**：https://cinnnnnnndy.github.io/DevEco-Design-System/#official-names
 - **Pixso 原生图标库（995 个零重绘 SVG + Token）**：https://cinnnnnnndy.github.io/DevEco-Design-System/#icons
 - **12 套官方页面脚手架（整窗 / 分屏 / 弹窗 / 抽屉）**：https://cinnnnnnndy.github.io/DevEco-Design-System/#scaffolds
+- **Agent 四层 GUI 对话元件（38 类：对话流基元 16 / 编排 8 / 输入区 6 / 页面级 8）**：https://cinnnnnnndy.github.io/DevEco-Design-System/#agent-units
 - **23 个核心组件文档与实时工作台**：https://cinnnnnnndy.github.io/DevEco-Design-System/#components
 - **跨模型 Skill 与 14 项自动化门禁**：https://cinnnnnnndy.github.io/DevEco-Design-System/#skill-guide
 
