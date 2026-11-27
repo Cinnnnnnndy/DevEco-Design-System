@@ -5101,7 +5101,7 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
   var domainTabs = Array.from(document.querySelectorAll("[data-domain-tab]"));
   var domainNodes = Array.from(document.querySelectorAll("[data-domain]"));
   function matchesDomain(el, domain) {
-    return (el.getAttribute("data-domain") || "").split(/s+/).indexOf(domain) >= 0;
+    return (el.getAttribute("data-domain") || "").trim().split(" ").indexOf(domain) >= 0;
   }
   function syncSystemForDomain(domain) {
     if (domain !== "harmony" && domain !== "pcmac") return;
@@ -5158,7 +5158,7 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
     if (!el) return null;
     var host = el.closest("[data-domain]");
     if (!host) return null;
-    var doms = (host.getAttribute("data-domain") || "").split(/s+/).filter(Boolean);
+    var doms = (host.getAttribute("data-domain") || "").trim().split(" ").filter(Boolean);
     return doms.length ? { domain: doms[0], id: id } : null;
   }
 
