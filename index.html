@@ -6,9 +6,9 @@
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
 <link rel="icon" type="image/svg+xml" href="./deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127k">
-<link rel="stylesheet" href="./site/launcher.css?v=20261127k">
-<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127k">
+<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127l">
+<link rel="stylesheet" href="./site/launcher.css?v=20261127l">
+<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127l">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
    页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ./design-system/tokens/index.css。 ---------- */
@@ -279,6 +279,26 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
 .is-domain-hidden{display:none!important}
 .hero-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 16px;margin-bottom:20px;border-radius:12px;border:1px solid var(--pg-sep);background:var(--pg-card);font-size:13px;color:var(--ui-fg2)}
 .hero-strip b{color:var(--ui-fg);font-weight:600}
+.layout.is-home .sidebar{display:none}
+.layout.is-home main{max-width:1120px;margin:0 auto;width:100%}
+.home-hero{padding:36px 0 28px;border-bottom:1px solid var(--pg-sep);margin-bottom:28px}
+.home-hero__eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ui-accent);margin-bottom:12px}
+.home-hero h2{margin:0 0 12px;font-size:32px;line-height:1.22;letter-spacing:-.02em;color:var(--ui-fg)}
+.home-hero p{margin:0;max-width:740px;font-size:15px;line-height:1.65;color:var(--ui-fg2)}
+.home-stats{display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;font:500 12.5px/1 var(--font-mono);color:var(--ui-fg2)}
+.home-stats b{color:var(--ui-fg);font-weight:700}
+.home-pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:28px}
+.home-pillar{padding:20px 22px;border-radius:14px;border:1px solid var(--pg-sep);background:var(--pg-card);display:flex;flex-direction:column;gap:8px}
+.home-pillar__no{font:700 11px/1 var(--font-mono);letter-spacing:.06em;color:var(--ui-accent)}
+.home-pillar h3{margin:0;font-size:16px;line-height:1.35;color:var(--ui-fg)}
+.home-pillar p{margin:0;font-size:13px;line-height:1.65;color:var(--ui-fg2)}
+.home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.home-entry{text-align:left;padding:18px;border-radius:14px;border:1px solid var(--pg-sep);background:var(--pg-card);cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
+.home-entry:hover{border-color:var(--ui-accent);transform:translateY(-2px)}
+.home-entry__tag{font:600 11px/1 var(--font-mono);color:var(--ui-accent)}
+.home-entry__title{font-size:15px;font-weight:600;color:var(--ui-fg)}
+.home-entry__desc{font-size:12.5px;line-height:1.5;color:var(--ui-fg2)}
+@media (max-width:900px){.home-pillars,.home-entries{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -293,10 +313,10 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   <header class="mast">
     <h1>DevEco 设计系统</h1>
     <nav class="top-tabs" role="tablist" aria-label="一级模块导航">
-      <button type="button" class="top-tab" role="tab" data-domain-tab="foundations" aria-selected="true">基础规范</button>
-      <button type="button" class="top-tab" role="tab" data-domain-tab="components" aria-selected="false">基础组件 (21)</button>
+      <button type="button" class="top-tab" role="tab" data-domain-tab="home" aria-selected="true">首页</button>
+      <button type="button" class="top-tab" role="tab" data-domain-tab="harmony" aria-selected="false">鸿蒙原生 (HDesign 2.0)</button>
+      <button type="button" class="top-tab" role="tab" data-domain-tab="pcmac" aria-selected="false">PC/Mac 当代 (NewUI)</button>
       <button type="button" class="top-tab" role="tab" data-domain-tab="agent" aria-selected="false">AI Agent (48)</button>
-      <button type="button" class="top-tab" role="tab" data-domain-tab="layouts" aria-selected="false">脚手架与模板</button>
       <button type="button" class="top-tab" role="tab" data-domain-tab="guide" aria-selected="false">对照与指南</button>
     </nav>
     <span class="grow"></span>
@@ -307,33 +327,49 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     <aside class="sidebar" aria-label="目录">
       <div class="sd-title">目录</div>
       <nav id="toc">
-        <a class="cat on" data-domain="foundations" href="#systems"><span class="lbl">两套系统归属</span><span class="cnt">01</span></a>
-        <a class="cat" data-domain="foundations" href="#tokens"><span class="lbl">鸿蒙 HDesign 2.0 Token</span><span class="cnt">02</span></a>
-        <a class="cat" data-domain="foundations" href="#official-names"><span class="lbl">PC/Mac NewUI 色阶</span><span class="cnt">03</span></a>
-        <a class="cat" data-domain="foundations" href="#icons"><span class="lbl">Pixso 图标库 (995)</span><span class="cnt">SVG</span></a>
+        <a class="cat on" data-domain="harmony" href="#tokens"><span class="lbl">鸿蒙 HDesign 2.0 Token</span><span class="cnt">TOKEN</span></a>
+        <a class="cat" data-domain="pcmac" href="#official-names"><span class="lbl">PC/Mac NewUI 色阶</span><span class="cnt">TOKEN</span></a>
+        <a class="cat" data-domain="harmony pcmac" href="#icons"><span class="lbl">Pixso 图标库 (1003)</span><span class="cnt">SVG</span></a>
 
-        <a class="cat" data-domain="components" href="#components"><span class="lbl">核心组件文档 (21)</span><span class="cnt">UI</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-button"><span class="lbl">Button</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-icon-button"><span class="lbl">IconButton</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-search-field"><span class="lbl">SearchField</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-text-input"><span class="lbl">TextInput & ErrorTip</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-selection"><span class="lbl">Selection</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-dialog"><span class="lbl">Dialog & Notification</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-menu"><span class="lbl">Menu</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-tooltip"><span class="lbl">Tooltip</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-tabs"><span class="lbl">Tabs</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-code-editor"><span class="lbl">CodeEditor</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-tree"><span class="lbl">Tree</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-toolbar"><span class="lbl">Toolbar</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-nav-list"><span class="lbl">NavList</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-chip"><span class="lbl">Chip</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-tag"><span class="lbl">Tag</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-window-frame"><span class="lbl">WindowFrame</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-status-bar"><span class="lbl">StatusBar & LspPill</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-ai-status"><span class="lbl">AiStatus</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-message-bar"><span class="lbl">MessageBar</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-tool-menu"><span class="lbl">ToolMenu</span></a>
-        <a class="cat sub-item" data-domain="components" href="#component-tool-stripe"><span class="lbl">ToolStripe</span></a>
+        <a class="cat" data-domain="harmony pcmac" href="#components"><span class="lbl">基础组件文档 (21)</span><span class="cnt">UI</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-button"><span class="lbl">Button</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-icon-button"><span class="lbl">IconButton</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-search-field"><span class="lbl">SearchField</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-text-input"><span class="lbl">TextInput & ErrorTip</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-selection"><span class="lbl">Selection</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-dialog"><span class="lbl">Dialog & Notification</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-menu"><span class="lbl">Menu</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-tooltip"><span class="lbl">Tooltip</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-tabs"><span class="lbl">Tabs</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-code-editor"><span class="lbl">CodeEditor</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-tree"><span class="lbl">Tree</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-toolbar"><span class="lbl">Toolbar</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-nav-list"><span class="lbl">NavList</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-chip"><span class="lbl">Chip</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-tag"><span class="lbl">Tag</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-window-frame"><span class="lbl">WindowFrame</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-status-bar"><span class="lbl">StatusBar & LspPill</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-ai-status"><span class="lbl">AiStatus</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-message-bar"><span class="lbl">MessageBar</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-tool-menu"><span class="lbl">ToolMenu</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#component-tool-stripe"><span class="lbl">ToolStripe</span></a>
+
+        <a class="cat" data-domain="harmony pcmac" href="#scaffolds"><span class="lbl">页面脚手架 (12)</span><span class="cnt">S1–12</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-ide-workbench"><span class="lbl">S1 IDE 主工作台脚手架 (Main IDE Workbench)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-ai-chat-workbench"><span class="lbl">S2 AI Agent / 会话工作台脚手架 (AI Session Workbench)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-split-settings-dialog"><span class="lbl">S3 双栏设置 / 新建工程弹窗脚手架 (Settings & Wizard Split Dialog)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-studio-tool-panel"><span class="lbl">S4 无顶栏纯工具窗脚手架 (Tool Window / .de-studio)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-welcome-screen"><span class="lbl">S5 工程欢迎页脚手架 (Welcome Screen)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-standard-form-dialog"><span class="lbl">S6 标准表单模态弹窗脚手架 (Modal Form Dialog)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-alert-confirm-dialog"><span class="lbl">S7 危险操作 / 告警确认弹窗脚手架 (Alert / Destructive Dialog)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-side-drawer"><span class="lbl">S8 右侧滑出抽屉脚手架 (Slide-over Drawer / Inspector)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-command-palette"><span class="lbl">S9 全局搜索 / 命令面板脚手架 (Search Everywhere / Command Palette)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-editor-preview-split"><span class="lbl">S10 左右分屏：代码编辑 + ArkUI 实时预览 (Editor + Preview Split)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-diff-review-split"><span class="lbl">S11 左右对比分屏：代码 Diff / AI 补丁审查 (Side-by-Side Diff Split)</span></a>
+        <a class="cat sub-item" data-domain="harmony pcmac" href="#scaffold-top-bottom-split"><span class="lbl">S12 上下分屏：代码主区 + 底部多标签诊断/日志面板 (Top-Bottom Split)</span></a>
+        <a class="cat" data-domain="harmony pcmac" href="#specimens"><span class="lbl">整窗实时工作台</span><span class="cnt">IDE</span></a>
+        <a class="cat" data-domain="harmony" href="#file-window"><span class="lbl">HarmonyIdeWindow</span><span class="cnt">HM</span></a>
+        <a class="cat" data-domain="pcmac" href="#studio-tool-window"><span class="lbl">StudioToolWindow</span><span class="cnt">PC</span></a>
 
         <a class="cat" data-domain="agent" href="#agent-units"><span class="lbl">Agent 对话元件 (48)</span><span class="cnt">AI</span></a>
         <a class="cat sub-item" data-domain="agent" href="#agent-stream"><span class="lbl">01 对话流基元 (20)</span></a>
@@ -343,23 +379,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
         <a class="cat sub-item" data-domain="agent" href="#agent-turn"><span class="lbl">完整一轮 SessionTurn</span></a>
         <a class="cat sub-item" data-domain="agent" href="#agent-structure"><span class="lbl">AI 输出结构化 1.0 vs 2.0</span></a>
 
-        <a class="cat" data-domain="layouts" href="#scaffolds"><span class="lbl">页面脚手架 (12)</span><span class="cnt">S1–12</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-ide-workbench"><span class="lbl">S1 IDE 主工作台脚手架 (Main IDE Workbench)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-ai-chat-workbench"><span class="lbl">S2 AI Agent / 会话工作台脚手架 (AI Session Workbench)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-split-settings-dialog"><span class="lbl">S3 双栏设置 / 新建工程弹窗脚手架 (Settings & Wizard Split Dialog)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-studio-tool-panel"><span class="lbl">S4 无顶栏纯工具窗脚手架 (Tool Window / .de-studio)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-welcome-screen"><span class="lbl">S5 工程欢迎页脚手架 (Welcome Screen)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-standard-form-dialog"><span class="lbl">S6 标准表单模态弹窗脚手架 (Modal Form Dialog)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-alert-confirm-dialog"><span class="lbl">S7 危险操作 / 告警确认弹窗脚手架 (Alert / Destructive Dialog)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-side-drawer"><span class="lbl">S8 右侧滑出抽屉脚手架 (Slide-over Drawer / Inspector)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-command-palette"><span class="lbl">S9 全局搜索 / 命令面板脚手架 (Search Everywhere / Command Palette)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-editor-preview-split"><span class="lbl">S10 左右分屏：代码编辑 + ArkUI 实时预览 (Editor + Preview Split)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-diff-review-split"><span class="lbl">S11 左右对比分屏：代码 Diff / AI 补丁审查 (Side-by-Side Diff Split)</span></a>
-        <a class="cat sub-item" data-domain="layouts" href="#scaffold-top-bottom-split"><span class="lbl">S12 上下分屏：代码主区 + 底部多标签诊断/日志面板 (Top-Bottom Split)</span></a>
-        <a class="cat" data-domain="layouts" href="#specimens"><span class="lbl">双系统实时工作台</span><span class="cnt">IDE</span></a>
-        <a class="cat" data-domain="layouts" href="#file-window"><span class="lbl">HarmonyIdeWindow</span><span class="cnt">HM</span></a>
-        <a class="cat" data-domain="layouts" href="#studio-tool-window"><span class="lbl">StudioToolWindow</span><span class="cnt">PC</span></a>
-
+        <a class="cat" data-domain="guide" href="#systems"><span class="lbl">两套系统归属</span><span class="cnt">MAP</span></a>
         <a class="cat" data-domain="guide" href="#compare"><span class="lbl">Pixso 设计稿对照</span><span class="cnt">6 组</span></a>
         <a class="cat sub-item" data-domain="guide" href="#compare-file-window"><span class="lbl">鸿蒙 IDE 窗口</span></a>
         <a class="cat sub-item" data-domain="guide" href="#compare-menu"><span class="lbl">菜单与弹层</span></a>
@@ -373,13 +393,79 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     </aside>
 
     <main>
-      <div class="hero-strip" data-domain="foundations">
-        <span><b>HarmonyOS NEXT HDesign 2.0</b> × <b>PC/Mac IntelliJ NewUI</b> · Pixso 矢量 AST 无损提取</span>
-        <span>995 图标 · 21 基础组件 · 48 Agent 元件 · 12 套脚手架 · 34/34 门禁</span>
+      <section id="home" data-domain="home">
+        <div class="home-hero">
+          <div class="home-hero__eyebrow">DEVECO DESIGN SYSTEM · PIXSO VECTOR AST</div>
+          <h2>一套面向 AI 时代研发工具的双端设计系统</h2>
+          <p>以同一套语义 Token 与组件契约，同时驾驭 <b>HarmonyOS NEXT 原生端（HDesign 2.0）</b> 与 <b>PC / Mac 桌面端（IntelliJ NewUI）</b>，并内置面向 DevEco Code 的 48 类 Agent 对话与多智能体编排规范。</p>
+          <div class="home-stats">
+            <span><b>2</b> 套设计系统</span>
+            <span><b>1,003</b> 矢量图标</span>
+            <span><b>21</b> 核心基础组件</span>
+            <span><b>48</b> Agent 元件 + 8 渐变形象</span>
+            <span><b>12</b> 页面脚手架</span>
+            <span><b>34/34</b> 还原度门禁</span>
+          </div>
+        </div>
+
+        <div class="home-pillars">
+          <div class="home-pillar">
+            <span class="home-pillar__no">01 · DUAL-SYSTEM, NATIVE CRAFT</span>
+            <h3>双端同源，原生各美</h3>
+            <p>共享语义层而不抹平平台特征：鸿蒙原生端坚持 <code>16vp</code> 呼吸感、毛玻璃侧栏与胶囊页签；PC/Mac 当代端坚持 <code>13px</code> 高信息密度与 <code>Gray 1–14</code> 精密色阶，一行 <code>data-system</code> 切换即得原生质感。</p>
+          </div>
+          <div class="home-pillar">
+            <span class="home-pillar__no">02 · AST-DRIVEN FIDELITY</span>
+            <h3>矢量真相，零手绘漂移</h3>
+            <p>所有色板、圆角、字阶、1,003 枚 SVG 图标与 12 套页面脚手架均直接解码自 Pixso 源文件矢量 AST，配套 34 项自动化门禁，杜绝私写硬编码样式与视觉走样。</p>
+          </div>
+          <div class="home-pillar">
+            <span class="home-pillar__no">03 · STREAM FIRST, CARDS SPARINGLY</span>
+            <h3>对话即流，卡片克制</h3>
+            <p>AI 正文回答、Deep Thinking 思考过程与工具检索过程一律「无卡片裸排 + 左竖线折叠」；仅将边框与底色留给意图确认、Diff 审阅与输入框，消除长对话里的多层嵌套噪音。</p>
+          </div>
+          <div class="home-pillar">
+            <span class="home-pillar__no">04 · HUMAN-IN-THE-LOOP ORCHESTRATION</span>
+            <h3>人机协同，确定可控</h3>
+            <p>以 8 枚渐变 Subagent 形象区分并行角色，以强/弱/通知三类意图确认、Token 静默压缩、检查点回滚与 2.0 结构化输出（结论先行 + 实体直跳 + 动作收口），让 AI 自主执行既透明又随时可控。</p>
+          </div>
+        </div>
+
+        <div class="home-entries">
+          <button type="button" class="home-entry" data-jump-domain="harmony">
+            <span class="home-entry__tag">01 · HARMONYOS NEXT</span>
+            <span class="home-entry__title">鸿蒙原生 (HDesign 2.0) →</span>
+            <span class="home-entry__desc">HDesign 2.0 Token、鸿蒙图标、21 基础组件、12 套脚手架与整窗样张。</span>
+          </button>
+          <button type="button" class="home-entry" data-jump-domain="pcmac">
+            <span class="home-entry__tag">02 · PC / MAC NEWUI</span>
+            <span class="home-entry__title">PC/Mac 当代 (NewUI) →</span>
+            <span class="home-entry__desc">NewUI 8 色系官方色阶、桌面端图标、21 基础组件与 Studio 整窗。</span>
+          </button>
+          <button type="button" class="home-entry" data-jump-domain="agent">
+            <span class="home-entry__tag">03 · AI AGENTIC UI</span>
+            <span class="home-entry__title">AI Agent (48) →</span>
+            <span class="home-entry__desc">四层 48 类对话元件、8 枚渐变 Subagent 形象与 1.0/2.0 输出结构对比。</span>
+          </button>
+          <button type="button" class="home-entry" data-jump-domain="guide">
+            <span class="home-entry__tag">04 · SPEC &amp; SKILL</span>
+            <span class="home-entry__title">对照与指南 →</span>
+            <span class="home-entry__desc">两套系统归属、6 组 Pixso 原稿并排对照、实战测试与 Skill 接入指南。</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="hero-strip" data-domain="harmony">
+        <span><b>HarmonyOS NEXT · HDesign 2.0</b> · 16vp 字阶 · 34vp 按钮 (r=8vp) · 28vp 胶囊页签与树行 · 毛玻璃侧栏</span>
+        <span>354+ 鸿蒙图标 · 21 组件 · 12 套脚手架</span>
+      </div>
+      <div class="hero-strip" data-domain="pcmac">
+        <span><b>PC / Mac 当代桌面端 · IntelliJ NewUI</b> · 13px 字阶 · Gray 1–14 官方色阶 · 28px 按钮 · 40px 底条页签</span>
+        <span>641+ NewUI 图标 · 21 组件 · 12 套脚手架</span>
       </div>
 
       <!-- ================= 01 两套系统归属 ================= -->
-      <section class="grp" id="systems" data-domain="foundations" style="margin-top:8px">
+      <section class="grp" id="systems" data-domain="guide" style="margin-top:8px">
         <div class="ghead"><h3>两套设计系统归属</h3><span class="cnt">01 · SYSTEMS</span></div>
         <p class="note">通过解码每个 <code>.pix</code> 压缩包内 <code>inner.pix</code> 的头部原始文件名与图层树，确权两套设计系统的真实来源与适用边界。</p>
         <div class="tbl">
@@ -426,7 +512,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       </section>
 
       <!-- ================= 02 鸿蒙 HDesign 2.0 Token ================= -->
-      <section class="grp" id="tokens" data-domain="foundations">
+      <section class="grp" id="tokens" data-domain="harmony">
         <div class="ghead"><h3>鸿蒙原生端 Token 全量色卡</h3><span class="cnt">02 · HDESIGN 2.0 FULL PALETTE</span></div>
         <p class="note">全部提取自 <code>鸿蒙IDE_v1.1.0_PC端组件库.pix</code> 与 <code>基础范式2.0.pix</code>（共 695 项共享样式），涵盖 4.0 面板表面、1.1/1.2 叠灰阶与状态填充、2.0 文案与图标、3.0 描边、22×2 官方多彩色板以及字阶/圆角/海拔阴影。点击任意色块即可复制色值。</p>
 
@@ -569,7 +655,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       </section>
 
       <!-- ================= 03 PC/Mac NewUI 全量色阶、字阶与语法色 ================= -->
-      <section class="grp" id="official-names" data-domain="foundations">
+      <section class="grp" id="official-names" data-domain="pcmac">
         <div class="ghead"><h3>PC / Mac NewUI 全量色阶与语法色</h3><span class="cnt">03 · NEWUI FULL PALETTE (186 COLORS)</span></div>
         <p class="note">完整提取自 JetBrains IntelliJ New UI（<code>expUI_dark.theme.json</code> / <code>expUI_light.theme.json</code>）、<code>【NewUI】鸿蒙IDE-当代.pix</code> 与 <code>deveco-intui-kit/tokens/tokens.json</code>（只读）。包含 <b>Dark 8 色系 97 色</b>、<b>Light 8 色系 88 色 + 扩展色</b>、<b>9 级官方字阶</b>与<b>10 项代码语法色</b>。点击任意色块即可复制 HEX。</p>
 
@@ -757,7 +843,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       </section>
 
       <!-- ================= Pixso 原生图标库 (995 SVG + Token) ================= -->
-      <section class="grp" id="icons" data-domain="foundations">
+      <section class="grp" id="icons" data-domain="harmony pcmac">
         <div class="ghead"><h3>Pixso 原生图标库（SVG + Token）</h3><span class="cnt">ICONS · 995 PIXSO VECTORS</span></div>
         <p class="note">全部直接从本地 <code>icon.pix</code> 矢量 AST 无损提取（<b>零重绘</b>）：包含 <b>鸿蒙 NEXT 图标 354 个</b>（<code>NEXT图标</code> 页）与 <b>PC/Mac NewUI 核心 IDE 图标 641 个</b>（<code>Icons</code> 页）。单色与语义色已自动绑定至 <code>currentColor</code>（<code>var(--icon)</code>）与 <code>var(--color-info / success / warning / error)</code>，切换深浅主题实时联动。点击任意图标即可复制源码或雪碧图 <code>&lt;use&gt;</code> 引用。</p>
         <div class="card">
@@ -797,7 +883,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       </section>
 
       <!-- ================= Pixso 页面级脚手架 (12 套标准骨架) ================= -->
-      <section class="grp" id="scaffolds" data-domain="layouts">
+      <section class="grp" id="scaffolds" data-domain="harmony pcmac">
         <div class="ghead"><h3>页面脚手架（整窗、分屏、设置弹窗、抽屉与命令面板）</h3><span class="cnt">SCAFFOLDS · 12 OFFICIAL LAYOUTS</span></div>
         <p class="note">12 套标准页面与弹层骨架（<code>scaffolds.json</code>），覆盖工作台、分屏、弹窗、抽屉与命令面板。</p>
         <div class="palette-filter" role="group" aria-label="脚手架场景筛选" style="margin-bottom:16px">
@@ -2482,12 +2568,12 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       </section>
 
       <!-- ================= 04 双系统实时工作台 (#specimens) ================= -->
-      <section class="grp" id="specimens" data-domain="layouts">
+      <section class="grp" id="specimens" data-domain="harmony pcmac">
         <div class="ghead"><h3>双系统实时工作台样张</h3><span class="cnt">04 · LIVE WORKBENCH SPECIMENS</span></div>
         <p class="note">鸿蒙 HDesign 2.0 与 PC/Mac NewUI 双端整窗实时交互样张，支持独立切换深浅色与系统形态。</p>
 
         <!-- 卡片 1：鸿蒙原生端工作台 -->
-        <article class="card spec-card" data-demo>
+        <article class="card spec-card" data-domain="harmony" data-demo>
           <div class="spec-top">
             <div>
               <div class="badge-row">
@@ -2625,7 +2711,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
         </article>
 
         <!-- 卡片 2：PC / Mac 当代桌面端工作台 -->
-        <article class="card spec-card" data-demo>
+        <article class="card spec-card" data-domain="pcmac" data-demo>
           <div class="spec-top">
             <div>
               <div class="badge-row">
@@ -2864,7 +2950,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       </section>
 
       <!-- ================= 06 全部组件文档 (#components) ================= -->
-      <section class="grp" id="components" data-domain="components">
+      <section class="grp" id="components" data-domain="harmony pcmac">
         <div class="ghead"><h3>组件文档全集</h3><span class="cnt">06 · 21+ COMPONENTS</span></div>
         <p class="note">全部组件直接在本页渲染，支持在每张卡片右上角实时切换「鸿蒙 2.0 / PC-Mac」与「深色 / 浅色 / 高对比」主题；每个组件舞台严格锁定自身主题背景色，杜绝浅底白字/深底黑字反色问题。</p>
         <div class="comp-grid">
@@ -3918,7 +4004,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
       </section>
 
       <!-- ================= 07 HarmonyIdeWindow 整窗模式 (#file-window) ================= -->
-      <section class="grp" id="file-window" data-domain="layouts">
+      <section class="grp" id="file-window" data-domain="harmony">
         <div class="ghead"><h3>HarmonyIdeWindow 整窗模式</h3><span class="cnt">07 · PATTERN A</span></div>
         <p class="note">严格对齐 <code>👉🔥【2.0】基础范式🔥👈.pix</code> 与 <code>鸿蒙IDE_v1.1.0_PC端组件库.pix</code> 的鸿蒙原生 IDE 整窗 Pattern（含 Ohpm Sync 顶部横幅、工程目录树、多页签代码联动与底部 LSP 状态栏）。</p>
         <article class="card spec-card" data-demo>
@@ -4069,7 +4155,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
       </section>
 
       <!-- ================= 08 StudioToolWindow 整窗模式 (#studio-tool-window) ================= -->
-      <section class="grp" id="studio-tool-window" data-domain="layouts">
+      <section class="grp" id="studio-tool-window" data-domain="pcmac">
         <div class="ghead"><h3>StudioToolWindow 工具窗模式</h3><span class="cnt">08 · PATTERN B</span></div>
         <p class="note">严格对齐 <code>【NewUI】鸿蒙IDE-当代.pix</code> + <code>icon.pix</code> 的 PC/Mac 当代工具窗、快捷键菜单、模态设置框与构建通知气泡。</p>
         <article class="card spec-card" data-demo>
@@ -5011,17 +5097,39 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
     headings.forEach(function (h) { io.observe(h); });
   }
 
-  /* 顶部 5 大一级页签与左侧目录联动（支持 #hash 自动切换） */
+  /* 顶部 4 大一级页签与左侧目录联动（支持多域归属、自动切双系统及 #hash 直达） */
   var domainTabs = Array.from(document.querySelectorAll("[data-domain-tab]"));
   var domainNodes = Array.from(document.querySelectorAll("[data-domain]"));
+  function matchesDomain(el, domain) {
+    return (el.getAttribute("data-domain") || "").split(/s+/).indexOf(domain) >= 0;
+  }
+  function syncSystemForDomain(domain) {
+    if (domain !== "harmony" && domain !== "pcmac") return;
+    var sys = domain === "harmony" ? "harmony" : "pc-mac";
+    ["#components", "#scaffolds"].forEach(function (sel) {
+      var sec = document.querySelector(sel);
+      if (!sec) return;
+      sec.querySelectorAll("[data-demo]").forEach(function (card) {
+        card.querySelectorAll("[data-live]").forEach(function (el) { el.setAttribute("data-system", sys); });
+        card.querySelectorAll("[data-set-system]").forEach(function (b) {
+          b.setAttribute("aria-pressed", b.getAttribute("data-set-system") === sys ? "true" : "false");
+        });
+      });
+    });
+    var iconSysBtn = document.querySelector('[data-icon-sys="' + sys + '"]');
+    if (iconSysBtn) iconSysBtn.click();
+  }
   function activateDomain(domain, scrollTargetId) {
-    if (!domain) domain = "foundations";
+    if (!domain) domain = "home";
+    var layoutEl = document.querySelector(".layout");
+    if (layoutEl) layoutEl.classList.toggle("is-home", domain === "home");
     domainTabs.forEach(function (t) {
       t.setAttribute("aria-selected", t.getAttribute("data-domain-tab") === domain ? "true" : "false");
     });
     domainNodes.forEach(function (el) {
-      el.classList.toggle("is-domain-hidden", el.getAttribute("data-domain") !== domain);
+      el.classList.toggle("is-domain-hidden", !matchesDomain(el, domain));
     });
+    syncSystemForDomain(domain);
     if (scrollTargetId) {
       var target = document.getElementById(scrollTargetId);
       if (target) {
@@ -5032,10 +5140,16 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
         return;
       }
     }
-    var firstToc = tocLinks.find(function (a) { return a.getAttribute("data-domain") === domain; });
+    var firstToc = tocLinks.find(function (a) { return matchesDomain(a, domain); });
     tocLinks.forEach(function (a) { a.classList.toggle("on", a === firstToc); });
     window.scrollTo({ top: 0, behavior: "auto" });
   }
+
+  document.querySelectorAll("[data-jump-domain]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      activateDomain(btn.getAttribute("data-jump-domain"));
+    });
+  });
 
   function domainForHash(hash) {
     if (!hash || hash.length < 2) return null;
@@ -5043,7 +5157,9 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
     var el = document.getElementById(id);
     if (!el) return null;
     var host = el.closest("[data-domain]");
-    return host ? { domain: host.getAttribute("data-domain"), id: id } : null;
+    if (!host) return null;
+    var doms = (host.getAttribute("data-domain") || "").split(/s+/).filter(Boolean);
+    return doms.length ? { domain: doms[0], id: id } : null;
   }
 
   domainTabs.forEach(function (btn) {
@@ -5059,7 +5175,7 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
 
   var initialHit = domainForHash(window.location.hash);
   if (initialHit) activateDomain(initialHit.domain, initialHit.id);
-  else activateDomain("foundations");
+  else activateDomain("home");
 })();
 </script>
 </body>
