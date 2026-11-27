@@ -512,9 +512,11 @@
   height: 100%;
   border: 0;
   background: transparent;
+  background-image: none;
   color: inherit;
-  font: inherit;
-  font-size: var(--font-size-ui);
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: var(--font-size-sm);
   line-height: 1;
   outline: none;
   overflow: hidden;
@@ -522,21 +524,36 @@
   white-space: nowrap;
 }
 
+[data-system="pc-mac"] .de-search input,
+[data-system="pc-mac"] .de-input input,
+[data-system="pc-mac"] .de-select select {
+  font-size: var(--font-size-ui);
+}
+
 .de-select select {
-  appearance: none;
-  -webkit-appearance: none;
-  padding-right: 20px;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: none !important;
+  padding-right: 22px;
   cursor: pointer;
 }
 
+.de-select select::-ms-expand,
+.de-select select::picker-icon {
+  display: none;
+}
+
 .de-select::after {
-  content: "▾";
+  content: "";
   position: absolute;
-  right: 8px;
+  right: 10px;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 11px;
-  color: var(--text-secondary);
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--text-secondary);
+  border-bottom: 1.5px solid var(--text-secondary);
+  transform: translateY(-65%) rotate(45deg);
   pointer-events: none;
 }
 
@@ -1233,7 +1250,7 @@
 }
 
 .de-nav__text,
-.de-nav__item > span:not(.de-counter):not(.de-tag):not(.de-icon) {
+.de-nav__item > span:not(.de-counter):not(.de-tag):not(.de-icon):not(.de-dot-status):not(.de-badge):not(.de-context-ring) {
   flex: 1;
   min-width: 0;
   overflow: hidden;
@@ -2686,6 +2703,8 @@
 
 /* U4: 工具调用 — 固定 24px 单行三段式（动词 / 单行省略对象 / tabular-nums 结果量） */
 .de-unit-action {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2695,6 +2714,7 @@
   font-size: 12.5px;
   line-height: 24px;
   min-width: 0;
+  overflow: hidden;
 }
 
 .de-unit-action:hover { background: var(--surface-hover); }

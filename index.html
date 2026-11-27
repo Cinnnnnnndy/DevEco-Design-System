@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
-<link rel="icon" type="image/svg+xml" href="deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="deveco-intui-kit/src/tokens.css?v=20261127a">
-<link rel="stylesheet" href="site/launcher.css?v=20261127a">
-<link rel="stylesheet" href="design-system/tokens/index.css?v=20261127a">
+<link rel="icon" type="image/svg+xml" href="./deveco-intui-kit/icons/deveco-code-logo.svg">
+<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127b">
+<link rel="stylesheet" href="./site/launcher.css?v=20261127b">
+<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127b">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
-   页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ../tokens/index.css。 ---------- */
+   页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ./design-system/tokens/index.css。 ---------- */
 :root{
   --pg-bg:var(--ui-bg);
   --pg-card:var(--ui-editor-bg);
@@ -285,7 +285,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   <header class="mast">
     <h1>DevEco 设计系统<small>Pixso 矢量 AST · 鸿蒙原生 HDesign 2.0 &amp; PC/Mac NewUI</small></h1>
     <span class="grow"></span>
-    <a class="tbtn" href="https://github.com/Cinnnnnnndy/DevEco-Design-System" target="_blank" rel="noopener" title="GitHub 仓库"><svg><use href="#i-home"/></svg><span>GitHub</span></a>
+    <a class="tbtn" href="./index.html" title="回到启动页"><svg><use href="#i-home"/></svg><span>启动页</span></a>
     <a class="tbtn" href="#skill-test-demo" title="页内直达：实战需求生成测试"><span>实战生成测试</span></a>
     <a class="tbtn" href="#skill-guide" title="页内直达：Skill 与使用方法"><svg><use href="#i-layers"/></svg><span>Skill 与用法</span></a>
     <button type="button" class="tbtn" id="theme-btn" title="切换页面深色 / 浅色外观"><svg><use href="#i-moon"/></svg><span id="theme-label">深色</span></button>
@@ -378,9 +378,9 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <header class="de-titlebar">
                 <span class="de-titlebar__mark">A</span>
                 <button type="button" class="de-titlebar__pill">Healthy_life ▾</button>
-                <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</button>
+                <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</button>
                 <span class="de-titlebar__spacer"></span>
-                <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC ▾</button>
+                <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC ▾</button>
               </header>
               <div class="de-window__body">
                 <aside class="de-nav" style="width:148px">
@@ -877,19 +877,19 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   <header class="de-titlebar">
     <span class="de-titlebar__mark">A</span>
     <button type="button" class="de-titlebar__pill">Healthy_life ▾</button>
-    <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> main ▾</button>
+    <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> main ▾</button>
     <span class="de-titlebar__spacer"></span>
     <div class="de-window__controls" aria-hidden="true">
-      <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
-      <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
-      <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
+      <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
+      <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+      <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
     </div>
   </header>
   <div class="de-window__body">
     <nav class="de-stripe" aria-label="侧边工具条">
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg></button>
     </nav>
     <aside class="de-nav" aria-label="工程目录" style="width:200px">
       <div class="de-nav__label">Project</div>
@@ -934,19 +934,19 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   &lt;header class="de-titlebar"&gt;
     &lt;span class="de-titlebar__mark"&gt;A&lt;/span&gt;
     &lt;button type="button" class="de-titlebar__pill"&gt;Healthy_life ▾&lt;/button&gt;
-    &lt;button type="button" class="de-titlebar__pill"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-vcs-branch"/&gt;&lt;/svg&gt; main ▾&lt;/button&gt;
+    &lt;button type="button" class="de-titlebar__pill"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-vcs-branch"/&gt;&lt;/svg&gt; main ▾&lt;/button&gt;
     &lt;span class="de-titlebar__spacer"&gt;&lt;/span&gt;
     &lt;div class="de-window__controls" aria-hidden="true"&gt;
-      &lt;button type="button" tabindex="-1"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/&gt;&lt;/svg&gt;&lt;/button&gt;
-      &lt;button type="button" tabindex="-1" style="color:var(--color-success)"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/&gt;&lt;/svg&gt;&lt;/button&gt;
-      &lt;button type="button" tabindex="-1" style="color:var(--color-success)"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" tabindex="-1"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" tabindex="-1" style="color:var(--color-success)"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" tabindex="-1" style="color:var(--color-success)"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/&gt;&lt;/svg&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/header&gt;
   &lt;div class="de-window__body"&gt;
     &lt;nav class="de-stripe" aria-label="侧边工具条"&gt;
-      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/&gt;&lt;/svg&gt;&lt;/button&gt;
-      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;&lt;/button&gt;
-      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-vcs-branch"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-vcs-branch"/&gt;&lt;/svg&gt;&lt;/button&gt;
     &lt;/nav&gt;
     &lt;aside class="de-nav" aria-label="工程目录" style="width:200px"&gt;
       &lt;div class="de-nav__label"&gt;Project&lt;/div&gt;
@@ -1013,12 +1013,12 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     <span class="de-titlebar__mark">A</span>
     <button type="button" class="de-titlebar__pill">DevEco Code · AI Agent ▾</button>
     <span class="de-titlebar__spacer"></span>
-    <button type="button" class="de-button de-button--primary de-button--s"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-add"/></svg> 新建会话</button>
+    <button type="button" class="de-button de-button--primary de-button--s"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-add"/></svg> 新建会话</button>
   </header>
   <div class="de-window__body">
     <nav class="de-stripe" aria-label="侧边工具条">
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="AI 会话" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="AI 会话" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
     </nav>
     <aside class="de-nav" aria-label="历史会话" style="width:216px">
       <div class="de-nav__label">Today</div>
@@ -1030,7 +1030,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     <div class="de-chat-main">
       <div class="de-chat-header">
         <strong style="font-size:13px">冷启动主线程耗时优化与 TaskPool 改造</strong>
-        <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
+        <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
       </div>
       <div class="de-chat-feed">
         <div class="de-chat-bubble de-chat-bubble--user">帮我分析 EntryAbility.ets 冷启动慢的原因，给出 TaskPool 异步补丁。</div>
@@ -1055,12 +1055,12 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     &lt;span class="de-titlebar__mark"&gt;A&lt;/span&gt;
     &lt;button type="button" class="de-titlebar__pill"&gt;DevEco Code · AI Agent ▾&lt;/button&gt;
     &lt;span class="de-titlebar__spacer"&gt;&lt;/span&gt;
-    &lt;button type="button" class="de-button de-button--primary de-button--s"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-ic-ide-add"/&gt;&lt;/svg&gt; 新建会话&lt;/button&gt;
+    &lt;button type="button" class="de-button de-button--primary de-button--s"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-ic-ide-add"/&gt;&lt;/svg&gt; 新建会话&lt;/button&gt;
   &lt;/header&gt;
   &lt;div class="de-window__body"&gt;
     &lt;nav class="de-stripe" aria-label="侧边工具条"&gt;
-      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="AI 会话" aria-pressed="true"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/&gt;&lt;/svg&gt;&lt;/button&gt;
-      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Project"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="AI 会话" aria-pressed="true"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Project"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/&gt;&lt;/svg&gt;&lt;/button&gt;
     &lt;/nav&gt;
     &lt;aside class="de-nav" aria-label="历史会话" style="width:216px"&gt;
       &lt;div class="de-nav__label"&gt;Today&lt;/div&gt;
@@ -1072,7 +1072,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     &lt;div class="de-chat-main"&gt;
       &lt;div class="de-chat-header"&gt;
         &lt;strong style="font-size:13px"&gt;冷启动主线程耗时优化与 TaskPool 改造&lt;/strong&gt;
-        &lt;span class="de-ai-status" data-state="generating"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-ic-ide-ai填充"/&gt;&lt;/svg&gt;生成中&lt;/span&gt;
+        &lt;span class="de-ai-status" data-state="generating"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/&gt;&lt;/svg&gt;生成中&lt;/span&gt;
       &lt;/div&gt;
       &lt;div class="de-chat-feed"&gt;
         &lt;div class="de-chat-bubble de-chat-bubble--user"&gt;帮我分析 EntryAbility.ets 冷启动慢的原因，给出 TaskPool 异步补丁。&lt;/div&gt;
@@ -1120,7 +1120,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   </div>
   <div class="de-split-dialog__body">
     <aside class="de-nav" aria-label="设置分类" style="width:240px">
-      <label class="de-search" style="margin-bottom:8px"><span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span><input type="search" placeholder="Search settings..." aria-label="搜索设置项"></label>
+      <label class="de-search" style="margin-bottom:8px"><span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span><input type="search" placeholder="Search settings..." aria-label="搜索设置项"></label>
       <div class="de-nav__label">Appearance</div>
       <button type="button" class="de-nav__item" aria-current="page"><span class="de-nav__text">Theme &amp; Font</span></button>
       <button type="button" class="de-nav__item"><span class="de-nav__text">Keymap</span></button>
@@ -1159,7 +1159,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   &lt;/div&gt;
   &lt;div class="de-split-dialog__body"&gt;
     &lt;aside class="de-nav" aria-label="设置分类" style="width:240px"&gt;
-      &lt;label class="de-search" style="margin-bottom:8px"&gt;&lt;span class="de-icon"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;input type="search" placeholder="Search settings..." aria-label="搜索设置项"&gt;&lt;/label&gt;
+      &lt;label class="de-search" style="margin-bottom:8px"&gt;&lt;span class="de-icon"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;input type="search" placeholder="Search settings..." aria-label="搜索设置项"&gt;&lt;/label&gt;
       &lt;div class="de-nav__label"&gt;Appearance&lt;/div&gt;
       &lt;button type="button" class="de-nav__item" aria-current="page"&gt;&lt;span class="de-nav__text"&gt;Theme &amp;amp; Font&lt;/span&gt;&lt;/button&gt;
       &lt;button type="button" class="de-nav__item"&gt;&lt;span class="de-nav__text"&gt;Keymap&lt;/span&gt;&lt;/button&gt;
@@ -1214,15 +1214,15 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
             <section class="de-window de-studio" style="min-height:230px">
   <nav class="de-stripe" aria-label="工具条">
-    <button type="button" class="de-icon-button de-icon-button--m" aria-label="提交" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></button>
-    <button type="button" class="de-icon-button de-icon-button--m" aria-label="Bookmarks"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></button>
-    <button type="button" class="de-icon-button de-icon-button--m" aria-label="Terminal"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg></button>
+    <button type="button" class="de-icon-button de-icon-button--m" aria-label="提交" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></button>
+    <button type="button" class="de-icon-button de-icon-button--m" aria-label="Bookmarks"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></button>
+    <button type="button" class="de-icon-button de-icon-button--m" aria-label="Terminal"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg></button>
   </nav>
   <aside class="de-nav" aria-label="工具菜单" style="width:220px">
     <div class="de-nav__label">Tool Windows</div>
-    <button type="button" class="de-nav__item" aria-current="page"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg><span class="de-nav__text">Commit &amp; Changes</span><span class="de-counter">4</span></button>
-    <button type="button" class="de-nav__item"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg><span class="de-nav__text">Bookmarks</span></button>
-    <button type="button" class="de-nav__item"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg><span class="de-nav__text">Terminal</span></button>
+    <button type="button" class="de-nav__item" aria-current="page"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg><span class="de-nav__text">Commit &amp; Changes</span><span class="de-counter">4</span></button>
+    <button type="button" class="de-nav__item"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg><span class="de-nav__text">Bookmarks</span></button>
+    <button type="button" class="de-nav__item"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg><span class="de-nav__text">Terminal</span></button>
   </aside>
   <div class="de-main" style="padding:14px 16px;gap:10px">
     <div class="de-toolbar" style="padding:0;min-height:28px;background:transparent"><span class="de-toolbar__title">Changes (4 files)</span><span class="de-tag">feat/ai-agent</span></div>
@@ -1236,15 +1236,15 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <summary style="cursor:pointer;color:var(--ui-link);font-size:12px">展开查看 / 复制脚手架源码</summary>
               <div class="codebox" style="margin-top:8px"><pre id="scaffold-code-studio-tool-panel" style="margin:0;white-space:pre-wrap;word-break:break-word">&lt;section class="de-window de-studio" style="min-height:230px"&gt;
   &lt;nav class="de-stripe" aria-label="工具条"&gt;
-    &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="提交" aria-pressed="true"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/&gt;&lt;/svg&gt;&lt;/button&gt;
-    &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Bookmarks"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/&gt;&lt;/svg&gt;&lt;/button&gt;
-    &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Terminal"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="提交" aria-pressed="true"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Bookmarks"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;button type="button" class="de-icon-button de-icon-button--m" aria-label="Terminal"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/&gt;&lt;/svg&gt;&lt;/button&gt;
   &lt;/nav&gt;
   &lt;aside class="de-nav" aria-label="工具菜单" style="width:220px"&gt;
     &lt;div class="de-nav__label"&gt;Tool Windows&lt;/div&gt;
-    &lt;button type="button" class="de-nav__item" aria-current="page"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/&gt;&lt;/svg&gt;&lt;span class="de-nav__text"&gt;Commit &amp;amp; Changes&lt;/span&gt;&lt;span class="de-counter"&gt;4&lt;/span&gt;&lt;/button&gt;
-    &lt;button type="button" class="de-nav__item"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/&gt;&lt;/svg&gt;&lt;span class="de-nav__text"&gt;Bookmarks&lt;/span&gt;&lt;/button&gt;
-    &lt;button type="button" class="de-nav__item"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/&gt;&lt;/svg&gt;&lt;span class="de-nav__text"&gt;Terminal&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="de-nav__item" aria-current="page"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/&gt;&lt;/svg&gt;&lt;span class="de-nav__text"&gt;Commit &amp;amp; Changes&lt;/span&gt;&lt;span class="de-counter"&gt;4&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="de-nav__item"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/&gt;&lt;/svg&gt;&lt;span class="de-nav__text"&gt;Bookmarks&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="de-nav__item"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/&gt;&lt;/svg&gt;&lt;span class="de-nav__text"&gt;Terminal&lt;/span&gt;&lt;/button&gt;
   &lt;/aside&gt;
   &lt;div class="de-main" style="padding:14px 16px;gap:10px"&gt;
     &lt;div class="de-toolbar" style="padding:0;min-height:28px;background:transparent"&gt;&lt;span class="de-toolbar__title"&gt;Changes (4 files)&lt;/span&gt;&lt;span class="de-tag"&gt;feat/ai-agent&lt;/span&gt;&lt;/div&gt;
@@ -1290,7 +1290,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   </aside>
   <div class="de-welcome__main">
     <div class="de-row" style="justify-content:space-between">
-      <label class="de-search" style="flex:1;max-width:280px"><span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span><input type="search" placeholder="Search projects..." aria-label="搜索工程"></label>
+      <label class="de-search" style="flex:1;max-width:280px"><span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span><input type="search" placeholder="Search projects..." aria-label="搜索工程"></label>
       <div class="de-row">
         <button type="button" class="de-button de-button--primary de-button--s">New Project</button>
         <button type="button" class="de-button de-button--secondary de-button--s">Open</button>
@@ -1318,7 +1318,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   &lt;/aside&gt;
   &lt;div class="de-welcome__main"&gt;
     &lt;div class="de-row" style="justify-content:space-between"&gt;
-      &lt;label class="de-search" style="flex:1;max-width:280px"&gt;&lt;span class="de-icon"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;input type="search" placeholder="Search projects..." aria-label="搜索工程"&gt;&lt;/label&gt;
+      &lt;label class="de-search" style="flex:1;max-width:280px"&gt;&lt;span class="de-icon"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;input type="search" placeholder="Search projects..." aria-label="搜索工程"&gt;&lt;/label&gt;
       &lt;div class="de-row"&gt;
         &lt;button type="button" class="de-button de-button--primary de-button--s"&gt;New Project&lt;/button&gt;
         &lt;button type="button" class="de-button de-button--secondary de-button--s"&gt;Open&lt;/button&gt;
@@ -1434,7 +1434,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
             <div class="de-overlay">
   <div class="de-dialog" role="alertdialog" aria-label="确认删除模块" style="width:100%;max-width:420px;padding:20px;gap:14px">
     <div class="de-alert-head">
-      <span class="de-alert-icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg></span>
+      <span class="de-alert-icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg></span>
       <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px">
         <div class="de-dialog__title">Delete Module "feature_legacy"?</div>
         <p style="margin:0;font-size:13px;line-height:1.5;color:var(--text-secondary)">将永久移除该模块目录及 <code>oh-package.json5</code> 中的依赖引用，此操作无法撤销。</p>
@@ -1455,7 +1455,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="codebox" style="margin-top:8px"><pre id="scaffold-code-alert-confirm-dialog" style="margin:0;white-space:pre-wrap;word-break:break-word">&lt;div class="de-overlay"&gt;
   &lt;div class="de-dialog" role="alertdialog" aria-label="确认删除模块" style="width:100%;max-width:420px;padding:20px;gap:14px"&gt;
     &lt;div class="de-alert-head"&gt;
-      &lt;span class="de-alert-icon"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/&gt;&lt;/svg&gt;&lt;/span&gt;
+      &lt;span class="de-alert-icon"&gt;&lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/&gt;&lt;/svg&gt;&lt;/span&gt;
       &lt;div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px"&gt;
         &lt;div class="de-dialog__title"&gt;Delete Module "feature_legacy"?&lt;/div&gt;
         &lt;p style="margin:0;font-size:13px;line-height:1.5;color:var(--text-secondary)"&gt;将永久移除该模块目录及 &lt;code&gt;oh-package.json5&lt;/code&gt; 中的依赖引用，此操作无法撤销。&lt;/p&gt;
@@ -1588,7 +1588,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       <button type="button" class="de-palette__tab" role="tab" aria-selected="false">Actions</button>
     </div>
     <div class="de-palette__search">
-      <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg>
+      <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg>
       <input type="search" value="EntryAbility" placeholder="Search everywhere..." aria-label="全局搜索">
       <span class="de-tag">⇧⇧</span>
     </div>
@@ -1598,11 +1598,11 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
         <span class="de-palette__kbd">entry/src/main/ets</span>
       </button>
       <button type="button" class="de-palette__item" role="option" aria-selected="false">
-        <span class="de-palette__item-left"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg><span>Run 'EntryAbility'</span></span>
+        <span class="de-palette__item-left"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg><span>Run 'EntryAbility'</span></span>
         <span class="de-palette__kbd">⌃R</span>
       </button>
       <button type="button" class="de-palette__item" role="option" aria-selected="false">
-        <span class="de-palette__item-left"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-hotreload"/></svg><span>Apply Hot Reload Changes</span></span>
+        <span class="de-palette__item-left"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-hotreload"/></svg><span>Apply Hot Reload Changes</span></span>
         <span class="de-palette__kbd">⌘\</span>
       </button>
     </div>
@@ -1626,7 +1626,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
       &lt;button type="button" class="de-palette__tab" role="tab" aria-selected="false"&gt;Actions&lt;/button&gt;
     &lt;/div&gt;
     &lt;div class="de-palette__search"&gt;
-      &lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;
+      &lt;svg class="de-svg-icon" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#nu-general-search"/&gt;&lt;/svg&gt;
       &lt;input type="search" value="EntryAbility" placeholder="Search everywhere..." aria-label="全局搜索"&gt;
       &lt;span class="de-tag"&gt;⇧⇧&lt;/span&gt;
     &lt;/div&gt;
@@ -1636,11 +1636,11 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
         &lt;span class="de-palette__kbd"&gt;entry/src/main/ets&lt;/span&gt;
       &lt;/button&gt;
       &lt;button type="button" class="de-palette__item" role="option" aria-selected="false"&gt;
-        &lt;span class="de-palette__item-left"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/&gt;&lt;/svg&gt;&lt;span&gt;Run 'EntryAbility'&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="de-palette__item-left"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/&gt;&lt;/svg&gt;&lt;span&gt;Run 'EntryAbility'&lt;/span&gt;&lt;/span&gt;
         &lt;span class="de-palette__kbd"&gt;⌃R&lt;/span&gt;
       &lt;/button&gt;
       &lt;button type="button" class="de-palette__item" role="option" aria-selected="false"&gt;
-        &lt;span class="de-palette__item-left"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-hotreload"/&gt;&lt;/svg&gt;&lt;span&gt;Apply Hot Reload Changes&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="de-palette__item-left"&gt;&lt;svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"&gt;&lt;use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-hotreload"/&gt;&lt;/svg&gt;&lt;span&gt;Apply Hot Reload Changes&lt;/span&gt;&lt;/span&gt;
         &lt;span class="de-palette__kbd"&gt;⌘\&lt;/span&gt;
       &lt;/button&gt;
     &lt;/div&gt;
@@ -1999,13 +1999,13 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>03 · 思考推理行 (.de-unit-thinking)</span><span>默认只留一行</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-thinking"><summary><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg><span class="de-shimmer">思考中</span><span class="de-unit-thinking__summary">检查 Sendable 约束与冷启动时序…</span><span class="mono" style="font-size:11px;color:var(--text-tertiary)">4.2s ▾</span></summary><div class="de-unit-thinking__body">验证 RdbHelper 构造参数均满足 ArkTS Sendable 传递要求，无主线程 UI 上下文耦合。</div></details>
+                  <details class="de-unit-thinking"><summary><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg><span class="de-shimmer">思考中</span><span class="de-unit-thinking__summary">检查 Sendable 约束与冷启动时序…</span><span class="mono" style="font-size:11px;color:var(--text-tertiary)">4.2s ▾</span></summary><div class="de-unit-thinking__body">验证 RdbHelper 构造参数均满足 ArkTS Sendable 传递要求，无主线程 UI 上下文耦合。</div></details>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>04 · 上下文检索聚合组 (ContextToolGroup)</span><span>连续只读聚合</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-result"><summary><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>已读取 4 个文件 · 2 次 Grep</span><span class="mono" style="font-size:11px">48ms ▾</span></summary><div class="de-unit-result__body">• Read EntryAbility.ets (L1–86)
+                  <details class="de-unit-result"><summary><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>已读取 4 个文件 · 2 次 Grep</span><span class="mono" style="font-size:11px">48ms ▾</span></summary><div class="de-unit-result__body">• Read EntryAbility.ets (L1–86)
 • Read RdbHelper.ets (L1–120)
 • Grep "createTableSync" (1 hit)</div></details>
                 </div>
@@ -2013,14 +2013,14 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>05 · 单步工具调用 (.de-unit-action)</span><span>固定 24px 三段式</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:4px">
-                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg><span class="de-unit-action__verb">编辑</span><span class="de-unit-action__target">entry/src/main/ets/entryability/EntryAbility.ets</span><span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span></span></div>
-                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg><span class="de-unit-action__verb">运行</span><span class="de-unit-action__target">hvigorw assembleHap --mode module</span><span class="de-unit-action__meta"><span>exit 0</span><span>1.4s</span></span></div>
+                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg><span class="de-unit-action__verb">编辑</span><span class="de-unit-action__target">entry/src/main/ets/entryability/EntryAbility.ets</span><span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span></span></div>
+                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg><span class="de-unit-action__verb">运行</span><span class="de-unit-action__target">hvigorw assembleHap --mode module</span><span class="de-unit-action__meta"><span>exit 0</span><span>1.4s</span></span></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>06 · 工具执行输出 (.de-unit-result)</span><span>封顶 200px 内滚</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-result" open><summary><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>编译通过 · 0 errors</span><span class="mono" style="font-size:11px">1.42s ▾</span></summary><div class="de-unit-result__body">&gt; hvigor Finished :entry:default@CompileArkTS in 1.18s
+                  <details class="de-unit-result" open><summary><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>编译通过 · 0 errors</span><span class="mono" style="font-size:11px">1.42s ▾</span></summary><div class="de-unit-result__body">&gt; hvigor Finished :entry:default@CompileArkTS in 1.18s
 &gt; BUILD SUCCESSFUL</div></details>
                 </div>
               </div>
@@ -2033,27 +2033,27 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>08 · Plan / 待办清单 (.de-unit-plan)</span><span>紧凑可收起</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-plan" open><summary><span>计划进度 <strong>2 / 3</strong> · 应用补丁</span><span class="de-tag">进行中</span></summary><ul class="de-unit-plan__list"><li class="de-unit-plan__step" data-status="done"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg><span>定位冷启动同步阻塞</span></li><li class="de-unit-plan__step" data-status="active"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg><span>改写 TaskPool 异步建表</span></li><li class="de-unit-plan__step"><span>执行真机冷启动复测</span></li></ul></details>
+                  <details class="de-unit-plan" open><summary><span>计划进度 <strong>2 / 3</strong> · 应用补丁</span><span class="de-tag">进行中</span></summary><ul class="de-unit-plan__list"><li class="de-unit-plan__step" data-status="done"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg><span>定位冷启动同步阻塞</span></li><li class="de-unit-plan__step" data-status="active"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg><span>改写 TaskPool 异步建表</span></li><li class="de-unit-plan__step"><span>执行真机冷启动复测</span></li></ul></details>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>09 · 提问 / 审批打断 (.de-unit-approval)</span><span>永不折叠</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <div class="de-unit-approval"><div class="de-unit-approval__head"><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>确认真机安装命令</span><span class="de-tag">在等你</span></div><div class="de-unit-approval__cmd">hdc install -r entry-default-signed.hap</div><div class="de-unit-approval__actions"><button type="button" class="de-button de-button--secondary de-button--s">拒绝</button><button type="button" class="de-button de-button--primary de-button--s">仅本次允许</button></div></div>
+                  <div class="de-unit-approval"><div class="de-unit-approval__head"><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>确认真机安装命令</span><span class="de-tag">在等你</span></div><div class="de-unit-approval__cmd">hdc install -r entry-default-signed.hap</div><div class="de-unit-approval__actions"><button type="button" class="de-button de-button--secondary de-button--s">拒绝</button><button type="button" class="de-button de-button--primary de-button--s">仅本次允许</button></div></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>10 · 工具失败 / 重试 (.de-tool-error)</span><span>永不折叠</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error);margin-top:2px" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg><div class="de-tool-error__msg"><strong>hdc install 失败</strong>：未检测到已授权真机。</div><button type="button" class="de-button de-button--secondary de-button--s">重试</button></div>
+                  <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error);margin-top:2px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg><div class="de-tool-error__msg"><strong>hdc install 失败</strong>：未检测到已授权真机。</div><button type="button" class="de-button de-button--secondary de-button--s">重试</button></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>11 · 等待与流光进行态 (.de-ai-status)</span><span>多状态胶囊</span></span>
                 <div class="expui-cell__body">
-                  <span class="de-ai-status" data-state="thinking"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>理解中</span>
-                  <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
-                  <span class="de-ai-status" data-state="waiting"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-wait-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>在等你确认</span>
+                  <span class="de-ai-status" data-state="thinking"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>理解中</span>
+                  <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
+                  <span class="de-ai-status" data-state="waiting"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-wait-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>在等你确认</span>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
@@ -2072,7 +2072,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>14 · 轮次收尾与操作栏 (.de-unit-footer)</span><span>耗时 + Diff + 操作</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-unit-footer" style="border-top:0;padding-top:0"><div class="de-unit-footer__left"><span>Worked for <strong>12.4s</strong></span><span class="de-diff-changes"><span class="de-diff-changes__add">+34</span><span class="de-diff-changes__del">-12</span></span></div><div class="de-row" style="gap:4px"><button type="button" class="de-icon-button de-icon-button--s" aria-label="复制"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-copy"/></svg></button><button type="button" class="de-icon-button de-icon-button--s" aria-label="重试"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></button></div></div>
+                  <div class="de-unit-footer" style="border-top:0;padding-top:0"><div class="de-unit-footer__left"><span>Worked for <strong>12.4s</strong></span><span class="de-diff-changes"><span class="de-diff-changes__add">+34</span><span class="de-diff-changes__del">-12</span></span></div><div class="de-row" style="gap:4px"><button type="button" class="de-icon-button de-icon-button--s" aria-label="复制"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-copy"/></svg></button><button type="button" class="de-icon-button de-icon-button--s" aria-label="重试"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></button></div></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
@@ -2084,7 +2084,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>16 · GUI 诊断与门禁验证证据卡</span><span>0 报错凭证</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-toast-inline" style="width:100%;justify-content:space-between"><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>verify-fidelity.js · 33/33 全部通过</span><span class="de-tag">0 Errors</span></div>
+                  <div class="de-toast-inline" style="width:100%;justify-content:space-between"><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>verify-fidelity.js · 33/33 全部通过</span><span class="de-tag">0 Errors</span></div>
                 </div>
               </div>
             </div>
@@ -2156,7 +2156,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>08 · 停止 / 中断与恢复锚点</span><span>永不折叠</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-stop"/></svg><div class="de-tool-error__msg">已由用户中断（已完成 2/3 步）</div><button type="button" class="de-button de-button--primary de-button--s">继续</button></div>
+                  <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-stop"/></svg><div class="de-tool-error__msg">已由用户中断（已完成 2/3 步）</div><button type="button" class="de-button de-button--primary de-button--s">继续</button></div>
                 </div>
               </div>
             </div>
@@ -2321,7 +2321,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               </div>
               <details class="de-unit-thinking">
                 <summary>
-                  <svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>
+                  <svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>
                   <span>已思考 3.8s</span>
                   <span class="de-unit-thinking__summary">已确认 RdbHelper.createTableSync 可迁移至 @Concurrent 任务函数</span>
                   <span class="mono" style="font-size:11px;color:var(--text-tertiary)">展开 ▾</span>
@@ -2330,7 +2330,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               </details>
               <details class="de-unit-result">
                 <summary>
-                  <span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>已检索 3 个上下文文件（ContextToolGroup 聚合）</span>
+                  <span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>已检索 3 个上下文文件（ContextToolGroup 聚合）</span>
                   <span class="mono" style="font-size:11px">42ms ▾</span>
                 </summary>
                 <div class="de-unit-result__body">• Read entry/src/main/ets/entryability/EntryAbility.ets (L1–86)
@@ -2338,7 +2338,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
 • Grep "createTableSync" across entry/ (1 match)</div>
               </details>
               <div class="de-unit-action">
-                <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
+                <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
                 <span class="de-unit-action__verb">编辑</span>
                 <span class="de-unit-action__target">entry/src/main/ets/entryability/EntryAbility.ets</span>
                 <span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span></span>
@@ -2346,7 +2346,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="de-chat-bubble">已完成修改：将 <code>RdbHelper.createTableSync()</code> 拆分为 <code>@Concurrent initRdbAsync</code> 并通过 <code>taskpool.execute</code> 后台执行，<code>hvigorw assembleHap</code> 编包通过（0 报错）。如需直接安装到 Mate 70 Pro 真机复测，请确认下方命令：</div>
               <div class="de-unit-approval">
                 <div class="de-unit-approval__head">
-                  <span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>等待确认 · 真机安装与冷启动复测</span>
+                  <span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>等待确认 · 真机安装与冷启动复测</span>
                   <span class="de-tag">U6 不折叠</span>
                 </div>
                 <div class="de-unit-approval__cmd">hdc install -r entry-default-signed.hap &amp;&amp; hdc shell aa start -a EntryAbility</div>
@@ -2357,7 +2357,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               </div>
               <div class="de-unit-footer">
                 <div class="de-unit-footer__left">
-                  <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>
+                  <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>
                   <span>Worked for <strong>12.4s</strong> · 变更 1 个文件</span>
                   <span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span>
                 </div>
@@ -2401,7 +2401,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                 <button type="button" class="de-button de-button--danger de-button--m"><span class="de-button__label">Alarm (告警按钮)</span></button>
                 <button type="button" class="de-button de-button--toolbar de-button--m"><span class="de-button__icon">＋</span><span class="de-button__label">Create Files</span></button>
                 <label class="de-search" style="width:210px">
-                  <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+                  <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
                   <input type="search" placeholder="Search files..." aria-label="搜索">
                 </label>
                 <label class="de-choice"><input type="checkbox" role="switch" class="de-switch" checked><span>LSP 索引</span></label>
@@ -2419,27 +2419,27 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                 <span class="de-titlebar__mark">A</span>
                 <div class="de-titlebar__group">
                   <button type="button" class="de-titlebar__pill">Healthy_life ▾</button>
-                  <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</button>
+                  <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</button>
                 </div>
                 <span class="de-titlebar__spacer"></span>
                 <div class="de-titlebar__group">
-                  <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC (Designed for phone) ▾</button>
-                  <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-toolwindow-structure"/></svg> Entry ▾</button>
+                  <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC (Designed for phone) ▾</button>
+                  <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-toolwindow-structure"/></svg> Entry ▾</button>
                 </div>
                 <span class="de-titlebar__spacer"></span>
                 <div class="de-window__controls" aria-hidden="true">
-                  <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
-                  <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
-                  <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
+                  <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
+                  <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+                  <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
                   <button type="button" tabindex="-1">–</button>
                   <button type="button" tabindex="-1" data-close>×</button>
                 </div>
               </header>
               <div class="de-window__body">
                 <nav class="de-stripe" aria-label="侧边工具条">
-                  <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
-                  <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></button>
-                  <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg></button>
+                  <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
+                  <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></button>
+                  <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg></button>
                 </nav>
                 <aside class="de-nav" aria-label="Project" style="width:220px">
                   <div class="de-toolbar" style="padding:0 6px;min-height:36px;background:transparent">
@@ -2489,7 +2489,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                     </div>
                   </div>
                   <div class="de-code-editor">
-                    <div class="de-code-alert-card"><span style="color:var(--color-success)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> 0 告警 · ArkTS Linter</div>
+                    <div class="de-code-alert-card"><span style="color:var(--color-success)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> 0 告警 · ArkTS Linter</div>
                     <div class="de-code-line"><span class="de-code-gutter">1</span><span class="de-code-content"><span class="cm">/* Copyright (c) 2026 Huawei Device Co., Ltd. */</span></span></div>
                     <div class="de-code-line"><span class="de-code-gutter">2</span><span class="de-code-content"><span class="kw">import</span> UIAbility <span class="kw">from</span> <span class="str">'@ohos.app.ability.UIAbility'</span>;</span></div>
                     <div class="de-code-line" data-current="true"><span class="de-code-gutter">3</span><span class="de-code-content"><span class="kw">export default class</span> <span class="fn">EntryAbility</span> <span class="kw">extends</span> UIAbility &#123;</span></div>
@@ -2536,26 +2536,26 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
             <section class="de-window de-studio" style="min-height:400px">
               <nav class="de-stripe" aria-label="工具">
                 <button type="button" class="de-icon-button de-icon-button--m" aria-label="构建">
-                  <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
+                  <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
                 </button>
                 <button type="button" class="de-icon-button de-icon-button--m" aria-label="运行" aria-pressed="true">
-                  <svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg>
+                  <svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg>
                 </button>
                 <button type="button" class="de-icon-button de-icon-button--m" aria-label="调试">
-                  <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg>
+                  <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg>
                 </button>
                 <button type="button" class="de-icon-button de-icon-button--m" aria-label="终端">
-                  <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg>
+                  <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg>
                 </button>
               </nav>
               <div class="de-pad" style="flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:20px;flex:1">
                 <ul class="de-menu de-tool-menu" role="menu">
-                  <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
-                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
-                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
-                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
-                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
-                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></span><span class="de-menu__label">API Change Assistant</span></button></li>
+                  <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
+                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
+                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
+                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
+                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
+                  <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></span><span class="de-menu__label">API Change Assistant</span></button></li>
                 </ul>
 
                 <div class="de-dialog" style="flex:1 1 300px;min-width:0;max-width:420px">
@@ -2564,7 +2564,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                   </header>
                   <div class="de-dialog__body">
                     <label class="de-search">
-                      <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+                      <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
                       <input type="search" placeholder="Search actions..." aria-label="Search actions">
                     </label>
                     <div class="de-field">
@@ -2612,19 +2612,19 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
             <h4>1. 鸿蒙 IDE 主工作台对照<small>👉🔥【2.0】基础范式🔥👈.pix · 1728×1152 深色整窗</small></h4>
             <div class="cmp-pair">
               <figure class="cmp-fig">
-                <img src="design-system/compare/frames/file-window.jpg" alt="Pixso 鸿蒙 IDE 深色整窗">
+                <img src="./design-system/compare/frames/file-window.jpg" alt="Pixso 鸿蒙 IDE 深色整窗">
                 <figcaption>Pixso 原稿：基础范式 2.0 · 鸿蒙 IDE 深色整窗（#202224 面板 + #131416 代码区）</figcaption>
               </figure>
               <div class="cmp-live">
                 <section class="de-window" data-system="harmony" data-theme="dark" style="width:100%">
                   <header class="de-titlebar">
                     <span class="de-titlebar__mark">A</span>
-                    <span class="de-titlebar__title">Healthy_life ▾ · <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</span>
+                    <span class="de-titlebar__title">Healthy_life ▾ · <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</span>
                     <span class="de-titlebar__spacer"></span>
-                    <span class="de-note"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC ▾ · <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-toolwindow-structure"/></svg> Entry ▾</span>
+                    <span class="de-note"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC ▾ · <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-toolwindow-structure"/></svg> Entry ▾</span>
                   </header>
                   <div class="de-window__body">
-                    <nav class="de-stripe"><button type="button" class="de-icon-button de-icon-button--m" aria-pressed="true" aria-label="Project"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button><button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></button></nav>
+                    <nav class="de-stripe"><button type="button" class="de-icon-button de-icon-button--m" aria-pressed="true" aria-label="Project"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button><button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></button></nav>
                     <aside class="de-nav" style="width:165px">
                       <ul class="de-tree">
                         <li><div class="de-tree__row"><span class="de-tree__chevron">›</span><span class="de-tree__name">MyApplication</span></div></li>
@@ -2651,7 +2651,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <h4>2. 菜单与弹层对照<small>8vp 圆角 · 4px 内边距 · 双描边</small></h4>
               <div class="cmp-pair">
                 <figure class="cmp-fig">
-                  <img src="design-system/compare/frames/notes-menu.jpg" alt="Pixso 弹层菜单">
+                  <img src="./design-system/compare/frames/notes-menu.jpg" alt="Pixso 弹层菜单">
                   <figcaption>Pixso 原稿：Customize Main Toolbar 弹层菜单</figcaption>
                 </figure>
                 <div class="cmp-live" data-system="pc-mac" data-theme="dark">
@@ -2667,7 +2667,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <h4>3. Studio 工具菜单对照<small>icon.pix · 280px 宽 · #2E436E 选中</small></h4>
               <div class="cmp-pair">
                 <figure class="cmp-fig">
-                  <img src="design-system/compare/frames/tool-menu.jpg" alt="Pixso Studio 工具菜单">
+                  <img src="./design-system/compare/frames/tool-menu.jpg" alt="Pixso Studio 工具菜单">
                   <figcaption>Pixso 原稿：Studio 工具菜单</figcaption>
                 </figure>
                 <div class="cmp-live" data-system="pc-mac" data-theme="dark">
@@ -2684,7 +2684,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <h4>4. Project 项目树对照<small>5.3 列表(树结构) · 28vp 行高 · 文件夹与徽标</small></h4>
               <div class="cmp-pair">
                 <figure class="cmp-fig">
-                  <img src="design-system/compare/frames/tree.jpg" alt="Pixso 鸿蒙 IDE Project 树">
+                  <img src="./design-system/compare/frames/tree.jpg" alt="Pixso 鸿蒙 IDE Project 树">
                   <figcaption>Pixso 原稿：鸿蒙 IDE 浅色 Project 树</figcaption>
                 </figure>
                 <div class="cmp-live" data-system="harmony" data-theme="light">
@@ -2708,7 +2708,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <h4>5. 编辑器页签与代码高亮对照<small>7.代码区页签 · 28vp 胶囊 r=6vp</small></h4>
               <div class="cmp-pair">
                 <figure class="cmp-fig">
-                  <img src="design-system/compare/frames/tabs.jpg" alt="Pixso 编辑器页签">
+                  <img src="./design-system/compare/frames/tabs.jpg" alt="Pixso 编辑器页签">
                   <figcaption>Pixso 原稿：代码页签栏与语法高亮</figcaption>
                 </figure>
                 <div class="cmp-live" data-system="harmony" data-theme="light">
@@ -2730,7 +2730,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
             <h4>6. Dialog 弹窗、按钮与报错校验对照<small>NewUI Preferences Dialog &amp; 鸿蒙 6.1 Dialog</small></h4>
             <div class="cmp-pair">
               <figure class="cmp-fig">
-                <img src="design-system/compare/frames/tooltip.jpg" alt="Pixso Preferences Dialog">
+                <img src="./design-system/compare/frames/tooltip.jpg" alt="Pixso Preferences Dialog">
                 <figcaption>Pixso 原稿：Preferences 弹窗与主次按钮</figcaption>
               </figure>
               <div class="cmp-live" data-system="pc-mac" data-theme="light">
@@ -2814,10 +2814,10 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <p class="comp-desc">纯图标触发器。支持 M（32×32 r=6，用于侧边工具条 ToolStripe 与主工具栏）和 S（24×24 r=4，用于面板标题栏与内联操作）。</p>
           <div data-live="" class="stage comp-stage" data-system="harmony" data-theme="dark">
             <div class="de-row">
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="构建"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="运行" aria-pressed="true"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="调试"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--s" aria-label="搜索"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="构建"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="运行" aria-pressed="true"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="调试"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--s" aria-label="搜索"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></button>
       <button type="button" class="de-icon-button de-icon-button--s" aria-label="关闭" disabled>×</button>
     </div>
           </div>
@@ -2852,15 +2852,15 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="harmony" data-theme="dark">
             <div class="de-row">
       <label class="de-search" style="width:240px">
-        <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+        <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
         <input type="search" placeholder="Search..." aria-label="默认搜索">
       </label>
       <label class="de-search" data-state="active" style="width:240px">
-        <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+        <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
         <input type="search" value="EntryAbility" aria-label="激活搜索">
       </label>
       <label class="de-search" data-disabled="true" style="width:180px">
-        <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+        <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
         <input type="search" placeholder="禁用状态" disabled aria-label="禁用搜索">
       </label>
     </div>
@@ -3113,7 +3113,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="harmony" data-theme="dark">
             <div class="de-row" style="justify-content:center;width:100%;padding:8px 0 44px">
       <span class="de-tooltip" data-open="true" data-tooltip="构建并运行当前模块 (⇧F10)">
-        <button type="button" class="de-button de-button--secondary de-button--m"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg> Run Entry</button>
+        <button type="button" class="de-button de-button--secondary de-button--m"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg> Run Entry</button>
       </span>
     </div>
           </div>
@@ -3195,7 +3195,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="harmony" data-theme="dark">
             <div class="de-window" style="width:100%;min-height:220px">
       <div class="de-code-editor">
-        <div class="de-code-alert-card"><span style="color:var(--color-success)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> 0 告警 · 2 提示</div>
+        <div class="de-code-alert-card"><span style="color:var(--color-success)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> 0 告警 · 2 提示</div>
         <div class="de-code-line"><span class="de-code-gutter">1</span><span class="de-code-content"><span class="kw">import</span> UIAbility <span class="kw">from</span> <span class="str">'@ohos.app.ability.UIAbility'</span>;</span></div>
         <div class="de-code-line" data-current="true"><span class="de-code-gutter">2</span><span class="de-code-content"><span class="kw">export default class</span> <span class="fn">EntryAbility</span> <span class="kw">extends</span> UIAbility &#123;</span></div>
         <div class="de-code-line"><span class="de-code-gutter">3</span><span class="de-code-content">  <span class="kw">private static</span> <span class="ct">TAG</span>: string = <span class="str">'EntryAbility'</span>;</span></div>
@@ -3207,7 +3207,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div class="comp-meta-grid">
             <div class="codebox"><span class="file">React / TSX 调用示例</span>import { CodeEditor, CodeLine } from &quot;./code-editor&quot;;
 
-&lt;CodeEditor alertBadge=&quot;<svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> 0 告警&quot;&gt;
+&lt;CodeEditor alertBadge=&quot;<svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> 0 告警&quot;&gt;
   &lt;CodeLine lineNumber={1}&gt;&lt;span className=&quot;kw&quot;&gt;import&lt;/span&gt; UIAbility...&lt;/CodeLine&gt;
 &lt;/CodeEditor&gt;</div>
             <div class="comp-spec-wrap"><table class="comp-spec-table"><thead><tr><th>Prop / 组件</th><th>类型</th><th>默认</th><th>说明</th></tr></thead>
@@ -3510,11 +3510,11 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
           <p class="comp-desc">CodeGenie / Agent 进行态状态胶囊（理解中、生成中、在等你、完成、报错）与行内续写幽灵字。</p>
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark">
             <div class="de-row">
-      <span class="de-ai-status" data-state="thinking"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>理解中</span>
-      <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
-      <span class="de-ai-status" data-state="waiting"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-wait-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>在等你确认</span>
-      <span class="de-ai-status" data-state="done"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>已完成</span>
-      <span class="de-ai-status" data-state="error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-stop"/></svg>已停止</span>
+      <span class="de-ai-status" data-state="thinking"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>理解中</span>
+      <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
+      <span class="de-ai-status" data-state="waiting"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-wait-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>在等你确认</span>
+      <span class="de-ai-status" data-state="done"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>已完成</span>
+      <span class="de-ai-status" data-state="error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-stop"/></svg>已停止</span>
     </div>
           </div>
           <div class="comp-meta-grid">
@@ -3590,11 +3590,11 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
           <p class="comp-desc">Studio 工具窗口快速切换菜单（提交 / Bookmarks / 查找 / 运行 / 调试 / API Change Assistant）。</p>
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark">
             <ul class="de-menu de-tool-menu" role="menu">
-      <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> </span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
-      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
-      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
-      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
-      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> </span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
+      <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
     </ul>
           </div>
           <div class="comp-meta-grid">
@@ -3624,9 +3624,9 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
           <p class="comp-desc">IDE 左右两侧纵向图标栏（鸿蒙端宽 44vp、PC/Mac 端宽 40px，内含 32×32 r=6px IconButton）。</p>
           <div data-live="" class="stage comp-stage" data-system="harmony" data-theme="dark">
             <nav class="de-stripe" aria-label="工具栏" style="height:200px">
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></button>
-      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Run"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></button>
+      <button type="button" class="de-icon-button de-icon-button--m" aria-label="Run"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
       <button type="button" class="de-icon-button de-icon-button--m" aria-label="Terminal">&gt;_</button>
     </nav>
           </div>
@@ -3673,9 +3673,9 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                   <div class="expui-cell__body">
                     <div class="de-run-widget" aria-label="NewUI RunWidget">
                       <button type="button" class="de-titlebar__pill" style="height:24px;padding:0 8px">EntryAbility ▾</button>
-                      <button type="button" class="de-run-widget__btn de-run-widget__btn--run" aria-label="Run"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
-                      <button type="button" class="de-run-widget__btn" aria-label="Debug"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
-                      <button type="button" class="de-run-widget__btn de-run-widget__btn--stop" aria-label="Stop"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-stop"/></svg></button>
+                      <button type="button" class="de-run-widget__btn de-run-widget__btn--run" aria-label="Run"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+                      <button type="button" class="de-run-widget__btn" aria-label="Debug"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
+                      <button type="button" class="de-run-widget__btn de-run-widget__btn--stop" aria-label="Stop"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-stop"/></svg></button>
                     </div>
                   </div>
                 </div>
@@ -3772,7 +3772,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                   <div class="expui-cell__body" style="align-items:stretch">
                     <details class="de-tool-call" open>
                       <summary class="de-tool-call__trigger">
-                        <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>
+                        <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>
                         <span class="de-tool-call__title">hvigorw assembleHap</span>
                         <span class="de-tool-call__sub">--mode module -p product=default</span>
                         <span class="de-tool-call__dur">1.4s</span>
@@ -3785,7 +3785,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                   <span class="expui-cell__k"><span>05 · ToolErrorCard</span><span>.de-tool-error · 失败与重试</span></span>
                   <div class="expui-cell__body" style="align-items:stretch">
                     <div class="de-tool-error">
-                      <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error);margin-top:2px" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>
+                      <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error);margin-top:2px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>
                       <div class="de-tool-error__msg"><strong>hdc install 失败</strong>：未检测到已授权的 HarmonyOS NEXT 真机设备。</div>
                       <button type="button" class="de-button de-button--secondary de-button--s">重试</button>
                     </div>
@@ -3795,7 +3795,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                   <span class="expui-cell__k"><span>06 · TextShimmer &amp; Toast</span><span>AI 思考扫光与轻提示</span></span>
                   <div class="expui-cell__body" style="justify-content:space-between">
                     <span class="de-shimmer">正在检索 EntryAbility.ets 依赖图并生成 TaskPool 补丁…</span>
-                    <div class="de-toast-inline"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg><span>补丁已应用并触发 Hot Reload</span></div>
+                    <div class="de-toast-inline"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg><span>补丁已应用并触发 Hot Reload</span></div>
                   </div>
                 </div>
               </div>
@@ -3829,27 +3829,27 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
             <span class="de-titlebar__mark" aria-hidden="true">A</span>
             <div class="de-titlebar__group">
               <button type="button" class="de-titlebar__pill">Healthy_life ▾</button>
-              <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</button>
+              <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> Master ▾</button>
             </div>
             <span class="de-titlebar__spacer"></span>
             <div class="de-titlebar__group">
-              <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC (Designed for phone) ▾</button>
-              <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-toolwindow-structure"/></svg> Entry ▾</button>
+              <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> MyPC (Designed for phone) ▾</button>
+              <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-toolwindow-structure"/></svg> Entry ▾</button>
             </div>
             <span class="de-titlebar__spacer"></span>
             <div class="de-window__controls" aria-hidden="true">
-              <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
-              <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
-              <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
+              <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
+              <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+              <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
               <button type="button" tabindex="-1">–</button>
               <button type="button" tabindex="-1" data-close>×</button>
             </div>
           </header>
           <div class="de-window__body">
             <nav class="de-stripe" aria-label="侧边工具条">
-              <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
-              <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></button>
-              <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg></button>
+              <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg></button>
+              <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></button>
+              <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg></button>
             </nav>
             <aside class="de-nav" aria-label="Project">
               <div class="de-toolbar" style="padding:0 6px;min-height:36px;background:transparent">
@@ -3859,7 +3859,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
               </div>
               <div style="padding:4px 4px 8px">
                 <label class="de-search">
-                  <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+                  <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
                   <input type="search" placeholder="Search files..." aria-label="Search files">
                 </label>
               </div>
@@ -3927,7 +3927,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                 </div>
               </div>
               <div class="de-code-editor">
-                <div class="de-code-alert-card"><span style="color:var(--color-success)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> 0 告警 · ArkTS Linter</div>
+                <div class="de-code-alert-card"><span style="color:var(--color-success)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> 0 告警 · ArkTS Linter</div>
                 <div class="de-code-line"><span class="de-code-gutter">1</span><span class="de-code-content"><span class="cm">/* Copyright (c) 2026 Huawei Device Co., Ltd. */</span></span></div>
                 <div class="de-code-line"><span class="de-code-gutter">2</span><span class="de-code-content"><span class="kw">import</span> UIAbility <span class="kw">from</span> <span class="str">'@ohos.app.ability.UIAbility'</span>;</span></div>
                 <div class="de-code-line" data-current="true"><span class="de-code-gutter">3</span><span class="de-code-content"><span class="kw">export default class</span> <span class="fn">EntryAbility</span> <span class="kw">extends</span> UIAbility &#123;</span></div>
@@ -3978,28 +3978,28 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
             <section class="de-window de-studio" style="min-height:440px">
           <nav class="de-stripe" aria-label="工具">
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="构建">
-              <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
+              <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
             </button>
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="运行" aria-pressed="true">
-              <svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg>
+              <svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg>
             </button>
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="调试">
-              <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg>
+              <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg>
             </button>
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="终端">
-              <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg>
+              <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg>
             </button>
           </nav>
           <div class="de-main">
             <div class="de-pad" style="flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:20px">
               <ul class="de-menu de-tool-menu" role="menu">
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></span><span class="de-menu__label">API Change Assistant</span></button></li>
-                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-toolwindow-profiler"/></svg></span><span class="de-menu__label">API参考</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item" aria-current="true"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-commit"/></svg></span><span class="de-menu__label">提交</span><span class="de-menu__shortcut">⌘0</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-bookmark"/></svg></span><span class="de-menu__label">Bookmarks</span><span class="de-menu__shortcut">⌘2</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span><span class="de-menu__label">查找</span><span class="de-menu__shortcut">⌘3</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></span><span class="de-menu__label">运行</span><span class="de-menu__shortcut">⌘4</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></span><span class="de-menu__label">调试</span><span class="de-menu__shortcut">⌘5</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></span><span class="de-menu__label">API Change Assistant</span></button></li>
+                <li role="none"><button type="button" role="menuitem" class="de-menu__item"><span class="de-menu__icon"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-toolwindow-profiler"/></svg></span><span class="de-menu__label">API参考</span></button></li>
               </ul>
 
               <div class="de-dialog" style="flex:1 1 320px;min-width:0;max-width:440px">
@@ -4008,7 +4008,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                 </header>
                 <div class="de-dialog__body">
                   <label class="de-search">
-                    <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+                    <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
                     <input type="search" placeholder="Search actions..." aria-label="Search actions">
                   </label>
                   <div class="de-field">
@@ -4076,18 +4076,18 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
           <span class="de-titlebar__mark">A</span>
           <div class="de-titlebar__group">
             <button type="button" class="de-titlebar__pill">Healthy_life ▾</button>
-            <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg> feat/perf-check ▾</button>
+            <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg> feat/perf-check ▾</button>
           </div>
           <span class="de-titlebar__spacer"></span>
           <div class="de-titlebar__group">
-            <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> Mate 70 Pro (真机联调) ▾</button>
-            <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-hotreload"/></svg> Scenario Check ▾</button>
+            <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg> Mate 70 Pro (真机联调) ▾</button>
+            <button type="button" class="de-titlebar__pill"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-hotreload"/></svg> Scenario Check ▾</button>
           </div>
           <span class="de-titlebar__spacer"></span>
           <div class="de-window__controls" aria-hidden="true">
-            <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
-            <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
-            <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
+            <button type="button" tabindex="-1"><svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg></button>
+            <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-play"/></svg></button>
+            <button type="button" tabindex="-1" style="color:var(--color-success)"><svg class="de-svg-icon" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-debug"/></svg></button>
             <button type="button" tabindex="-1">–</button>
             <button type="button" tabindex="-1" data-close>×</button>
           </div>
@@ -4098,13 +4098,13 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
           <!-- 左侧工具图标条 -->
           <nav class="de-stripe" aria-label="侧边工具条">
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="Project" aria-pressed="true">
-              <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>
+              <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>
             </button>
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="Search">
-              <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg>
+              <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg>
             </button>
             <button type="button" class="de-icon-button de-icon-button--m" aria-label="Git">
-              <svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-vcs-branch"/></svg>
+              <svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-vcs-branch"/></svg>
             </button>
           </nav>
 
@@ -4117,7 +4117,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
             </div>
             <div style="padding:4px 4px 8px;display:flex;flex-direction:column;gap:8px">
               <label class="de-search">
-                <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-search"/></svg></span>
+                <span class="de-icon"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-search"/></svg></span>
                 <input type="search" placeholder="过滤告警文件..." aria-label="过滤告警文件">
               </label>
               <div class="de-chip-row">
@@ -4185,12 +4185,12 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
 
             <!-- 代码编辑区 -->
             <div class="de-code-editor" style="min-height:190px">
-              <div class="de-code-alert-card"><span style="color:var(--color-warning)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-warning)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg> </span> 2 性能告警 · ArkTS Profiler</div>
+              <div class="de-code-alert-card"><span style="color:var(--color-warning)"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-warning)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg> </span> 2 性能告警 · ArkTS Profiler</div>
               <div class="de-code-line"><span class="de-code-gutter">1</span><span class="de-code-content"><span class="cm">/* Copyright (c) 2026 Huawei Device Co., Ltd. */</span></span></div>
               <div class="de-code-line"><span class="de-code-gutter">2</span><span class="de-code-content"><span class="kw">import</span> UIAbility <span class="kw">from</span> <span class="str">'@ohos.app.ability.UIAbility'</span>;</span></div>
               <div class="de-code-line"><span class="de-code-gutter">3</span><span class="de-code-content"><span class="kw">import</span> taskpool <span class="kw">from</span> <span class="str">'@ohos.taskpool'</span>;</span></div>
               <div class="de-code-line"><span class="de-code-gutter">4</span><span class="de-code-content"><span class="kw">export default class</span> <span class="fn">EntryAbility</span> <span class="kw">extends</span> UIAbility &#123;</span></div>
-              <div class="de-code-line" data-current="true"><span class="de-code-gutter">5</span><span class="de-code-content">  <span class="kw">async</span> <span class="fn">onCreate</span>(want: Want) &#123; <span class="cm">// <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-warning)" aria-hidden="true"><use href="design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg> 同步 RDB 建表耗时 142ms</span></span></div>
+              <div class="de-code-line" data-current="true"><span class="de-code-gutter">5</span><span class="de-code-content">  <span class="kw">async</span> <span class="fn">onCreate</span>(want: Want) &#123; <span class="cm">// <svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-warning)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg> 同步 RDB 建表耗时 142ms</span></span></div>
               <div class="de-code-line"><span class="de-code-gutter">6</span><span class="de-code-content">    <span class="kw">await</span> taskpool.<span class="fn">execute</span>(initRdbTable, <span class="str">'dayInfo'</span>);</span></div>
               <div class="de-code-line"><span class="de-code-gutter">7</span><span class="de-code-content">  &#125;</span></div>
               <div class="de-code-line"><span class="de-code-gutter">8</span><span class="de-code-content">&#125;</span></div>
@@ -4208,7 +4208,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
                 </div>
                 <article class="de-notification" style="max-width:none;min-height:0">
                   <header class="de-notification__header">
-                    <span style="color:var(--color-success);flex:none"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg> </span>
+                    <span style="color:var(--color-success);flex:none"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg> </span>
                     <span>已将 RDB 同步建表迁移至 <code>@Concurrent</code> TaskPool 后台线程</span>
                   </header>
                   <div class="de-notification__body">
@@ -4253,7 +4253,7 @@ import { LspPill } from &quot;./code-editor&quot;;</div>
             <footer class="de-statusbar">
               <span class="de-crumb">Healthy_life › entry › src › main › ets › <strong>EntryAbility.ets</strong></span>
               <span class="de-statusbar__group">
-                <span class="de-lsp-pill"><span class="de-lsp-pill__dot"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> Profiler Ready · 471ms</span>
+                <span class="de-lsp-pill"><span class="de-lsp-pill__dot"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg> </span> Profiler Ready · 471ms</span>
                 <span>Line 5, Col 24</span>
                 <span>UTF-8</span>
               </span>
@@ -4504,7 +4504,7 @@ description: 使用 DevEco 双设计系统（鸿蒙原生端 HarmonyOS NEXT HDes
 - 所有 IDE 图标已从本地 `icon.pix` 矢量 AST 无损提取为 995 个官方 SVG（354 个鸿蒙 NEXT + 641 个 PC/Mac NewUI），并自动将单色/语义色绑定至 `currentColor`（`var(--icon)`）与 `var(--color-info / success / warning / error)`：
   - 雪碧图：`design-system/icons/sprite.svg`
   - 检索清单：`design-system/icons/manifest.json`
-- **禁止模型手写或重绘 `&lt;svg&gt;&lt;path .../&gt;&lt;/svg&gt;`**；必须通过 `&lt;svg class="de-svg-icon"&gt;&lt;use href="design-system/icons/sprite.svg#&lt;id&gt;"/&gt;&lt;/svg&gt;` 引用，或直接拷贝 `manifest.json` 中对应图标的 Token 化 `&lt;svg&gt;`。
+- **禁止模型手写或重绘 `&lt;svg&gt;&lt;path ../design-system/&gt;&lt;/svg&gt;`**；必须通过 `&lt;svg class="de-svg-icon"&gt;&lt;use href="./design-system/icons/sprite.svg#&lt;id&gt;"/&gt;&lt;/svg&gt;` 引用，或直接拷贝 `manifest.json` 中对应图标的 Token 化 `&lt;svg&gt;`。
 
 ### 4. 保护区、样式隔离与高频防坑硬规则（MUST FOLLOW）
 - **严禁修改 `deveco-intui-kit/` 目录下的任何文件**。
@@ -4513,7 +4513,7 @@ description: 使用 DevEco 双设计系统（鸿蒙原生端 HarmonyOS NEXT HDes
 - **严禁把鸿蒙 AARRGGBB（如 `#E5000000`）当成 CSS `#RRGGBBAA` 直接写进样式**。
 - **宿主样式穿透隔离**：任何文档页/外层壳禁止写裸标签样式（如 `footer`、`p`、`code`、`hr`）去影响 `[data-system]` 内部；组件预览画布（`.stage` / `.comp-stage` / `.workbench-stage`）必须始终使用自身 `[data-theme]` 对应的 `var(--surface-window)`，绝不继承外层页面的浅/深背景，杜绝反色（白底白字或黑底黑字）。
 - **小尺寸徽标与图标居中**：任何高度 ≤ 24px 的徽标/图标按钮（如 `.de-tree__badge`、`.de-titlebar__mark`、`.de-menu__icon`）必须使用 `display: inline-flex; align-items: center; justify-content: center; line-height: 1;`，严禁省略 `line-height: 1` 导致继承行高下溢贴底。
-- **严禁 Emoji / Unicode 伪图标与手绘 `&lt;svg&gt;`**：不得使用 `🔨 ▶ 🐞 💻 ⊞ ⑂ ✦ ⚠ 🔖 ⌕ ■` 等符号替代图标，也不得手写 `&lt;svg&gt;&lt;path .../&gt;&lt;/svg&gt;`；一律引用 `design-system/icons/sprite.svg#&lt;pixso-id&gt;`。
+- **严禁 Emoji / Unicode 伪图标与手绘 `&lt;svg&gt;`**：不得使用 `🔨 ▶ 🐞 💻 ⊞ ⑂ ✦ ⚠ 🔖 ⌕ ■` 等符号替代图标，也不得手写 `&lt;svg&gt;&lt;path ../design-system/&gt;&lt;/svg&gt;`；一律引用 `design-system/icons/sprite.svg#&lt;pixso-id&gt;`。
 - **交互切换控件顺序固定**：所有双系统切换栏统一为 **左 `harmony`（鸿蒙 2.0）、右 `pc-mac`（PC/Mac NewUI）**，主题顺序统一为 **深色 → 浅色 → 高对比**，禁止随默认卡片翻转位置。
 - **色卡与 Token 必须全量直出**：展示色板时直接从源 JSON（`pc_lib-styles.json`、`tokens.json`）全量生成，避免只做局部摘要导致缺失色阶。
 - **`.de-window` 与 `.de-studio` 严格互斥**：只要窗口包含顶栏 `.de-titlebar`，就**只能使用 `.de-window` + `.de-window__body`**（顶栏在上，下方图标条/侧栏/主区横向排列），**严禁再叠加 `.de-studio`**；`.de-studio` 仅用于无顶栏的纯横向工具窗（`StudioToolWindow`）。
@@ -4571,8 +4571,8 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
 
 <div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
 
-<script src="design-system/preview/preview.js"></script>
-<script src="design-system/docs/docs.js"></script>
+<script src="./design-system/preview/preview.js"></script>
+<script src="./design-system/docs/docs.js"></script>
 <script>
 (function () {
   /* 页面壳自身的深浅色切换（与仓库其他规范卡片一致） */
@@ -4750,7 +4750,7 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
       var ic = allIcons.find(function (x) { return x.id === id; });
       if (!ic) return;
       var payload = state.copyMode === "use"
-        ? '<svg class="de-svg-icon" aria-hidden="true"><use href="design-system/icons/sprite.svg#' + ic.id + '"/></svg>'
+        ? '<svg class="de-svg-icon" aria-hidden="true"><use href="./design-system/icons/sprite.svg#' + ic.id + '"/></svg>'
         : ic.svg;
       if (navigator.clipboard) navigator.clipboard.writeText(payload);
       showToast((state.copyMode === "use" ? "已复制 <use>：" : "已复制 SVG：") + ic.name);
@@ -4815,7 +4815,7 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
       });
     }
 
-    fetch("design-system/icons/manifest.json")
+    fetch("./design-system/icons/manifest.json")
       .then(function (r) { return r.json(); })
       .then(function (data) {
         allIcons = data.icons || [];
