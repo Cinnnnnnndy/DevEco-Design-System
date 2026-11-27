@@ -3322,6 +3322,77 @@
   color: var(--color-info);
 }
 
+/* Subagent 渐变形象头像（方案一：渐变风格 1–8，浅/深双底自适应） */
+.de-subagent-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--surface-hover);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  overflow: hidden;
+}
+
+.de-subagent-avatar--s {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+}
+
+.de-subagent-avatar svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.de-subagent-avatar--s svg {
+  width: 14px;
+  height: 14px;
+}
+
+.de-subagent-gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.de-subagent-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface-window);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.de-subagent-tile__box {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--surface-editor);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.de-subagent-tile__box svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 720px) {
+  .de-subagent-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 
 
 

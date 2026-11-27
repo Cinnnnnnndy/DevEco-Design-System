@@ -6,9 +6,9 @@
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
 <link rel="icon" type="image/svg+xml" href="./deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127j">
-<link rel="stylesheet" href="./site/launcher.css?v=20261127j">
-<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127j">
+<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127k">
+<link rel="stylesheet" href="./site/launcher.css?v=20261127k">
+<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127k">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
    页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ./design-system/tokens/index.css。 ---------- */
@@ -2089,19 +2089,34 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           </div>
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
             <div class="expui-grid">
+              <div class="expui-cell expui-cell--12">
+                <span class="expui-cell__k"><span>00 · Subagent 渐变形象图标库（方案一：渐变风格 1–8）<span class="de-tag--new">NEW</span></span><span>浅/深双底自适应 · 角色映射规范</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-subagent-gallery">
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-1"/></svg></span><span>01 协调</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-2"/></svg></span><span>02 设计</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-3"/></svg></span><span>03 检索</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-4"/></svg></span><span>04 架构</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-5"/></svg></span><span>05 构建</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-6"/></svg></span><span>06 测试</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-7"/></svg></span><span>07 审阅</span></div>
+                    <div class="de-subagent-tile"><span class="de-subagent-tile__box"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-8"/></svg></span><span>08 调优</span></div>
+                  </div>
+                </div>
+              </div>
               <div class="expui-cell expui-cell--4">
                 <span class="expui-cell__k"><span>01 · 角色与模型归属徽标</span><span>产出来源</span></span>
                 <div class="expui-cell__body">
-                  <span class="de-tag">Coordinator</span>
-                  <span class="de-tag">Claude-haiku-5-5</span>
+                  <span class="de-tag" style="gap:5px"><span class="de-subagent-avatar de-subagent-avatar--s"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-1"/></svg></span>Coordinator</span>
+                  <span class="de-tag" style="gap:5px"><span class="de-subagent-avatar de-subagent-avatar--s"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-7"/></svg></span>Reviewer</span>
                   <span class="de-tag">GLM 5.1</span>
                 </div>
               </div>
               <div class="expui-cell expui-cell--8">
-                <span class="expui-cell__k"><span>02 · Subagent 并行协作折叠卡 (.de-subagent)</span><span>全结束自动折 · 单行简介</span></span>
+                <span class="expui-cell__k"><span>02 · Subagent 并行协作折叠卡 (.de-subagent)</span><span>全结束自动折 · 渐变形象 + 单行简介</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:6px">
                   <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-chevrondown"/></svg><strong style="color:var(--text-primary)">并行协作</strong><span>当前对话 · 2 个运行中 · 1 个已完成 · 1 个失败</span></div>
-                  <div class="de-subagent"><div class="de-subagent__meta"><span class="de-dot-status"></span><span class="de-subagent__title">subagent3</span><span class="de-tag">Claude-haiku-5-5</span><span class="de-subagent__desc">正在调整手机 / 平板断点，仅单行显示…</span></div><button type="button" class="de-button de-button--secondary de-button--s">右侧详情</button></div>
+                  <div class="de-subagent"><div class="de-subagent__meta"><span class="de-subagent-avatar"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-4"/></svg></span><span class="de-subagent__title">subagent3</span><span class="de-tag">Claude-haiku-5-5</span><span class="de-subagent__desc">正在调整手机 / 平板断点，仅单行显示…</span></div><button type="button" class="de-button de-button--secondary de-button--s">右侧详情</button></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
@@ -4677,6 +4692,21 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
     - **实体自动链接化**：文件路径与行号（如 `EntryAbility.ets:13`）自动渲染为可点击 `.de-file-link` 芯片直跳编辑器，与普通行内 `&lt;code&gt;` 视觉分离。
     - **代码块与表格治理**：代码块默认 **5 行**、展开上限 **10 行**，超长整文件输出自动转为 **Artifact 产物卡**；表格（`.de-prose-table`）支持横向滚动、数值列 `tabular-nums` 右对齐。
     - **流式输出防抖**：未闭合代码块提前占位外壳、未闭合表格稳定行高；用户手动上滚时锁定视口不再抢焦点，底部浮现 `32×32` 去底部按钮。
+
+
+---
+
+## 十、Pixso 全 12 画布全量复查补漏规则（源自 `Code&amp;Studio体验融合.pix`）
+
+针对 `视觉飞机稿`、`飞机稿`、`Chat对话`、`Session管理`、`AI设置`、`登录+安装&amp;引流`、`930版本`、`典型页面` 全 12 个画布复查补齐的精确交互边界：
+
+1. **对话区宽度与工具输出上限**：对话内容区最大宽约 `600px`（约占 2/3）；工具运行中单行三段式为「加载态图标 + 固定工具名 + 单行动态步骤」；文件检索展开上限 **5 行**（超 5 项且悬停才出滚动条，新文件贴底），结果输出上限 **7 行**；无参工具仅留名称痕不展开，云端知识库可展开看引用链接。
+2. **Diff 确认权限边界**：仅**最新一轮**修改文件支持文件级「接纳/拒绝」（悬浮显单文件操作，异常文件常驻），历史轮次未确认文件仅可打开浏览；单个 Diff 块不允许单独拒绝，仅支持单独接纳或批量拒绝/接纳。
+3. **意图确认弹窗量化规范**：与输入框等宽且吸附其上方，弹出期间禁用输入框的添加文件/输入/切 Agent；单步选项 **1–9 个**（视口最多显 5 项，6–9 项滚动），总步骤 **≤5 步最佳（上限 9 步）**；按钮 **2–3 个**（确定居右、撤销居左；多步骤不提供跳过机制）。
+4. **排队、异常与通知中心**：排队数字动态递减，轮到或手动/异常停止即消失（不驻留对话流）；InlineChat 排队不显具体数字；网络/设备/权限等不可修复异常仅提示原因不给修复按钮；聚合任务进度用「通知与决策中心」（收起 `2 task` / 展开 `task + 2 todo`）。
+5. **Session 唯一性与筛选器**：全列表仅允许存在 **1 个**未开始的空对话且永远置顶；类型筛选器支持 `全部 / 待办 / 运行中 / 已完成`（筛选态隐藏按天时间印记）；卡片悬浮外露「停止生成」，`...` 菜单收「重命名 / 取消收藏 / 归档 / 停止并删除」。
+6. **模型下拉、提示词库、迁移与登录空态**：模型下拉分「搜索(吸顶) / 列表(最多 5 条滚动) / 添加(吸顶)」，收藏模型后收藏在上；提示词库最多收藏 **3 个**（满额置灰提示）；未登录时 AI 设置子项可点但仅显登录链接；首次登录需勾选隐私条款，930 集成版安装结果弹窗 **5s 自动消失**；AI 卡片响应式最小宽：单行 `1062px` / 双行 `564px` / 三行 `496px`。
+7. **Subagent 渐变形象规范（`方案一：渐变风格 1–8`）**：优先采用立体渐变几何形象（`.de-subagent-avatar` / `#sa-grad-1..8`，浅/深双底自适应），按角色固定映射：01 琥珀三瓣（协调）、02 粉红星芒（设计/视觉）、03 青绿三角（检索）、04 蓝紫倒三角（架构）、05 珊瑚 S 曲线（构建）、06 翠绿四叶环（测试）、07 天蓝四角星（审阅）、08 紫罗兰光束（调优），替代无辨识度的纯色圆点。
 </pre>
         </article>
       </section>
