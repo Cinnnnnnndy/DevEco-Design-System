@@ -2597,8 +2597,8 @@
 
 /* U1: 你的输入 — 全文不折 */
 .de-unit-user {
-  align-self: flex-start;
-  max-width: 92%;
+  align-self: flex-end;
+  max-width: 84%;
   padding: 8px 12px;
   border-radius: 8px;
   border: 0;
@@ -2749,6 +2749,26 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.de-unit-toolcall__nested {
+  margin: 2px 0 2px 14px;
+  padding-left: 10px;
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.de-select--ghost {
+  background: transparent;
+  border-color: transparent;
+  padding: 0 4px;
+}
+
+.de-select--ghost:hover:not([data-disabled="true"]) {
+  background: var(--surface-hover);
+  border-color: transparent;
 }
 
 /* U3: 计划 / 待办 — 紧凑可收起卡，不抢主视觉 */
