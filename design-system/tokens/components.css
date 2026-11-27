@@ -539,7 +539,10 @@
   cursor: pointer;
 }
 
-.de-select select::-ms-expand,
+.de-select select::-ms-expand {
+  display: none;
+}
+
 .de-select select::picker-icon {
   display: none;
 }
@@ -1046,6 +1049,7 @@
 [data-system="pc-mac"] .de-segmented__item {
   height: 26px;
   border-radius: 5px;
+  font-size: var(--font-size-ui);
 }
 
 [data-system="pc-mac"] .de-segmented__item[aria-selected="true"],
@@ -2593,11 +2597,12 @@
 
 /* U1: 你的输入 — 全文不折 */
 .de-unit-user {
-  align-self: flex-end;
-  max-width: 88%;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: var(--surface-selected);
+  align-self: flex-start;
+  max-width: 92%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--surface-hover);
   color: var(--text-primary);
   font-size: var(--font-size-ui);
   line-height: 1.55;
@@ -2612,7 +2617,35 @@
   gap: 6px;
 }
 
-/* U2: 思考 — 默认只留一行（生成中 Shimmer + 最新一句；完成后留用时，正文按需展开） */
+/* U1b: AI 正文回答 — 严格无卡片、无边框、无底色，直接裸排在对话流中 */
+.de-unit-prose {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: var(--font-size-ui);
+  line-height: 1.65;
+}
+
+.de-unit-prose p {
+  margin: 0 0 6px;
+}
+
+.de-unit-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.de-unit-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--surface-hover);
+}
+
+/* U2: 思考 — 无螺旋 Logo，仅 16x16 折叠箭头 + Deep Thinking + 耗时；内容上限 160px */
 .de-unit-thinking {
   width: 100%;
   min-width: 0;
@@ -2624,7 +2657,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   min-height: 24px;
   padding: 2px 6px;
   border-radius: var(--radius-control);
@@ -2634,6 +2667,16 @@
 
 .de-unit-thinking > summary::-webkit-details-marker { display: none; }
 .de-unit-thinking > summary:hover { background: var(--surface-hover); }
+
+.de-unit-thinking__arrow {
+  transform: rotate(-90deg);
+  transition: transform 0.16s ease;
+  color: var(--text-tertiary);
+}
+
+.de-unit-thinking[open] > summary .de-unit-thinking__arrow {
+  transform: rotate(0deg);
+}
 
 .de-unit-thinking__summary {
   flex: 1;
@@ -2645,14 +2688,67 @@
 }
 
 .de-unit-thinking__body {
-  margin: 4px 0 0 22px;
-  padding: 8px 12px;
-  border-left: 2px solid var(--line);
+  margin: 4px 0 0 8px;
+  padding: 2px 0 2px 12px;
+  border-left: 1px solid var(--line);
   color: var(--text-secondary);
   font-size: 12px;
   line-height: 1.55;
   max-height: 160px;
   overflow-y: auto;
+}
+
+/* U2b: 工具调用 / 上下文检索（对齐 Pixso 对话流组件 容器 80：无外框无底色，标题行 + 左侧竖线 + 最多 5 行 20px 文件行） */
+.de-unit-toolcall {
+  width: 100%;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.de-unit-toolcall > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 20px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.de-unit-toolcall > summary::-webkit-details-marker { display: none; }
+.de-unit-toolcall > summary:hover { background: var(--surface-hover); }
+
+.de-unit-toolcall[open] > summary .de-unit-thinking__arrow {
+  transform: rotate(0deg);
+}
+
+.de-unit-toolcall__list {
+  margin: 4px 0 0 8px;
+  padding: 0 0 0 12px;
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  max-height: 100px; /* 5 行 × 20px */
+  overflow-y: auto;
+}
+
+.de-unit-toolcall__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 20px;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.de-unit-toolcall__item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* U3: 计划 / 待办 — 紧凑可收起卡，不抢主视觉 */
@@ -3007,6 +3103,83 @@
 .de-dot-status[data-tone="warn"] { background: var(--color-warning); }
 .de-dot-status[data-tone="success"] { background: var(--color-success); }
 .de-dot-status[data-tone="error"] { background: var(--color-error); }
+
+/* Pixso 融合规范新增：异常提示三级别 / 去底部按钮 / Token 三段阈值 / 免责栏 */
+.de-unit-alert {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-warning, var(--color-warning));
+  background: var(--surface-warning, rgba(245, 166, 35, 0.1));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-primary);
+}
+
+.de-unit-alert[data-tone="error"] {
+  border-color: var(--color-error);
+  background: var(--surface-error, rgba(229, 72, 77, 0.1));
+}
+
+.de-unit-alert[data-tone="notice"] {
+  border-color: var(--color-info);
+  background: var(--surface-info, rgba(53, 116, 240, 0.1));
+}
+
+.de-unit-alert__links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 22px;
+}
+
+.de-unit-alert__link {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--text-link, var(--color-info));
+  font: 500 12.5px/1.4 var(--font-ui);
+  cursor: pointer;
+}
+
+.de-unit-alert__link:hover {
+  text-decoration: underline;
+}
+
+.de-scroll-bottom {
+  width: 32px;
+  height: 32px;
+  border-radius: 99px;
+  border: 1px solid var(--border-control);
+  background: var(--surface-popover, var(--surface-editor));
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-popover);
+  flex: none;
+}
+
+.de-context-ring[data-level="warn"] {
+  background: conic-gradient(var(--color-warning) var(--pct, 78%), var(--line) 0);
+}
+
+.de-context-ring[data-level="full"] {
+  background: conic-gradient(var(--color-error) var(--pct, 100%), var(--line) 0);
+}
+
+.de-composer__disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 10.5px;
+  color: var(--text-tertiary);
+}
 
 
 

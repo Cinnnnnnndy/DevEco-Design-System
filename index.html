@@ -6,9 +6,9 @@
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
 <link rel="icon" type="image/svg+xml" href="./deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127b">
-<link rel="stylesheet" href="./site/launcher.css?v=20261127b">
-<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127b">
+<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127e">
+<link rel="stylesheet" href="./site/launcher.css?v=20261127e">
+<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127e">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
    页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ./design-system/tokens/index.css。 ---------- */
@@ -1985,75 +1985,72 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
             <div class="expui-grid">
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>01 · 用户输入 (.de-unit-user)</span><span>全文不折</span></span>
+                <span class="expui-cell__k"><span>01 · 用户提问 (.de-unit-user)</span><span>r=8 无描边 · 末条点击可改</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
                   <div class="de-unit-user"><div class="de-unit-user__ctx"><span class="de-tag">@EntryAbility.ets</span><span class="de-tag">Profiler 截图</span></div><span>排查冷启动卡顿并用 TaskPool 给出最小补丁。</span></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>02 · AI 正文回答 (.de-chat-bubble)</span><span>Markdown 结论</span></span>
+                <span class="expui-cell__k"><span>02 · AI 正文回答 (.de-unit-prose)</span><span>无卡片无边框 · 裸排正文</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <div class="de-chat-bubble">已定位 <code>RdbHelper.createTableSync</code> 在主线程同步阻塞 <strong>142ms</strong>，建议拆分 <code>@Concurrent</code> 函数并交由 <code>taskpool.execute</code> 后台执行。</div>
+                  <div class="de-unit-prose"><p>已定位 <code>RdbHelper.createTableSync</code> 在主线程同步阻塞 <strong>142ms</strong>，建议拆分 <code>@Concurrent</code> 函数并交由 <code>taskpool.execute</code> 后台执行。</p></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>03 · 思考推理行 (.de-unit-thinking)</span><span>默认只留一行</span></span>
+                <span class="expui-cell__k"><span>03 · 思考推理 (.de-unit-thinking)</span><span>纯折叠箭头 · 上限 160px</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-thinking"><summary><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg><span class="de-shimmer">思考中</span><span class="de-unit-thinking__summary">检查 Sendable 约束与冷启动时序…</span><span class="mono" style="font-size:11px;color:var(--text-tertiary)">4.2s ▾</span></summary><div class="de-unit-thinking__body">验证 RdbHelper 构造参数均满足 ArkTS Sendable 传递要求，无主线程 UI 上下文耦合。</div></details>
+                  <details class="de-unit-thinking"><summary><svg class="de-svg-icon de-svg-icon--m de-unit-thinking__arrow" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-arrow"/></svg><span style="color:var(--text-secondary)">Deep Thinking</span><span class="mono" style="font-size:12px;color:var(--text-tertiary)">(已思考 5分30秒)</span></summary><div class="de-unit-thinking__body">验证 RdbHelper 构造参数均满足 ArkTS Sendable 传递要求，无主线程 UI 上下文耦合。思考中内容区高度上限 160px，手动展开无上限，结束后自动收起。</div></details>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>04 · 上下文检索聚合组 (ContextToolGroup)</span><span>连续只读聚合</span></span>
+                <span class="expui-cell__k"><span>04 · 工具调用 / 检索过程 (.de-unit-toolcall)</span><span>无外框无底色 · 左竖线 + 最多 5 行</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-result"><summary><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>已读取 4 个文件 · 2 次 Grep</span><span class="mono" style="font-size:11px">48ms ▾</span></summary><div class="de-unit-result__body">• Read EntryAbility.ets (L1–86)
-• Read RdbHelper.ets (L1–120)
-• Grep "createTableSync" (1 hit)</div></details>
+                  <details class="de-unit-toolcall" open><summary><span>正在搜索...</span><span style="color:var(--text-tertiary)">代码库</span><span style="color:var(--text-tertiary)">已搜索 120 个文件</span><svg class="de-svg-icon de-svg-icon--m de-unit-thinking__arrow" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-arrow"/></svg></summary><div class="de-unit-toolcall__list"><div class="de-unit-toolcall__item"><span class="de-tree__badge">A</span><span>entry/src/test/entryability.ets</span></div><div class="de-unit-toolcall__item"><span class="de-tree__badge">A</span><span>entry/src/main/ets/data/RdbHelper.ets</span></div><div class="de-unit-toolcall__item"><span class="de-tree__badge">A</span><span>entry/src/main/ets/pages/HeapSortPage.ets</span></div></div></details>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>05 · 单步工具调用 (.de-unit-action)</span><span>固定 24px 三段式</span></span>
-                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:4px">
-                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg><span class="de-unit-action__verb">编辑</span><span class="de-unit-action__target">entry/src/main/ets/entryability/EntryAbility.ets</span><span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span></span></div>
-                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-terminal"/></svg><span class="de-unit-action__verb">运行</span><span class="de-unit-action__target">hvigorw assembleHap --mode module</span><span class="de-unit-action__meta"><span>exit 0</span><span>1.4s</span></span></div>
+                <span class="expui-cell__k"><span>05 · 变更文件单行 + 批量审阅</span><span>680×28 r=4 · 全部拒绝/接纳</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:6px">
+                  <div class="de-unit-action"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg><span class="de-unit-action__target">entry/src/test/entryability.ets</span><span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__del">-18</span><span class="de-diff-changes__add">+8</span></span></span></div>
+                  <div style="display:flex;justify-content:flex-end;gap:4px"><button type="button" class="de-button de-button--secondary de-button--s">全部拒绝</button><button type="button" class="de-button de-button--primary de-button--s">全部接纳</button></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>06 · 工具执行输出 (.de-unit-result)</span><span>封顶 200px 内滚</span></span>
+                <span class="expui-cell__k"><span>06 · 代码块与工具输出 (.de-unit-result)</span><span>默认 5 行 · 展开上限 10 行</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
                   <details class="de-unit-result" open><summary><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg>编译通过 · 0 errors</span><span class="mono" style="font-size:11px">1.42s ▾</span></summary><div class="de-unit-result__body">&gt; hvigor Finished :entry:default@CompileArkTS in 1.18s
 &gt; BUILD SUCCESSFUL</div></details>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>07 · GUI 行内 Diff 预览卡</span><span>红绿增删 + 应用/回退</span></span>
+                <span class="expui-cell__k"><span>07 · GUI 行内 Diff 预览卡</span><span>红绿增删 + 行号</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
                   <div class="de-unit-result" style="border-radius:8px"><div class="de-diff-head"><span>EntryAbility.ets</span><span class="de-diff-changes"><span class="de-diff-changes__add">+2</span><span class="de-diff-changes__del">-1</span></span></div><div class="de-code-editor" style="padding:4px 0"><div class="de-code-line de-diff-line--del"><span class="de-code-gutter">13</span><span class="de-code-content">- RdbHelper.createTableSync();</span></div><div class="de-code-line de-diff-line--add"><span class="de-code-gutter">13</span><span class="de-code-content">+ await taskpool.execute(initRdbAsync);</span></div></div></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>08 · Plan / 待办清单 (.de-unit-plan)</span><span>紧凑可收起</span></span>
+                <span class="expui-cell__k"><span>08 · Task / Plan 待办清单 (.de-unit-plan)</span><span>规划/执行/完成三态 · 出修改文件自动折</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <details class="de-unit-plan" open><summary><span>计划进度 <strong>2 / 3</strong> · 应用补丁</span><span class="de-tag">进行中</span></summary><ul class="de-unit-plan__list"><li class="de-unit-plan__step" data-status="done"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg><span>定位冷启动同步阻塞</span></li><li class="de-unit-plan__step" data-status="active"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg><span>改写 TaskPool 异步建表</span></li><li class="de-unit-plan__step"><span>执行真机冷启动复测</span></li></ul></details>
+                  <details class="de-unit-plan" open><summary><span>待办清单 <strong>1 / 3</strong> · 框架&amp;布局设计</span><span class="de-tag">执行态</span></summary><ul class="de-unit-plan__list"><li class="de-unit-plan__step" data-status="done"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-actions-checked"/></svg><span>框架&amp;布局设计（已完成 · 可定位）</span></li><li class="de-unit-plan__step" data-status="active"><span class="de-dot-status"></span><span>实现核心模块（执行中 · 可跟随）</span></li><li class="de-unit-plan__step"><span style="width:12px;height:12px;border-radius:50%;border:1px solid var(--text-tertiary);display:inline-block;flex:none"></span><span>关联页面逻辑（未执行 · 不可点）</span></li></ul></details>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>09 · 提问 / 审批打断 (.de-unit-approval)</span><span>永不折叠</span></span>
+                <span class="expui-cell__k"><span>09 · 互动式意图确认 (.de-unit-approval)</span><span>强交互阻塞 / 弱交互倒计时 / 通知三类</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <div class="de-unit-approval"><div class="de-unit-approval__head"><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>确认真机安装命令</span><span class="de-tag">在等你</span></div><div class="de-unit-approval__cmd">hdc install -r entry-default-signed.hap</div><div class="de-unit-approval__actions"><button type="button" class="de-button de-button--secondary de-button--s">拒绝</button><button type="button" class="de-button de-button--primary de-button--s">仅本次允许</button></div></div>
+                  <div class="de-unit-approval"><div class="de-unit-approval__head"><span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>What functions need to be added?</span><span class="de-tag">1 / 3 · 强交互</span></div><div class="de-unit-approval__cmd">全步骤存在有效值后 Submit 激活 · 弱交互支持倒计时默认执行</div><div class="de-unit-approval__actions"><button type="button" class="de-button de-button--secondary de-button--s">取消</button><button type="button" class="de-button de-button--primary de-button--s">Submit</button></div></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>10 · 工具失败 / 重试 (.de-tool-error)</span><span>永不折叠</span></span>
+                <span class="expui-cell__k"><span>10 · 异常场景提示 (.de-unit-alert)</span><span>Error / Warning / Notice · 可操作态</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
-                  <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error);margin-top:2px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg><div class="de-tool-error__msg"><strong>hdc install 失败</strong>：未检测到已授权真机。</div><button type="button" class="de-button de-button--secondary de-button--s">重试</button></div>
+                  <div class="de-unit-alert"><div style="display:flex;align-items:center;gap:6px"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-warning)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg><span><strong>Warning</strong> · 大模型平台限流 / 超时，已保留当前进度</span></div><div class="de-unit-alert__links"><button type="button" class="de-unit-alert__link">结束对话</button><button type="button" class="de-unit-alert__link">继续生成</button></div></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>11 · 等待与流光进行态 (.de-ai-status)</span><span>多状态胶囊</span></span>
-                <div class="expui-cell__body">
-                  <span class="de-ai-status" data-state="thinking"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>理解中</span>
-                  <span class="de-ai-status" data-state="generating"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-ai填充"/></svg>生成中</span>
-                  <span class="de-ai-status" data-state="waiting"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-wait-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>在等你确认</span>
+                <span class="expui-cell__k"><span>11 · 生成态 + 去底部按钮 (.de-scroll-bottom)</span><span>手动滚动后浮现 · 32×32 圆形</span></span>
+                <div class="expui-cell__body" style="justify-content:space-between">
+                  <div class="de-row" style="gap:8px"><span class="de-shimmer" style="font-size:12.5px">生成中…</span><span class="de-tag">中控排队中</span></div>
+                  <button type="button" class="de-scroll-bottom" aria-label="去底部" title="最新生成内容不可见时出现"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-scrolldown"/></svg></button>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
@@ -2064,15 +2061,15 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>13 · 上下文压缩分割线 (.de-compaction)</span><span>系统边界</span></span>
+                <span class="expui-cell__k"><span>13 · 停止生成与接续锚点</span><span>保留进度 · 支持「继续生成」</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-compaction">以上 18 轮历史已自动压缩为上下文摘要</div>
+                  <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-stop"/></svg><div class="de-tool-error__msg">已停止生成，保留当前输出进度</div><button type="button" class="de-button de-button--primary de-button--s">继续生成</button></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>14 · 轮次收尾与操作栏 (.de-unit-footer)</span><span>耗时 + Diff + 操作</span></span>
+                <span class="expui-cell__k"><span>14 · 轮次收尾与悬浮时间戳 (.de-unit-footer)</span><span>4 档时间格式 + 操作栏</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-unit-footer" style="border-top:0;padding-top:0"><div class="de-unit-footer__left"><span>Worked for <strong>12.4s</strong></span><span class="de-diff-changes"><span class="de-diff-changes__add">+34</span><span class="de-diff-changes__del">-12</span></span></div><div class="de-row" style="gap:4px"><button type="button" class="de-icon-button de-icon-button--s" aria-label="复制"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-copy"/></svg></button><button type="button" class="de-icon-button de-icon-button--s" aria-label="重试"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></button></div></div>
+                  <div class="de-unit-footer" style="border-top:0;padding-top:0"><div class="de-unit-footer__left"><span>15:30</span><span class="de-diff-changes"><span class="de-diff-changes__add">+34</span><span class="de-diff-changes__del">-12</span></span></div><div class="de-row" style="gap:4px"><button type="button" class="de-icon-button de-icon-button--s" aria-label="复制"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-copy"/></svg></button><button type="button" class="de-icon-button de-icon-button--s" aria-label="重试"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-refresh"/></svg></button></div></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
@@ -2110,29 +2107,30 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
             <div class="expui-grid">
               <div class="expui-cell expui-cell--4">
-                <span class="expui-cell__k"><span>01 · 角色归属徽标</span><span>产出来源</span></span>
+                <span class="expui-cell__k"><span>01 · 角色与模型归属徽标</span><span>产出来源</span></span>
                 <div class="expui-cell__body">
                   <span class="de-tag">Coordinator</span>
-                  <span class="de-tag">Code Reviewer</span>
-                  <span class="de-tag">UI Verifier</span>
+                  <span class="de-tag">Claude-haiku-5-5</span>
+                  <span class="de-tag">GLM 5.1</span>
                 </div>
               </div>
               <div class="expui-cell expui-cell--8">
-                <span class="expui-cell__k"><span>02 · 子 Agent 派生任务卡 (.de-subagent)</span><span>紫左边框 + 跳转子会话</span></span>
-                <div class="expui-cell__body">
-                  <div class="de-subagent"><div class="de-subagent__meta"><span class="de-dot-status"></span><span class="de-subagent__title">Browser Verifier</span><span class="de-subagent__desc">正在校验深浅主题对比度与横向溢出…</span></div><button type="button" class="de-button de-button--secondary de-button--s">查看子会话</button></div>
+                <span class="expui-cell__k"><span>02 · Subagent 并行协作折叠卡 (.de-subagent)</span><span>全结束自动折 · 单行简介</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:6px">
+                  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)"><svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-chevrondown"/></svg><strong style="color:var(--text-primary)">并行协作</strong><span>当前对话 · 2 个运行中 · 1 个已完成 · 1 个失败</span></div>
+                  <div class="de-subagent"><div class="de-subagent__meta"><span class="de-dot-status"></span><span class="de-subagent__title">subagent3</span><span class="de-tag">Claude-haiku-5-5</span><span class="de-subagent__desc">正在调整手机 / 平板断点，仅单行显示…</span></div><button type="button" class="de-button de-button--secondary de-button--s">右侧详情</button></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>03 · 并行任务泳道摘要</span><span>Fan-out 进度</span></span>
-                <div class="expui-cell__body">
-                  <div class="de-setting-row"><span><strong>3 个子任务并行</strong> · 2 已完成 / 1 运行中</span><span class="de-counter">2/3</span></div>
+                <span class="expui-cell__k"><span>03 · Subagent 结束 / 失败态行</span><span>三态区分</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:6px">
+                  <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px;min-width:0"><span class="de-dot-status" data-tone="success"></span><strong>subagent1</strong><span style="color:var(--text-secondary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">3 项交互检查通过 · 已回传</span></span><span class="de-tag">已完成</span></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>04 · 后台任务胶囊 (Background)</span><span>日志 / 停止</span></span>
+                <span class="expui-cell__k"><span>04 · 一键结束所有 Subagent（中间态）</span><span>主结束子仍跑</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px"><span class="de-dot-status" data-tone="success"></span><code>hvigor --watch</code> 运行中</span><button type="button" class="de-button de-button--danger de-button--s">停止</button></div>
+                  <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px"><span class="de-dot-status"></span>2 个 subagent 仍在运行（滚出视口时置顶提示）</span><button type="button" class="de-button de-button--danger de-button--s">结束全部</button></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
@@ -2182,39 +2180,45 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <div data-live="" class="stage comp-stage" data-system="harmony" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
             <div class="expui-grid">
               <div class="expui-cell expui-cell--12">
-                <span class="expui-cell__k"><span>01–03 · 组合输入区 (.de-composer)：上下文芯片 + 多行指令 + 模式/模型/发送</span><span>核心输入眼位</span></span>
-                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
+                <span class="expui-cell__k"><span>01–03 · 组合输入区 (.de-composer · 深色/Chat-input)：4 类附件 + Goal/Plan/Build + GLM 5.1 + 默认审批</span><span>核心输入眼位</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:8px">
                   <div class="de-composer">
                     <div class="de-composer__ctx">
                       <span class="de-tag">@EntryAbility.ets ×</span>
-                      <span class="de-tag">#git-diff ×</span>
+                      <span class="de-tag">HeapSort.ets:12-28 ×</span>
                       <span class="de-tag">冷启动截图.png ×</span>
+                      <span class="de-tag">hvigor ERROR ×</span>
                     </div>
-                    <textarea class="de-composer__input" rows="2" aria-label="Agent 富指令输入框" placeholder="输入需求，输入 @ 引用文件，输入 / 调用技能...">把冷启动建表迁移到 TaskPool，并在改完后跑一遍 verify-fidelity.js 门禁。</textarea>
+                    <textarea class="de-composer__input" rows="2" aria-label="Agent 富指令输入框" placeholder="输入 @ 添加上下文，/ 快速切换功能指令">把冷启动建表迁移到 TaskPool，并在改完后跑一遍 verify-fidelity.js 门禁。</textarea>
                     <div class="de-composer__bar">
                       <div class="de-row" style="gap:6px">
-                        <div class="de-segmented" role="tablist" aria-label="运行模式"><button type="button" class="de-segmented__item" aria-selected="true">Agent</button><button type="button" class="de-segmented__item" aria-selected="false">Plan</button><button type="button" class="de-segmented__item" aria-selected="false">Ask</button></div>
-                        <span class="de-select"><select aria-label="模型选择"><option>Gemini 2.5 Pro · High</option><option>Claude Sonnet · Fast</option></select></span>
+                        <div class="de-segmented" role="tablist" aria-label="运行模式"><button type="button" class="de-segmented__item" aria-selected="true">Goal</button><button type="button" class="de-segmented__item" aria-selected="false">Plan</button><button type="button" class="de-segmented__item" aria-selected="false">Build</button></div>
+                        <span class="de-select"><select aria-label="模型选择"><option>GLM 5.1</option><option>Claude-haiku-5-5</option></select></span>
+                        <span class="de-tag">默认审批</span>
                       </div>
                       <div class="de-row" style="gap:8px">
-                        <span class="de-context-pill"><span class="de-context-ring" style="--pct:42%"></span><span>42% · 84k</span></span>
+                        <span class="de-context-pill" title="1%~75% 亮灰；≥75% 告警色并静默压缩；100% 置灰禁用"><span class="de-context-ring" style="--pct:42%"></span><span>42% · 84k</span></span>
                         <button type="button" class="de-button de-button--primary de-button--s">发送</button>
                       </div>
                     </div>
                   </div>
+                  <div class="de-composer__disclaimer"><span>Content generated by AI is for reference only.</span><span>|</span><span>Terms of Use</span><span>·</span><span>Privacy Policy</span></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>04 · 队列消息预备条 (.de-queued)</span><span>生成中排队下一句</span></span>
-                <div class="expui-cell__body">
-                  <div class="de-queued"><span>队列中 (1)：跑完后再把结果同步推送到 main</span><button type="button" class="de-button de-button--secondary de-button--s">撤回</button></div>
-                </div>
-              </div>
-              <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>05–06 · 上下文压缩与斜杠补全浮层</span><span>/plan /verify /diff</span></span>
+                <span class="expui-cell__k"><span>04 · Token 消耗圆环三段阈值 &amp; 容量编辑</span><span>75% 告警 / 100% 禁用</span></span>
                 <div class="expui-cell__body" style="justify-content:space-between">
-                  <div class="de-row" style="gap:6px"><kbd class="de-kbd">/plan</kbd><kbd class="de-kbd">/verify</kbd><kbd class="de-kbd">/compact</kbd></div>
-                  <button type="button" class="de-button de-button--secondary de-button--s">压缩上下文</button>
+                  <div class="de-row" style="gap:8px">
+                    <span class="de-context-pill"><span class="de-context-ring" style="--pct:42%"></span><span>42% 正常</span></span>
+                    <span class="de-context-pill"><span class="de-context-ring" data-level="warn" style="--pct:78%"></span><span>78% 静默压缩</span></span>
+                    <span class="de-context-pill"><span class="de-context-ring" data-level="full" style="--pct:100%"></span><span>100% 禁用</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>05–06 · @ 上下文 6 类选择器（勾选即选择）</span><span>技能 / 规则 / 知识库 / 文件 / UX稿</span></span>
+                <div class="expui-cell__body" style="justify-content:space-between">
+                  <div class="de-row" style="gap:6px"><span class="de-tag">技能</span><span class="de-tag">规则</span><span class="de-tag">知识库</span><span class="de-tag">文件和文件夹</span><span class="de-tag">UX设计稿</span></div>
                 </div>
               </div>
             </div>
@@ -2246,26 +2250,27 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>02 · 会话侧栏状态标记（两枚核心点）</span><span>运行蓝点 / 待审琥珀点</span></span>
+                <span class="expui-cell__k"><span>02 · Session 侧栏 5 态标记（最小宽 300px）</span><span>运行 / 暂停待确认 / 异常未读</span></span>
                 <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:4px">
-                  <button type="button" class="de-nav__item" aria-current="page"><span class="de-dot-status"></span><span class="de-nav__text">运行中：冷启动主线程优化</span></button>
-                  <button type="button" class="de-nav__item"><span class="de-dot-status" data-tone="warn"></span><span class="de-nav__text">待确认：真机 hdc 安装审批</span></button>
+                  <button type="button" class="de-nav__item" aria-current="page"><span class="de-dot-status"></span><span class="de-nav__text">运行中：冷启动主线程优化（悬浮出停止）</span></button>
+                  <button type="button" class="de-nav__item"><span class="de-dot-status" data-tone="warn"></span><span class="de-nav__text">已暂停，等待确认：真机 hdc 安装审批</span></button>
+                  <button type="button" class="de-nav__item"><span class="de-dot-status" data-tone="error"></span><span class="de-nav__text">异常结束（未读）：hvigor 构建超时</span></button>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>03 · 折叠时机偏好设置行</span><span>完成即折 / 下一句再折</span></span>
+                <span class="expui-cell__k"><span>03 · Session 排序与右键菜单 4 象限</span><span>收藏按收藏时间 · 普通按天切分</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-setting-row"><span>过程折叠时机</span><span class="de-select"><select aria-label="折叠时机"><option>完成即折（推荐）</option><option>下一句输入再折</option></select></span></div>
+                  <div class="de-setting-row"><span><strong>Favorite</strong> · Today · <code>2026/8/30</code></span><span class="de-tag">停止 / 收藏 / 归档 / 删除</span></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>04 · 权限策略设置行</span><span>Ask / Auto-Edit / Sandbox</span></span>
+                <span class="expui-cell__k"><span>04 · 智能体设置与黑名单自动运行</span><span>默认关闭 · 除黑名单外自动授权</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-setting-row"><span>终端命令审批</span><label class="de-choice"><input type="checkbox" role="switch" class="de-switch" checked><span>高风险必审</span></label></div>
+                  <div class="de-setting-row"><span>自动运行（MCP Tool 授权）</span><label class="de-choice"><input type="checkbox" role="switch" class="de-switch" checked><span>除黑名单外自动</span></label></div>
                 </div>
               </div>
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>05 · MCP / 工具与技能开关行</span><span>连接绿点 + 工具数</span></span>
+                <span class="expui-cell__k"><span>05 · MCP 服务连接状态与悬浮操作</span><span>绿点成功 / 红标失败 · 重连/编辑/删</span></span>
                 <div class="expui-cell__body">
                   <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px"><span class="de-dot-status" data-tone="success"></span><strong>deveco-cli MCP</strong> <span class="de-counter">12</span></span><input type="checkbox" role="switch" class="de-switch" checked aria-label="启用 deveco-cli MCP"></div>
                 </div>
@@ -2321,29 +2326,31 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               </div>
               <details class="de-unit-thinking">
                 <summary>
-                  <svg class="de-svg-icon de-svg-icon--s" style="color:var(--de-ai-ink)" aria-hidden="true"><use href="./design-system/icons/sprite.svg#nu-general-tool-windows-aiassistanttoolwindow"/></svg>
-                  <span>已思考 3.8s</span>
+                  <svg class="de-svg-icon de-svg-icon--m de-unit-thinking__arrow" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-arrow"/></svg>
+                  <span style="color:var(--text-secondary)">Deep Thinking</span>
+                  <span class="mono" style="font-size:12px;color:var(--text-tertiary)">(已思考 3.8s)</span>
                   <span class="de-unit-thinking__summary">已确认 RdbHelper.createTableSync 可迁移至 @Concurrent 任务函数</span>
-                  <span class="mono" style="font-size:11px;color:var(--text-tertiary)">展开 ▾</span>
                 </summary>
                 <div class="de-unit-thinking__body">定位 EntryAbility.ets 第 13 行同步建表耗时 142ms；改为 taskpool.execute(initRdbAsync) 后主线程首帧渲染不再阻塞。</div>
               </details>
-              <details class="de-unit-result">
+              <details class="de-unit-toolcall" open>
                 <summary>
-                  <span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-folder"/></svg>已检索 3 个上下文文件（ContextToolGroup 聚合）</span>
-                  <span class="mono" style="font-size:11px">42ms ▾</span>
+                  <span>已搜索 3 个文件</span>
+                  <span style="color:var(--text-tertiary)">代码库（调用完自动折叠）</span>
+                  <svg class="de-svg-icon de-svg-icon--m de-unit-thinking__arrow" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-arrow"/></svg>
                 </summary>
-                <div class="de-unit-result__body">• Read entry/src/main/ets/entryability/EntryAbility.ets (L1–86)
-• Read entry/src/main/ets/data/RdbHelper.ets (L1–120)
-• Grep "createTableSync" across entry/ (1 match)</div>
+                <div class="de-unit-toolcall__list">
+                  <div class="de-unit-toolcall__item"><span class="de-tree__badge">A</span><span>entry/src/main/ets/entryability/EntryAbility.ets</span></div>
+                  <div class="de-unit-toolcall__item"><span class="de-tree__badge">A</span><span>entry/src/main/ets/data/RdbHelper.ets</span></div>
+                  <div class="de-unit-toolcall__item"><span class="de-tree__badge" data-ext="json">&#123;&#125;</span><span>entry/src/main/module.json5</span></div>
+                </div>
               </details>
               <div class="de-unit-action">
                 <svg class="de-svg-icon de-svg-icon--s" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-工具栏-ic-ide-build"/></svg>
-                <span class="de-unit-action__verb">编辑</span>
                 <span class="de-unit-action__target">entry/src/main/ets/entryability/EntryAbility.ets</span>
-                <span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span></span>
+                <span class="de-unit-action__meta"><span class="de-diff-changes"><span class="de-diff-changes__del">-4</span><span class="de-diff-changes__add">+14</span></span></span>
               </div>
-              <div class="de-chat-bubble">已完成修改：将 <code>RdbHelper.createTableSync()</code> 拆分为 <code>@Concurrent initRdbAsync</code> 并通过 <code>taskpool.execute</code> 后台执行，<code>hvigorw assembleHap</code> 编包通过（0 报错）。如需直接安装到 Mate 70 Pro 真机复测，请确认下方命令：</div>
+              <div class="de-unit-prose"><p>已完成修改：将 <code>RdbHelper.createTableSync()</code> 拆分为 <code>@Concurrent initRdbAsync</code> 并通过 <code>taskpool.execute</code> 后台执行，<code>hvigorw assembleHap</code> 编包通过（0 报错）。如需直接安装到 Mate 70 Pro 真机复测，请确认下方命令：</p></div>
               <div class="de-unit-approval">
                 <div class="de-unit-approval__head">
                   <span><svg class="de-svg-icon de-svg-icon--s" style="margin-right:6px" aria-hidden="true"><use href="./design-system/icons/sprite.svg#hm-ic-ide-warning"/></svg>等待确认 · 真机安装与冷启动复测</span>
@@ -4556,6 +4563,22 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
    - 顶栏、状态栏、页签栏、横幅均保持单行不折行（`white-space: nowrap`）；
    - 深色模式下弹窗标题（`.de-dialog__title`）、次级说明文字（`--text-secondary` &gt;= 4.5:1）、菜单快捷键对比度清晰可读；
    - 工程树目录节点带有矢量文件夹图标，文件节点带有彩色扩展名徽标（`.de-tree__badge`）。
+
+
+---
+
+## 九、Agent 对话流与 AI 体验融合硬规范（源自 `Code&amp;Studio体验融合.pix`）
+
+构建 DevEco Code / Studio AI 对话、Subagent 编排、组合输入区与 Session 管理时，必须严格遵守以下从 Pixso 官方稿件抽取的视觉与状态机铁律：
+
+1. **AI 正文回答严禁套卡片（`.de-unit-prose`）**：无底色、无边框、无圆角，直接裸排在对话流画布上；仅用户提问（`.de-unit-user`）使用 `r=8` 无描边浅底色块作为每轮起点锚点，且最后一条提问支持点击原地编辑（与底部输入框共存）。
+2. **Deep Thinking 严禁使用螺旋 Logo（`.de-unit-thinking`）**：仅保留 `16×16` 折叠箭头（`sprite.svg#hm-ic-ide-arrow`）+ `Deep Thinking` + 耗时 `(已思考 5分30秒)`；思考中内容区高度上限 **`160px`**，手动展开无上限，思考结束后自动收起。
+3. **工具调用无卡片化（`.de-unit-toolcall`）与代码块折叠规则**：工具调用/检索过程（如 `正在搜索... 代码库 已搜索 120 个文件`）**严禁套外框卡片与底色**，采用「`20px` 标题行 + 左侧 `1px` 竖线 + 最多 **5 行** `20px` 文件行（`max-height: 100px` 贴底滚动）」，调用结束自动折叠，多次调用统一收纳折叠；代码块（`r=8` 细边框卡）默认 **5 行**，展开上限 **10 行**；手动滚动离开底部时出现 `32×32` 圆形去底部按钮（`.de-scroll-bottom`）。
+4. **Task / Plan 待办与变更文件联动**：待办清单严格三态（规划态点击无效 / 执行态绿完成可定位、白黑进行可跟随、灰未执行无反应 / 完成态全绿）；出现修改文件列表（`680×28 r=4` + `全部拒绝/全部接纳`）后底部待办清单**自动折叠**；停止生成后保留进度并给「继续生成」入口。
+5. **互动式意图确认三类分级**：① **强交互**（阻塞、不可跳过，全步骤有效后 `Submit` 激活）；② **弱交互**（默认项 + 倒计时自动执行，可取消）；③ **通知类**（不阻塞）。
+6. **Subagent 并行协作卡片流**：顶部折叠条 `并行协作 · 当前对话 · N 运行中 · M 已完成 · K 失败`，**全部结束后自动折叠**；单卡含状态点 + 名称 + 模型标签 + **严格单行简介**；滚出视口时输入框上方提示，主结束子仍跑时提供「一键结束全部」。
+7. **输入区与 Token 三段阈值**：模式分段 `Goal / Plan / Build` + 模型下拉 + `默认审批` + 4 类附件芯片 + 底部 `10px` 免责行；Token 圆环 `1%~75%` 亮灰 → `≥75%` 告警色（70%~80% 静默压缩）→ `100%` 输入框置灰禁用（悬浮支持编辑上限，最小 `50K`）。
+8. **Session 侧栏（最小宽 `300px`）与 AI 设置**：会话 5 态（未开始 / 运行中 / 已暂停待确认 / 已结束 / 异常未读）+ 4 鼠标态（失焦 / 悬浮出停止或删除 / 聚焦 / 锁定失焦），收藏区按收藏瞬时时间排序，普通区按天切分且运行中置顶。
 </pre>
         </article>
       </section>
