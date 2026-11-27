@@ -271,36 +271,53 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
   .tr{grid-template-columns:1fr;gap:4px}
   .tr.th{display:none}
 }
-.top-tabs{display:flex;align-items:center;gap:4px;margin-left:16px;overflow-x:auto;scrollbar-width:none}
+/* 精致毛玻璃顶栏（首页模式下 Banner 铺在其下方透出） */
+.mast{position:sticky;top:0;z-index:40;left:50%;width:100vw;margin-left:-50vw;padding:0 28px!important;height:56px!important;display:flex;align-items:center;justify-content:space-between;gap:16px;background:color-mix(in srgb,var(--pg-bg) 68%,transparent)!important;backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--pg-sep)!important}
+.mast h1{margin:0;font-size:15px!important;font-weight:600;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.mast h1 .brand-dot{width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,#0A59F7,#3B82F6);display:inline-flex;align-items:center;justify-content:center;color:#fff;font:700 11px/1 var(--font-mono);flex:none}
+.mast h1 .brand-sub{font-weight:400;color:var(--ui-fg2)}
+.top-tabs{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-card) 75%,transparent);overflow-x:auto;scrollbar-width:none}
 .top-tabs::-webkit-scrollbar{display:none}
-.top-tab{height:32px;padding:0 12px;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--ui-fg2);font:500 13px/1 var(--font-ui);cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
-.top-tab:hover{background:var(--pg-stage);color:var(--ui-fg)}
-.top-tab[aria-selected="true"]{background:var(--ui-fg);color:var(--pg-bg);font-weight:600}
+.top-tab{height:28px;padding:0 13px;border-radius:99px;border:1px solid transparent;background:transparent;color:var(--ui-fg2);font:500 12.5px/1 var(--font-ui);cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,box-shadow .15s}
+.top-tab:hover{color:var(--ui-fg)}
+.top-tab[aria-selected="true"]{background:var(--pg-bg);color:var(--ui-fg);font-weight:600;border-color:var(--pg-sep);box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.mast .tbtn{height:30px;padding:0 12px;border-radius:99px;font-size:12px}
 .is-domain-hidden{display:none!important}
 .hero-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 16px;margin-bottom:20px;border-radius:12px;border:1px solid var(--pg-sep);background:var(--pg-card);font-size:13px;color:var(--ui-fg2)}
 .hero-strip b{color:var(--ui-fg);font-weight:600}
 html,body{overflow-x:clip}
 .layout.is-home .sidebar{display:none}
-.layout.is-home{padding-top:0}
-.layout.is-home main{max-width:1160px;margin:0 auto;width:100%;padding-top:0}
-.home-banner{position:relative;left:50%;width:100vw;margin-left:-50vw;min-height:56vh;padding:76px 24px 68px;margin-bottom:44px;overflow:hidden;border-bottom:1px solid var(--pg-sep);display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(680px 380px at 22% 28%,rgba(10,89,247,.18),transparent 68%),radial-gradient(620px 360px at 78% 26%,rgba(139,92,246,.18),transparent 68%),radial-gradient(560px 300px at 50% 92%,rgba(13,148,136,.14),transparent 68%),linear-gradient(180deg,var(--pg-bg) 0%,var(--pg-card) 42%,var(--pg-bg) 100%)}
-.home-banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(128,128,128,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(128,128,128,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 68% 64% at 50% 48%,rgba(0,0,0,.9),transparent 82%);pointer-events:none}
-.home-banner::after{content:"";position:absolute;left:50%;top:50%;width:720px;height:720px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(10,89,247,.09);box-shadow:0 0 0 96px rgba(139,92,246,.03),inset 0 0 0 110px rgba(10,89,247,.025);pointer-events:none}
-.home-banner__inner{position:relative;z-index:1;max-width:840px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
-.home-banner__eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 78%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font:600 11.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ui-fg2);margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.home-banner__eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#0A59F7,#8B5CF6);box-shadow:0 0 10px rgba(10,89,247,.6)}
-.home-banner h2{margin:0 0 20px;font-size:clamp(36px,4.8vw,58px);font-weight:700;line-height:1.18;letter-spacing:-.025em;color:var(--ui-fg);text-wrap:balance}
-.home-banner__grad{display:block;background:linear-gradient(100deg,#0A59F7 0%,#6366F1 48%,#0D9488 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.home-banner p{margin:0 0 32px;max-width:600px;font-size:clamp(15px,1.4vw,17px);line-height:1.68;color:var(--ui-fg2);font-weight:400;text-wrap:balance}
-.home-banner__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:36px}
-.home-cta-btn{height:42px;padding:0 22px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ui-fg);font:500 14px/1 var(--font-ui);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .18s,border-color .18s,box-shadow .18s}
-.home-cta-btn:hover{border-color:var(--ui-accent);transform:translateY(-1.5px);box-shadow:0 8px 24px rgba(10,89,247,.14)}
-.home-cta-btn--primary{background:linear-gradient(135deg,#0A59F7 0%,#3B82F6 100%);border-color:transparent;color:#fff;box-shadow:0 8px 24px rgba(10,89,247,.28),inset 0 1px 0 rgba(255,255,255,.28)}
-.home-cta-btn--primary:hover{box-shadow:0 12px 28px rgba(10,89,247,.38),inset 0 1px 0 rgba(255,255,255,.35)}
-.home-banner__orbs{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;border-radius:16px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 72%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 8px 30px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.45)}
-.home-banner__orb{width:34px;height:34px;border-radius:10px;border:1px solid transparent;background:transparent;display:inline-flex;align-items:center;justify-content:center;transition:transform .18s,background .18s,border-color .18s}
-.home-banner__orb:hover{transform:translateY(-3px) scale(1.08);background:var(--pg-card);border-color:var(--pg-sep)}
-.home-banner__orb svg{width:22px;height:22px}
+.layout.is-home{padding-top:0!important;margin-top:0!important}
+.layout.is-home main{max-width:1160px;margin:0 auto;width:100%;padding-top:0!important}
+/* 首页沉浸式 Banner：上移铺至毛玻璃导航栏下方，单色克制光晕 + 散落渐变形象 */
+.home-banner{position:relative;left:50%;width:100vw;margin-left:-50vw;margin-top:-76px;min-height:62vh;padding:148px 24px 80px;margin-bottom:44px;overflow:hidden;border-bottom:1px solid var(--pg-sep);display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(760px 420px at 50% 18%,rgba(10,89,247,.12),transparent 72%),radial-gradient(520px 300px at 50% 88%,rgba(10,89,247,.05),transparent 70%),linear-gradient(180deg,var(--pg-card) 0%,var(--pg-bg) 100%)}
+.home-banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(128,128,128,.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(128,128,128,.055) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 64% 62% at 50% 48%,rgba(0,0,0,.9),transparent 82%);pointer-events:none}
+.home-banner::after{content:"";position:absolute;left:50%;top:54%;width:680px;height:680px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(10,89,247,.07);box-shadow:0 0 0 110px rgba(10,89,247,.02);pointer-events:none}
+.home-banner__inner{position:relative;z-index:2;max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.home-banner__eyebrow{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 76%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ui-fg2);margin-bottom:24px}
+.home-banner__eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#0A59F7}
+.home-banner h2{margin:0 0 18px;font-size:clamp(36px,4.8vw,58px);font-weight:700;line-height:1.18;letter-spacing:-.025em;color:var(--ui-fg);text-wrap:balance}
+.home-banner__grad{display:block;color:var(--ui-accent)}
+.home-banner p{margin:0 0 32px;max-width:540px;font-size:clamp(15px,1.35vw,16.5px);line-height:1.7;color:var(--ui-fg2);font-weight:400;text-wrap:balance}
+.home-banner__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.home-cta-btn{height:40px;padding:0 20px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 84%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ui-fg);font:500 13.5px/1 var(--font-ui);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .18s,border-color .18s,box-shadow .18s}
+.home-cta-btn:hover{border-color:var(--ui-accent);transform:translateY(-1.5px);box-shadow:0 8px 22px rgba(10,89,247,.12)}
+.home-cta-btn--primary{background:#0A59F7;border-color:#0A59F7;color:#fff;box-shadow:0 6px 20px rgba(10,89,247,.24)}
+.home-cta-btn--primary:hover{box-shadow:0 10px 26px rgba(10,89,247,.34)}
+/* 散落在 Banner 两侧留白处的 8 枚渐变 Subagent 徽标 */
+.home-banner__scatter{position:absolute;inset:0;z-index:1;max-width:1360px;margin:0 auto;pointer-events:none}
+.home-scatter-orb{position:absolute;width:44px;height:44px;border-radius:13px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 24px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.5);display:inline-flex;align-items:center;justify-content:center;pointer-events:auto;transition:transform .25s ease,box-shadow .25s ease}
+.home-scatter-orb:hover{transform:translateY(-4px) scale(1.08);box-shadow:0 14px 30px rgba(10,89,247,.12)}
+.home-scatter-orb svg{width:24px;height:24px}
+.home-scatter-orb--1{top:26%;left:9%;transform:rotate(-6deg)}
+.home-scatter-orb--2{top:46%;left:15%;width:38px;height:38px;opacity:.9;transform:rotate(5deg)}
+.home-scatter-orb--3{top:68%;left:8%;width:42px;height:42px;opacity:.85;transform:rotate(-4deg)}
+.home-scatter-orb--4{top:78%;left:21%;width:36px;height:36px;opacity:.75;transform:rotate(7deg)}
+.home-scatter-orb--5{top:24%;right:10%;transform:rotate(6deg)}
+.home-scatter-orb--6{top:45%;right:16%;width:38px;height:38px;opacity:.9;transform:rotate(-5deg)}
+.home-scatter-orb--7{top:66%;right:9%;width:42px;height:42px;opacity:.85;transform:rotate(4deg)}
+.home-scatter-orb--8{top:79%;right:22%;width:36px;height:36px;opacity:.75;transform:rotate(-7deg)}
+@media (max-width:1080px){.home-banner__scatter{display:none}}
 .home-section-label{font:600 11.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ui-fg2);margin:0 0 14px}
 .home-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:36px}
 .home-pillar{padding:22px 20px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-card);display:flex;flex-direction:column;gap:8px}
@@ -327,15 +344,14 @@ html,body{overflow-x:clip}
 
 <div class="page" id="top">
   <header class="mast">
-    <h1>DevEco 设计系统</h1>
+    <h1><span class="brand-dot">D</span>DevEco <span class="brand-sub">Design</span></h1>
     <nav class="top-tabs" role="tablist" aria-label="一级模块导航">
       <button type="button" class="top-tab" role="tab" data-domain-tab="home" aria-selected="true">首页</button>
-      <button type="button" class="top-tab" role="tab" data-domain-tab="harmony" aria-selected="false">鸿蒙原生 (HDesign 2.0)</button>
-      <button type="button" class="top-tab" role="tab" data-domain-tab="pcmac" aria-selected="false">PC/Mac 当代 (NewUI)</button>
-      <button type="button" class="top-tab" role="tab" data-domain-tab="agent" aria-selected="false">AI Agent (48)</button>
+      <button type="button" class="top-tab" role="tab" data-domain-tab="harmony" aria-selected="false">鸿蒙原生</button>
+      <button type="button" class="top-tab" role="tab" data-domain-tab="pcmac" aria-selected="false">PC / Mac</button>
+      <button type="button" class="top-tab" role="tab" data-domain-tab="agent" aria-selected="false">AI Agent</button>
       <button type="button" class="top-tab" role="tab" data-domain-tab="guide" aria-selected="false">对照与指南</button>
     </nav>
-    <span class="grow"></span>
     <button type="button" class="tbtn" id="theme-btn" title="切换页面深色 / 浅色外观"><svg><use href="#i-moon"/></svg><span id="theme-label">深色</span></button>
   </header>
 
@@ -412,6 +428,16 @@ html,body{overflow-x:clip}
     <main>
       <section id="home" data-domain="home">
         <div class="home-banner">
+          <div class="home-banner__scatter" aria-label="DevEco Subagent 渐变视觉体系">
+            <span class="home-scatter-orb home-scatter-orb--1" title="01 协调"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-1"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--2" title="02 设计"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-2"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--3" title="03 检索"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-3"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--4" title="04 架构"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-4"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--5" title="05 构建"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-5"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--6" title="06 测试"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-6"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--7" title="07 审阅"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-7"/></svg></span>
+            <span class="home-scatter-orb home-scatter-orb--8" title="08 调优"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-8"/></svg></span>
+          </div>
           <div class="home-banner__inner">
             <div class="home-banner__eyebrow">DevEco Design System</div>
             <h2>让创造回归直觉<span class="home-banner__grad">让智能自然发生</span></h2>
@@ -419,16 +445,6 @@ html,body{overflow-x:clip}
             <div class="home-banner__cta">
               <button type="button" class="home-cta-btn home-cta-btn--primary" data-jump-domain="harmony">探索设计规范 →</button>
               <button type="button" class="home-cta-btn" data-jump-domain="agent">走进 AI Agent 体验</button>
-            </div>
-            <div class="home-banner__orbs" aria-label="DevEco Subagent 渐变视觉体系">
-              <span class="home-banner__orb" title="01 协调"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-1"/></svg></span>
-              <span class="home-banner__orb" title="02 设计"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-2"/></svg></span>
-              <span class="home-banner__orb" title="03 检索"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-3"/></svg></span>
-              <span class="home-banner__orb" title="04 架构"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-4"/></svg></span>
-              <span class="home-banner__orb" title="05 构建"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-5"/></svg></span>
-              <span class="home-banner__orb" title="06 测试"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-6"/></svg></span>
-              <span class="home-banner__orb" title="07 审阅"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-7"/></svg></span>
-              <span class="home-banner__orb" title="08 调优"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#sa-grad-8"/></svg></span>
             </div>
           </div>
         </div>
