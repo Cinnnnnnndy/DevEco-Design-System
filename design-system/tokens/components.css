@@ -3181,6 +3181,26 @@
   color: var(--text-tertiary);
 }
 
+.de-tag--new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 0 6px;
+  border-radius: 99px;
+  border: 1px solid var(--color-info);
+  background: var(--surface-selected);
+  color: var(--color-info);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-left: 6px;
+  vertical-align: middle;
+  flex: none;
+}
+
 
 
 

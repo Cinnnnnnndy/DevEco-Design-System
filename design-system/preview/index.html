@@ -6,9 +6,9 @@
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
 <link rel="icon" type="image/svg+xml" href="../../deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="../../deveco-intui-kit/src/tokens.css?v=20261127e">
-<link rel="stylesheet" href="../../site/launcher.css?v=20261127e">
-<link rel="stylesheet" href="../tokens/index.css?v=20261127e">
+<link rel="stylesheet" href="../../deveco-intui-kit/src/tokens.css?v=20261127f">
+<link rel="stylesheet" href="../../site/launcher.css?v=20261127f">
+<link rel="stylesheet" href="../tokens/index.css?v=20261127f">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
    页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ../tokens/index.css。 ---------- */
@@ -300,7 +300,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
         <a class="cat" href="#official-names"><span class="lbl">PC/Mac NewUI 色阶</span><span class="cnt">03</span></a>
         <a class="cat" href="#icons"><span class="lbl">Pixso 图标库 (995)</span><span class="cnt">SVG</span></a>
         <a class="cat" href="#scaffolds"><span class="lbl">页面脚手架 (12)</span><span class="cnt">LAYOUT</span></a>
-        <a class="cat" href="#agent-units"><span class="lbl">Agent 对话元件 (38)</span><span class="cnt">AGENT</span></a>
+        <a class="cat" href="#agent-units"><span class="lbl">Agent 对话元件 (48)</span><span class="cnt">AGENT</span></a>
         <a class="cat" href="#specimens"><span class="lbl">双系统实时工作台</span><span class="cnt">04</span></a>
         <a class="cat" href="#compare"><span class="lbl">Pixso 设计稿对照</span><span class="cnt">05</span></a>
         <a class="cat sub-item" href="#compare-file-window"><span class="lbl">鸿蒙 IDE 窗口</span></a>
@@ -1952,26 +1952,26 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
         </article>
       </section>
 
-      <!-- ================= Agent 对话基本单元与四层 GUI 元件体系 (38 类) ================= -->
+      <!-- ================= Agent 对话基本单元与四层 GUI 元件体系 (48 类，含 10 项 NEW 补全) ================= -->
       <section class="grp" id="agent-units">
-        <div class="ghead"><h3>Agent 对话基本单元与四层 GUI 元件（38 类）</h3><span class="cnt">AGENT · 4 LAYERS · 38 UNITS</span></div>
-        <p class="note">用户消息、AI 文本、工具调用、等待状态、Plan、进度、系统提示混排在同一条纵向流里——这条流怎么分行分色，直接决定产品好不好读。参考 DevKit TUI 四层架构并针对 <b>DevEco GUI IDE 全面深化</b>：<b>01 对话流基元（16 类）</b>回答「这一行是什么」，<b>02 编排类元件（8 类）</b>回答「由谁产出、几件事并行」，<b>03 输入区单元（6 类）</b>回答「同一眼位的输入与上下文控制」，<b>04 页面级元件（8 类）</b>回答「整页设置与状态标记怎么摆」。</p>
+        <div class="ghead"><h3>Agent 对话基本单元与四层 GUI 元件（48 类）</h3><span class="cnt">AGENT · 4 LAYERS · 48 UNITS (+10 NEW)</span></div>
+        <p class="note">用户消息、AI 文本、工具调用、等待状态、Plan、进度、系统提示混排在同一条纵向流里——这条流怎么分行分色，直接决定产品好不好读。基于 <code>Code&amp;Studio体验融合.pix</code> 与 DevKit TUI 四层架构全面深化，并补全 <b>10 类高价值缺失单元（带 <code>NEW</code> 标识）</b>：<b>01 对话流基元（20 类）</b>、<b>02 编排类元件（10 类）</b>、<b>03 输入区单元（8 类）</b>、<b>04 页面级元件（10 类）</b>。</p>
 
         <div class="palette-filter" role="group" aria-label="Agent 元件四层筛选" style="margin-bottom:16px">
-          <button type="button" class="pill-btn" data-agent-filter="all" aria-pressed="true">全部显示 (38 元件)</button>
-          <button type="button" class="pill-btn" data-agent-filter="stream" aria-pressed="false">01 对话流基元 (16)</button>
-          <button type="button" class="pill-btn" data-agent-filter="orchestration" aria-pressed="false">02 编排类元件 (8)</button>
-          <button type="button" class="pill-btn" data-agent-filter="input" aria-pressed="false">03 输入区单元 (6)</button>
-          <button type="button" class="pill-btn" data-agent-filter="page" aria-pressed="false">04 页面级元件 (8)</button>
+          <button type="button" class="pill-btn" data-agent-filter="all" aria-pressed="true">全部显示 (48 元件)</button>
+          <button type="button" class="pill-btn" data-agent-filter="stream" aria-pressed="false">01 对话流基元 (20)</button>
+          <button type="button" class="pill-btn" data-agent-filter="orchestration" aria-pressed="false">02 编排类元件 (10)</button>
+          <button type="button" class="pill-btn" data-agent-filter="input" aria-pressed="false">03 输入区单元 (8)</button>
+          <button type="button" class="pill-btn" data-agent-filter="page" aria-pressed="false">04 页面级元件 (10)</button>
           <button type="button" class="pill-btn" data-agent-filter="turn" aria-pressed="false">完整一轮实景组装</button>
         </div>
 
-        <!-- 组 1：对话流基元（16 类） -->
+        <!-- 组 1：对话流基元（20 类） -->
         <article class="card spec-card" data-agent-group="stream" data-demo>
           <div class="spec-top">
             <div>
-              <div class="badge-row"><span class="sys-badge">LAYER 01 · STREAM PRIMITIVES (16)</span><code>对话流基元</code></div>
-              <h4>01 对话流基元（16 类）<small>回答「一条纵向对话流里的这一行是什么」· 在 TUI 14 类基础上补齐 GUI 行内 Diff、多媒体预览与验证证据卡</small></h4>
+              <div class="badge-row"><span class="sys-badge">LAYER 01 · STREAM PRIMITIVES (20)</span><code>对话流基元 · +4 NEW</code></div>
+              <h4>01 对话流基元（20 类）<small>回答「一条纵向对话流里的这一行是什么」· 对齐 Pixso 无卡片正文/工具调用，并补齐检查点回滚、引用证据、末条原地编辑与产物卡</small></h4>
             </div>
             <div class="spec-controls" role="group" aria-label="对话流基元主题切换">
               <button type="button" class="pill-btn" data-set-system="harmony">鸿蒙 2.0</button>
@@ -2081,19 +2081,44 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <div class="expui-cell expui-cell--6">
                 <span class="expui-cell__k"><span>16 · GUI 诊断与门禁验证证据卡</span><span>0 报错凭证</span></span>
                 <div class="expui-cell__body">
-                  <div class="de-toast-inline" style="width:100%;justify-content:space-between"><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="../icons/sprite.svg#nu-general-actions-checked"/></svg>verify-fidelity.js · 33/33 全部通过</span><span class="de-tag">0 Errors</span></div>
+                  <div class="de-toast-inline" style="width:100%;justify-content:space-between"><span><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-success);margin-right:6px" aria-hidden="true"><use href="../icons/sprite.svg#nu-general-actions-checked"/></svg>verify-fidelity.js · 34/34 全部通过</span><span class="de-tag">0 Errors</span></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>17 · 检查点与一键回滚 (Checkpoint)<span class="de-tag--new">NEW</span></span><span>按轮次恢复代码与对话</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-setting-row"><span><strong>Checkpoint #3</strong> · 修改 EntryAbility.ets 前</span><button type="button" class="de-button de-button--secondary de-button--s">回滚到此</button></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>18 · 引用来源与证据链 (Citations)<span class="de-tag--new">NEW</span></span><span>RAG / 文档 / 行号跳转</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-row" style="gap:6px;flex-wrap:wrap"><span class="de-tag">[1] HarmonyOS TaskPool 指南</span><span class="de-tag">[2] RdbHelper.ets:42</span><span class="de-tag">[3] ArkTS Sendable 规范</span></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>19 · 末条提问原地编辑态 (Inline Edit)<span class="de-tag--new">NEW</span></span><span>与底部输入框共存</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:6px">
+                  <div class="de-input"><input type="text" aria-label="编辑上一条提问" value="排查冷启动卡顿并用 TaskPool 给出最小补丁（同时补充单测）。"></div>
+                  <div style="display:flex;justify-content:flex-end;gap:4px"><button type="button" class="de-button de-button--secondary de-button--s">取消</button><button type="button" class="de-button de-button--primary de-button--s">重新发送</button></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>20 · 结构化产物卡 (Artifact Card)<span class="de-tag--new">NEW</span></span><span>方案 / 报告 / 侧栏预览</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-setting-row"><div style="display:flex;align-items:center;gap:8px"><span class="de-tree__badge" data-ext="json">MD</span><div><strong style="display:block;font-size:12px">implementation_plan.md</strong><span style="font-size:11px;color:var(--text-tertiary)">冷启动优化方案 · 3 个改动文件 · 待审批</span></div></div><button type="button" class="de-button de-button--secondary de-button--s">侧栏打开</button></div>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- 组 2：编排类元件（8 类） -->
+        <!-- 组 2：编排类元件（10 类） -->
         <article class="card spec-card" data-agent-group="orchestration" data-demo>
           <div class="spec-top">
             <div>
-              <div class="badge-row"><span class="sys-badge">LAYER 02 · ORCHESTRATION (8)</span><code>编排类元件</code></div>
-              <h4>02 编排类元件（8 类）<small>回答「这一行由谁产出、有几件事正在同时进行」· 主/子 Agent 并行、后台任务与中断恢复</small></h4>
+              <div class="badge-row"><span class="sys-badge">LAYER 02 · ORCHESTRATION (10)</span><code>编排类元件 · +2 NEW</code></div>
+              <h4>02 编排类元件（10 类）<small>回答「这一行由谁产出、有几件事正在同时进行」· 主/子 Agent 并行、记忆压缩事件与并发审批队列</small></h4>
             </div>
             <div class="spec-controls" role="group" aria-label="编排类元件主题切换">
               <button type="button" class="pill-btn" data-set-system="harmony">鸿蒙 2.0</button>
@@ -2157,16 +2182,29 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                   <div class="de-tool-error"><svg class="de-svg-icon de-svg-icon--s" style="color:var(--color-error)" aria-hidden="true"><use href="../icons/sprite.svg#hm-工具栏-stop"/></svg><div class="de-tool-error__msg">已由用户中断（已完成 2/3 步）</div><button type="button" class="de-button de-button--primary de-button--s">继续</button></div>
                 </div>
               </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>09 · 上下文压缩与记忆写入条<span class="de-tag--new">NEW</span></span><span>静默压缩 / 自动记忆可撤销</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:6px">
+                  <div class="de-compaction">以上 18 轮历史已静默压缩为上下文摘要</div>
+                  <div class="de-setting-row"><span>已写入记忆：<strong>冷启动优先采用 TaskPool</strong></span><button type="button" class="de-button de-button--secondary de-button--s">撤销</button></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>10 · 并发审批队列与批量决策条<span class="de-tag--new">NEW</span></span><span>多子 Agent 同时申请授权</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px"><span class="de-dot-status" data-tone="warn"></span><strong>1 / 3</strong> 条工具调用待审批</span><div class="de-row" style="gap:4px"><button type="button" class="de-button de-button--secondary de-button--s">逐条看</button><button type="button" class="de-button de-button--primary de-button--s">全部允许</button></div></div>
+                </div>
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 组 3：输入区单元（6 类） -->
+        <!-- 组 3：输入区单元（8 类） -->
         <article class="card spec-card" data-agent-group="input" data-demo>
           <div class="spec-top">
             <div>
-              <div class="badge-row"><span class="sys-badge">LAYER 03 · COMPOSER &amp; INPUT (6)</span><code>输入区单元</code></div>
-              <h4>03 输入区单元（6 类）<small>回答「不在流里、但和流同一眼位的那几个东西是什么」· 富输入栏、上下文芯片、模式切换与队列</small></h4>
+              <div class="badge-row"><span class="sys-badge">LAYER 03 · COMPOSER &amp; INPUT (8)</span><code>输入区单元 · +2 NEW</code></div>
+              <h4>03 输入区单元（8 类）<small>回答「不在流里、但和流同一眼位的那几个东西是什么」· 富输入栏、Token 三段阈值、排队指令与斜杠命令</small></h4>
             </div>
             <div class="spec-controls" role="group" aria-label="输入区单元主题切换">
               <button type="button" class="pill-btn" data-set-system="harmony">鸿蒙 2.0</button>
@@ -2221,16 +2259,29 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                   <div class="de-row" style="gap:6px"><span class="de-tag">技能</span><span class="de-tag">规则</span><span class="de-tag">知识库</span><span class="de-tag">文件和文件夹</span><span class="de-tag">UX设计稿</span></div>
                 </div>
               </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>07 · 生成中排队消息条 (.de-queued)<span class="de-tag--new">NEW</span></span><span>排队下一句 · 支持撤回/插队</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-queued"><span>队列中 (1)：跑完门禁后同步推送到 main</span><div class="de-row" style="gap:4px"><button type="button" class="de-button de-button--secondary de-button--s">撤回</button><button type="button" class="de-button de-button--primary de-button--s">插队</button></div></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>08 · / 斜杠技能命令补全浮层<span class="de-tag--new">NEW</span></span><span>快速切换功能指令</span></span>
+                <div class="expui-cell__body" style="justify-content:space-between">
+                  <div class="de-row" style="gap:6px;flex-wrap:wrap"><kbd class="de-kbd">/plan</kbd><kbd class="de-kbd">/verify</kbd><kbd class="de-kbd">/review</kbd><kbd class="de-kbd">/compact</kbd></div>
+                  <span style="font-size:11.5px;color:var(--text-tertiary)">↑↓ 选择 · ↵ 触发</span>
+                </div>
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 组 4：页面级元件（8 类） -->
+        <!-- 组 4：页面级元件（10 类） -->
         <article class="card spec-card" data-agent-group="page" data-demo>
           <div class="spec-top">
             <div>
-              <div class="badge-row"><span class="sys-badge">LAYER 04 · PAGE &amp; SETTINGS (8)</span><code>页面级元件</code></div>
-              <h4>04 页面级元件（8 类）<small>回答「整页设置与它带来的状态标记怎么摆」· 会话头、侧栏标记、折叠偏好与 MCP 开关</small></h4>
+              <div class="badge-row"><span class="sys-badge">LAYER 04 · PAGE &amp; SETTINGS (10)</span><code>页面级元件 · +2 NEW</code></div>
+              <h4>04 页面级元件（10 类）<small>回答「整页设置与它带来的状态标记怎么摆」· Session 5 态与 AI 设置 8 大模块全覆盖</small></h4>
             </div>
             <div class="spec-controls" role="group" aria-label="页面级元件主题切换">
               <button type="button" class="pill-btn" data-set-system="harmony">鸿蒙 2.0</button>
@@ -2291,6 +2342,18 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                 <span class="expui-cell__k"><span>08 · 底栏全局状态锚点</span><span>常驻运行态</span></span>
                 <div class="expui-cell__body">
                   <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px"><span class="de-dot-status"></span>1 Agent 运行中</span><span class="de-lsp-pill"><span class="de-lsp-pill__dot">2</span> LSP Ready</span></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>09 · 模型供应商校验行<span class="de-tag--new">NEW</span></span><span>默认折叠 · 校验中 / 校验失败</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-setting-row"><span style="display:inline-flex;align-items:center;gap:6px"><span class="de-dot-status" data-tone="error"></span><strong>Custom Provider</strong> · API Key 校验失败</span><button type="button" class="de-button de-button--secondary de-button--s">重新校验</button></div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>10 · 规则 / 记忆 / 归档管理行<span class="de-tag--new">NEW</span></span><span>全局单选 · 工程单文件覆盖</span></span>
+                <div class="expui-cell__body">
+                  <div class="de-setting-row"><span>工程规则 <code>.deveco/rules.md</code> · 归档 4 条</span><div class="de-row" style="gap:6px"><button type="button" class="de-button de-button--secondary de-button--s">恢复归档</button><input type="checkbox" role="switch" class="de-switch" checked aria-label="启用工程规则"></div></div>
                 </div>
               </div>
             </div>
@@ -4579,6 +4642,7 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
 6. **Subagent 并行协作卡片流**：顶部折叠条 `并行协作 · 当前对话 · N 运行中 · M 已完成 · K 失败`，**全部结束后自动折叠**；单卡含状态点 + 名称 + 模型标签 + **严格单行简介**；滚出视口时输入框上方提示，主结束子仍跑时提供「一键结束全部」。
 7. **输入区与 Token 三段阈值**：模式分段 `Goal / Plan / Build` + 模型下拉 + `默认审批` + 4 类附件芯片 + 底部 `10px` 免责行；Token 圆环 `1%~75%` 亮灰 → `≥75%` 告警色（70%~80% 静默压缩）→ `100%` 输入框置灰禁用（悬浮支持编辑上限，最小 `50K`）。
 8. **Session 侧栏（最小宽 `300px`）与 AI 设置**：会话 5 态（未开始 / 运行中 / 已暂停待确认 / 已结束 / 异常未读）+ 4 鼠标态（失焦 / 悬浮出停止或删除 / 聚焦 / 锁定失焦），收藏区按收藏瞬时时间排序，普通区按天切分且运行中置顶。
+9. **补齐的 10 类 `NEW` 基本单元（共 4 层 48 类）**：对话流基元补齐检查点回滚（Checkpoint）、引用来源证据链（Citations）、末条提问原地编辑态、结构化产物卡（Artifact Card）；编排类补齐上下文压缩/记忆写入撤销条、并发审批队列批量决策条；输入区补齐生成中排队消息条（`.de-queued`）、`/` 斜杠命令补全浮层；页面级补齐模型供应商校验行、规则/记忆/归档管理行（均在预览页标注 `.de-tag--new` `NEW` 徽标）。
 </pre>
         </article>
       </section>
