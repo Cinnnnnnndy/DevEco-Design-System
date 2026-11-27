@@ -329,18 +329,17 @@ html,body{overflow-x:clip}
 .home-scatter-orb--8{top:78%;right:24%;width:30px;height:30px;opacity:.52;filter:blur(.9px);animation-delay:-4.8s;transform:perspective(680px) rotateY(-30deg) rotateX(-18deg) rotateZ(-14deg)}
 .home-scatter-orb--8 svg{filter:drop-shadow(0 10px 14px rgba(168,85,247,.14))}
 @media (max-width:1080px){.home-banner__scatter{display:none}}
-.home-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;padding:8px 8px 36px;margin-bottom:28px;border-bottom:1px solid var(--pg-sep)}
-.home-pillar{display:flex;flex-direction:column;gap:6px}
-.home-pillar__no{font:500 11px/1 var(--font-mono);color:var(--ui-fg2);opacity:.55}
-.home-pillar h3{margin:0;font-size:15px;font-weight:600;line-height:1.35;color:var(--ui-fg)}
-.home-pillar p{margin:0;font-size:13px;line-height:1.55;color:var(--ui-fg2)}
-.home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:32px}
-.home-entry{text-align:left;padding:14px 18px;border-radius:12px;border:1px solid var(--pg-sep);background:var(--pg-card);cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:border-color .15s,transform .15s}
-.home-entry:hover{border-color:var(--ui-fg2);transform:translateY(-1px)}
-.home-entry__title{font-size:14px;font-weight:500;color:var(--ui-fg)}
-.home-entry__arrow{font-size:13px;color:var(--ui-fg2)}
-@media (max-width:960px){.home-banner{min-height:48vh;padding:108px 20px 56px}.home-pillars,.home-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.home-pillars,.home-entries{grid-template-columns:1fr}}
+.home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:40px}
+.home-entry{text-align:left;padding:16px 16px 18px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-card);cursor:pointer;display:flex;flex-direction:column;gap:14px;transition:border-color .18s,transform .18s,box-shadow .18s}
+.home-entry:hover{border-color:var(--ui-fg2);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.home-entry__illu{width:100%;aspect-ratio:220/120;border-radius:10px;background:var(--pg-bg);color:var(--ui-fg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.home-entry__illu svg{width:100%;height:100%;display:block}
+.home-entry__foot{display:flex;align-items:center;justify-content:space-between;padding:0 2px}
+.home-entry__title{font-size:15px;font-weight:600;color:var(--ui-fg);letter-spacing:-.01em}
+.home-entry__arrow{font-size:14px;color:var(--ui-fg2);transition:transform .18s}
+.home-entry:hover .home-entry__arrow{transform:translateX(3px);color:var(--ui-fg)}
+@media (max-width:960px){.home-banner{min-height:48vh;padding:108px 20px 56px}.home-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.home-entries{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -458,34 +457,23 @@ html,body{overflow-x:clip}
           </div>
         </div>
 
-        <div class="home-pillars">
-          <div class="home-pillar">
-            <span class="home-pillar__no">01</span>
-            <h3>各美其美</h3>
-            <p>鸿蒙轻盈呼吸，桌面精密高效。</p>
-          </div>
-          <div class="home-pillar">
-            <span class="home-pillar__no">02</span>
-            <h3>克制留白</h3>
-            <p>视觉重量只为重点与决策停留。</p>
-          </div>
-          <div class="home-pillar">
-            <span class="home-pillar__no">03</span>
-            <h3>对话如流</h3>
-            <p>思考、检索与回答自然展开。</p>
-          </div>
-          <div class="home-pillar">
-            <span class="home-pillar__no">04</span>
-            <h3>透明可控</h3>
-            <p>智能自主前行，掌控归于人。</p>
-          </div>
-        </div>
-
         <div class="home-entries">
-          <button type="button" class="home-entry" data-jump-domain="harmony"><span class="home-entry__title">鸿蒙原生</span><span class="home-entry__arrow">→</span></button>
-          <button type="button" class="home-entry" data-jump-domain="pcmac"><span class="home-entry__title">PC / Mac</span><span class="home-entry__arrow">→</span></button>
-          <button type="button" class="home-entry" data-jump-domain="agent"><span class="home-entry__title">AI Agent</span><span class="home-entry__arrow">→</span></button>
-          <button type="button" class="home-entry" data-jump-domain="guide"><span class="home-entry__title">对照与指南</span><span class="home-entry__arrow">→</span></button>
+          <button type="button" class="home-entry" data-jump-domain="harmony">
+            <span class="home-entry__illu"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#home-illu-1"/></svg></span>
+            <span class="home-entry__foot"><span class="home-entry__title">鸿蒙原生</span><span class="home-entry__arrow">→</span></span>
+          </button>
+          <button type="button" class="home-entry" data-jump-domain="pcmac">
+            <span class="home-entry__illu"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#home-illu-2"/></svg></span>
+            <span class="home-entry__foot"><span class="home-entry__title">PC / Mac</span><span class="home-entry__arrow">→</span></span>
+          </button>
+          <button type="button" class="home-entry" data-jump-domain="agent">
+            <span class="home-entry__illu"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#home-illu-3"/></svg></span>
+            <span class="home-entry__foot"><span class="home-entry__title">AI Agent</span><span class="home-entry__arrow">→</span></span>
+          </button>
+          <button type="button" class="home-entry" data-jump-domain="guide">
+            <span class="home-entry__illu"><svg aria-hidden="true"><use href="./design-system/icons/sprite.svg#home-illu-4"/></svg></span>
+            <span class="home-entry__foot"><span class="home-entry__title">对照与指南</span><span class="home-entry__arrow">→</span></span>
+          </button>
         </div>
       </section>
 
