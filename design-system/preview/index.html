@@ -297,15 +297,15 @@ html,body{overflow-x:clip}
 .home-banner::after{content:"";position:absolute;left:50%;top:54%;width:680px;height:680px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(10,89,247,.07);box-shadow:0 0 0 110px rgba(10,89,247,.02);pointer-events:none}
 .home-banner__inner{position:relative;z-index:2;max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
 .home-banner__eyebrow{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 76%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ui-fg2);margin-bottom:24px}
-.home-banner__eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#0A59F7}
+.home-banner__eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ui-fg2);opacity:.65}
 .home-banner h2{margin:0 0 18px;font-size:clamp(36px,4.8vw,58px);font-weight:700;line-height:1.18;letter-spacing:-.025em;color:var(--ui-fg);text-wrap:balance}
-.home-banner__grad{display:block;color:var(--ui-accent)}
+.home-banner__grad{display:block;color:var(--ui-fg2);font-weight:600}
 .home-banner p{margin:0 0 32px;max-width:540px;font-size:clamp(15px,1.35vw,16.5px);line-height:1.7;color:var(--ui-fg2);font-weight:400;text-wrap:balance}
 .home-banner__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .home-cta-btn{height:40px;padding:0 20px;border-radius:99px;border:1px solid var(--pg-sep);background:color-mix(in srgb,var(--pg-bg) 84%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ui-fg);font:500 13.5px/1 var(--font-ui);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .18s,border-color .18s,box-shadow .18s}
-.home-cta-btn:hover{border-color:var(--ui-accent);transform:translateY(-1.5px);box-shadow:0 8px 22px rgba(10,89,247,.12)}
-.home-cta-btn--primary{background:#0A59F7;border-color:#0A59F7;color:#fff;box-shadow:0 6px 20px rgba(10,89,247,.24)}
-.home-cta-btn--primary:hover{box-shadow:0 10px 26px rgba(10,89,247,.34)}
+.home-cta-btn:hover{border-color:var(--ui-fg2);transform:translateY(-1.5px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.home-cta-btn--primary{background:var(--ui-fg);border-color:var(--ui-fg);color:var(--pg-bg);box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.home-cta-btn--primary:hover{box-shadow:0 10px 24px rgba(0,0,0,.2)}
 /* 散落在 Banner 两侧的 8 枚无底色 3D 建模透视形象（近大实、远小虚 + 彩色环境光投影） */
 @keyframes saFloat{0%,100%{margin-top:0}50%{margin-top:-7px}}
 .home-banner__scatter{position:absolute;inset:0;z-index:1;max-width:1380px;margin:0 auto;pointer-events:none;perspective:900px}
@@ -332,13 +332,13 @@ html,body{overflow-x:clip}
 .home-section-label{font:600 11.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ui-fg2);margin:0 0 14px}
 .home-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:36px}
 .home-pillar{padding:22px 20px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-card);display:flex;flex-direction:column;gap:8px}
-.home-pillar__no{font:700 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--ui-accent)}
+.home-pillar__no{font:600 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--ui-fg2);opacity:.75}
 .home-pillar h3{margin:0;font-size:16px;font-weight:600;line-height:1.35;color:var(--ui-fg)}
 .home-pillar p{margin:0;font-size:13px;line-height:1.65;color:var(--ui-fg2)}
 .home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:24px}
 .home-entry{text-align:left;padding:20px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-card);cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
-.home-entry:hover{border-color:var(--ui-accent);transform:translateY(-2px)}
-.home-entry__tag{font:600 10.5px/1 var(--font-mono);color:var(--ui-accent)}
+.home-entry:hover{border-color:var(--ui-fg2);transform:translateY(-2px)}
+.home-entry__tag{font:600 10.5px/1 var(--font-mono);color:var(--ui-fg2);opacity:.75}
 .home-entry__title{font-size:15px;font-weight:600;color:var(--ui-fg)}
 .home-entry__desc{font-size:12.5px;line-height:1.5;color:var(--ui-fg2)}
 @media (max-width:960px){.home-banner{min-height:46vh;padding:52px 20px 44px}.home-pillars,.home-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
