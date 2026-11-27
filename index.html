@@ -6,9 +6,9 @@
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
 <link rel="icon" type="image/svg+xml" href="./deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127g">
-<link rel="stylesheet" href="./site/launcher.css?v=20261127g">
-<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127g">
+<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127h">
+<link rel="stylesheet" href="./site/launcher.css?v=20261127h">
+<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127h">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
    页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ./design-system/tokens/index.css。 ---------- */
@@ -2438,18 +2438,18 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           </div>
         </article>
 
-        <!-- 组 6：AI 返回正文的结构性处理与渲染优化规范 (NEW) -->
+        <!-- 组 6：AI 输出内容的结构性处理与优化（1.0 现状 vs 2.0 优化版对比） -->
         <article class="card spec-card" data-agent-group="structure" data-demo>
           <div class="spec-top">
             <div>
               <div class="badge-row">
-                <span class="sys-badge">AI RESPONSE STRUCTURE · POST-PROCESSING</span>
-                <code>正文结构化处理 · NEW</code>
+                <span class="sys-badge">AI OUTPUT STRUCTURE · 1.0 vs 2.0</span>
+                <code>1.0 Pixso 现状 vs 2.0 结构化优化 · NEW</code>
               </div>
-              <h4>AI 返回正文的结构性处理与渲染优化<span class="de-tag--new">NEW</span><small>解决长回复「Markdown 文本墙」难读、跳动、难操作问题</small></h4>
-              <p style="margin-top:4px">正文严格采用无卡片裸排，但内部必须按 <b>「1. 结论先行 → 2. 结构化依据（文件跳转芯片 / 紧致清单 / 指标表 / 5–10 行受限代码块）→ 3. 风险 Callout → 4. 可点击后续动作」</b> 固定节奏做后处理与流式防抖。</p>
+              <h4>AI 输出内容的结构性处理与优化（1.0 现状 vs 2.0 升级对比）<span class="de-tag--new">NEW</span><small>同一任务（堆排序 ArkTS 实现）对照查看「当前设计稿 1.0 渲染方式」与「2.0 结构化后处理优化版」</small></h4>
+              <p style="margin-top:4px">左列忠实还原 <code>Code&amp;Studio体验融合.pix</code>（<code>对话流</code> / <code>浅色对话框</code>）当前的平铺 Markdown 输出形态并归纳痛点；右列给出 <b>2.0 结构化优化版</b>：四段式阅读节奏、可点击文件行号芯片、<code>tabular-nums</code> 指标表、轻量风险 Callout 与可点击后续动作，并配套流式渲染防抖。</p>
             </div>
-            <div class="spec-controls" role="group" aria-label="AI 正文结构化预览切换">
+            <div class="spec-controls" role="group" aria-label="AI 输出对比预览切换">
               <button type="button" class="pill-btn" data-set-system="harmony">鸿蒙 2.0</button>
               <button type="button" class="pill-btn" data-set-system="pc-mac">PC/Mac</button>
               <span class="pill-sep"></span>
@@ -2460,35 +2460,47 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           </div>
           <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
             <div class="expui-grid">
+              <!-- 左列：1.0 当前版本（Pixso 现状还原） -->
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>01 · 四段式回复骨架 + 可点击文件行号芯片<span class="de-tag--new">NEW</span></span><span>结论先行 · 符号直跳编辑器</span></span>
-                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
+                <span class="expui-cell__k"><span>1.0 当前版本 · Pixso 现状还原</span><span>平铺 Markdown · 纯文本列表</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:10px">
                   <div class="de-unit-prose">
-                    <p><strong>结论</strong>：冷启动耗时已从 <code>412ms</code> 降至 <code>268ms</code>（-35%），主线程零阻塞。</p>
-                    <h5>核心改动</h5>
-                    <ul>
-                      <li>在 <span class="de-file-link">EntryAbility.ets:13</span> 改为 <code>taskpool.execute</code> 异步建表</li>
-                      <li>在 <span class="de-file-link">RdbHelper.ets:42</span> 补充 <code>@Sendable</code> 构造校验</li>
-                    </ul>
-                    <div class="de-prose-callout"><strong>破坏性提示</strong>：首次冷启动前 150ms 内若提前读库，需等待 <code>rdbReady</code> Promise。</div>
-                    <div class="de-next-actions">
-                      <button type="button" class="de-next-action">运行真机冷启动复测 →</button>
-                      <button type="button" class="de-next-action">补充 Sendable 单元测试</button>
-                    </div>
+                    <p>我已经成功为您实现了一个完整的堆排序算法项目，包含以下核心组件：</p>
+                    <p>・堆排序算法核心 (HeapSort.ets)</p>
+                    <p>・支持升序和降序排序，时间复杂度 O(n log n)，空间复杂度 O(1)，完善的边界处理和错误检查</p>
+                    <p>・可视化界面 (HeapSortPage.ets)：实时柱状图展示排序过程、交互式控制（上一步/下一步/重置）、自定义数组参数配置、进度条和详细步骤描述</p>
+                    <p>・单元测试 (HeapSort.test.ets)：覆盖空数组、单元素与逆序用例</p>
+                  </div>
+                  <div class="de-setting-row" style="font-size:12px;color:var(--text-secondary)">
+                    <span><strong>1.0 现状总结与痛点</strong>：① 无结论/依据分层，长列表扫读成本高；② 文件名 <code>HeapSort.ets</code> 为纯文本无法直跳编辑器；③ 风险提示与正文混排；④ 结尾无行动收口，用户需手打下一句。</span>
                   </div>
                 </div>
               </div>
+              <!-- 右列：2.0 结构化优化版 -->
               <div class="expui-cell expui-cell--6">
-                <span class="expui-cell__k"><span>02 · 结构化对比表 + 流式渲染防抖约束<span class="de-tag--new">NEW</span></span><span>tabular-nums 右对齐 · 未闭合占位</span></span>
-                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:8px">
-                  <table class="de-prose-table">
-                    <thead><tr><th>阶段指标</th><th class="num">优化前</th><th class="num">优化后</th><th class="num">降幅</th></tr></thead>
-                    <tbody>
-                      <tr><td>首帧渲染 (TTFD)</td><td class="num">412 ms</td><td class="num">268 ms</td><td class="num" style="color:var(--color-success)">-35%</td></tr>
-                      <tr><td>主线程建表阻塞</td><td class="num">142 ms</td><td class="num">0 ms</td><td class="num" style="color:var(--color-success)">-100%</td></tr>
-                    </tbody>
-                  </table>
-                  <div class="de-setting-row" style="font-size:12px"><span><strong>流式防抖规则</strong>：未闭合代码块预占壳体（默认 5 行 / 展开上限 10 行）；超 10 行转 Artifact 产物卡；正文标题封顶 <code>H3/H4</code> 禁大号 H1。</span></div>
+                <span class="expui-cell__k"><span>2.0 结构化优化版<span class="de-tag--new">NEW</span></span><span>四段节奏 · 实体直跳 · 指标表 · 动作收口</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:10px">
+                  <div class="de-unit-prose">
+                    <p><strong>结论</strong>：堆排序算法、可视化交互页与单元测试已全部完成，<code>hvigorw assembleHap</code> 编包通过（0 报错）。</p>
+                    <h5>核心产物与定位</h5>
+                    <table class="de-prose-table">
+                      <thead><tr><th>模块</th><th>源码入口</th><th class="num">改动</th></tr></thead>
+                      <tbody>
+                        <tr><td>算法核心 · O(n log n)</td><td><span class="de-file-link">HeapSort.ets:18</span></td><td class="num" style="color:var(--color-success)">+96</td></tr>
+                        <tr><td>柱状图可视化页</td><td><span class="de-file-link">HeapSortPage.ets:45</span></td><td class="num" style="color:var(--color-success)">+142</td></tr>
+                        <tr><td>边界单元测试 (6/6)</td><td><span class="de-file-link">HeapSort.test.ets:12</span></td><td class="num" style="color:var(--color-success)">+54</td></tr>
+                      </tbody>
+                    </table>
+                    <div class="de-prose-callout"><strong>性能提示</strong>：自定义数组超过 <code>500</code> 项时，建议开启步进节流或迁移至 <code>TaskPool</code>，避免高频动画掉帧。</div>
+                    <div class="de-next-actions">
+                      <button type="button" class="de-next-action">打开真机可视化预览 →</button>
+                      <button type="button" class="de-next-action">运行 6 条单元测试</button>
+                      <button type="button" class="de-next-action">查看 3 个文件 Diff</button>
+                    </div>
+                  </div>
+                  <div class="de-setting-row" style="font-size:12px;color:var(--text-secondary)">
+                    <span><strong>2.0 优化机制</strong>：① 结论先行 + H3/H4 标题封顶；② 文件路径自动转可点击芯片；③ 代码块 5/10 行受限、超长转 Artifact 卡；④ 未闭合代码块/表格流式预占位防抖；⑤ 结尾收敛为可点选下一步。</span>
+                  </div>
                 </div>
               </div>
             </div>
