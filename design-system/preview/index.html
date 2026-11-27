@@ -279,38 +279,37 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
 .is-domain-hidden{display:none!important}
 .hero-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 16px;margin-bottom:20px;border-radius:12px;border:1px solid var(--pg-sep);background:var(--pg-card);font-size:13px;color:var(--ui-fg2)}
 .hero-strip b{color:var(--ui-fg);font-weight:600}
+html,body{overflow-x:clip}
 .layout.is-home .sidebar{display:none}
-.layout.is-home main{max-width:1120px;margin:0 auto;width:100%}
-.home-banner{position:relative;overflow:hidden;border-radius:20px;padding:40px 44px;margin-bottom:24px;border:1px solid var(--pg-sep);background:radial-gradient(620px 320px at 88% 18%,rgba(10,89,247,.26),transparent 65%),radial-gradient(480px 280px at 72% 88%,rgba(124,58,237,.22),transparent 65%),radial-gradient(360px 240px at 14% 90%,rgba(13,148,136,.14),transparent 70%),var(--pg-card);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:28px;align-items:center}
-.home-banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(128,128,128,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(128,128,128,.07) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(circle at 75% 45%,rgba(0,0,0,.9),transparent 78%);pointer-events:none}
-.home-banner__left{position:relative;z-index:1}
-.home-banner__eyebrow{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:99px;border:1px solid var(--pg-sep);background:var(--pg-bg);font:600 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--ui-accent);margin-bottom:14px}
-.home-banner h2{margin:0 0 12px;font-size:34px;line-height:1.2;letter-spacing:-.025em;color:var(--ui-fg)}
-.home-banner p{margin:0 0 20px;max-width:560px;font-size:14.5px;line-height:1.65;color:var(--ui-fg2)}
-.home-banner__cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
-.home-cta-btn{height:36px;padding:0 16px;border-radius:10px;border:1px solid var(--pg-sep);background:var(--pg-bg);color:var(--ui-fg);font:500 13px/1 var(--font-ui);cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform .15s,border-color .15s}
-.home-cta-btn:hover{border-color:var(--ui-accent);transform:translateY(-1px)}
+.layout.is-home{padding-top:0}
+.layout.is-home main{max-width:1160px;margin:0 auto;width:100%;padding-top:0}
+.home-banner{position:relative;left:50%;width:100vw;margin-left:-50vw;min-height:54vh;padding:72px 24px 64px;margin-bottom:44px;overflow:hidden;border-bottom:1px solid var(--pg-sep);display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(900px 460px at 18% 15%,rgba(10,89,247,.22),transparent 62%),radial-gradient(760px 420px at 84% 22%,rgba(124,58,237,.22),transparent 60%),radial-gradient(640px 360px at 52% 96%,rgba(13,148,136,.16),transparent 65%),linear-gradient(180deg,var(--pg-card) 0%,var(--pg-bg) 100%)}
+.home-banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(128,128,128,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(128,128,128,.07) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 75% 70% at 50% 42%,rgba(0,0,0,.85),transparent 85%);pointer-events:none}
+.home-banner__inner{position:relative;z-index:1;max-width:860px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.home-banner__eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;border:1px solid var(--pg-sep);background:var(--pg-bg);font:600 12px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ui-accent);margin-bottom:22px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.home-banner h2{margin:0 0 18px;font-size:clamp(34px,4.6vw,56px);font-weight:700;line-height:1.16;letter-spacing:-.03em;color:var(--ui-fg)}
+.home-banner p{margin:0 0 30px;max-width:640px;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--ui-fg2);font-weight:400}
+.home-banner__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:32px}
+.home-cta-btn{height:42px;padding:0 22px;border-radius:99px;border:1px solid var(--pg-sep);background:var(--pg-bg);color:var(--ui-fg);font:500 14px/1 var(--font-ui);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .18s,border-color .18s,box-shadow .18s}
+.home-cta-btn:hover{border-color:var(--ui-accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,89,247,.16)}
 .home-cta-btn--primary{background:var(--ui-accent);border-color:var(--ui-accent);color:#fff}
-.home-banner__visual{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-bg);box-shadow:0 16px 40px rgba(0,0,0,.16)}
-.home-banner__orbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.home-banner__orb{height:48px;border-radius:12px;border:1px solid var(--pg-sep);background:var(--pg-card);display:flex;align-items:center;justify-content:center}
-.home-banner__orb svg{width:26px;height:26px}
-.home-banner__chips{display:flex;flex-wrap:wrap;gap:6px;font:500 11.5px/1 var(--font-mono);color:var(--ui-fg2)}
-.home-banner__chips span{padding:5px 9px;border-radius:99px;border:1px solid var(--pg-sep);background:var(--pg-card)}
-.home-stats{display:flex;flex-wrap:wrap;gap:16px;font:500 12px/1 var(--font-mono);color:var(--ui-fg2)}
-.home-stats b{color:var(--ui-fg);font-weight:700}
-.home-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}
-.home-pillar{padding:16px;border-radius:14px;border:1px solid var(--pg-sep);background:var(--pg-card);display:flex;flex-direction:column;gap:6px}
-.home-pillar__no{font:700 10.5px/1 var(--font-mono);letter-spacing:.06em;color:var(--ui-accent)}
-.home-pillar h3{margin:0;font-size:14.5px;line-height:1.35;color:var(--ui-fg)}
-.home-pillar p{margin:0;font-size:12.5px;line-height:1.55;color:var(--ui-fg2)}
-.home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.home-entry{text-align:left;padding:16px;border-radius:14px;border:1px solid var(--pg-sep);background:var(--pg-card);cursor:pointer;display:flex;flex-direction:column;gap:5px;transition:border-color .15s,transform .15s}
+.home-banner__orbs{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+.home-banner__orb{width:38px;height:38px;border-radius:11px;border:1px solid var(--pg-sep);background:var(--pg-bg);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .18s}
+.home-banner__orb:hover{transform:translateY(-3px)}
+.home-banner__orb svg{width:22px;height:22px}
+.home-section-label{font:600 11.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ui-fg2);margin:0 0 14px}
+.home-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:36px}
+.home-pillar{padding:22px 20px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-card);display:flex;flex-direction:column;gap:8px}
+.home-pillar__no{font:700 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--ui-accent)}
+.home-pillar h3{margin:0;font-size:16px;font-weight:600;line-height:1.35;color:var(--ui-fg)}
+.home-pillar p{margin:0;font-size:13px;line-height:1.65;color:var(--ui-fg2)}
+.home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:24px}
+.home-entry{text-align:left;padding:20px;border-radius:16px;border:1px solid var(--pg-sep);background:var(--pg-card);cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
 .home-entry:hover{border-color:var(--ui-accent);transform:translateY(-2px)}
 .home-entry__tag{font:600 10.5px/1 var(--font-mono);color:var(--ui-accent)}
-.home-entry__title{font-size:14.5px;font-weight:600;color:var(--ui-fg)}
-.home-entry__desc{font-size:12px;line-height:1.45;color:var(--ui-fg2)}
-@media (max-width:960px){.home-banner{grid-template-columns:1fr;padding:28px 24px}.home-pillars,.home-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.home-entry__title{font-size:15px;font-weight:600;color:var(--ui-fg)}
+.home-entry__desc{font-size:12.5px;line-height:1.5;color:var(--ui-fg2)}
+@media (max-width:960px){.home-banner{min-height:46vh;padding:52px 20px 44px}.home-pillars,.home-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.home-pillars,.home-entries{grid-template-columns:1fr}}
 </style>
 </head>
@@ -409,24 +408,15 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
     <main>
       <section id="home" data-domain="home">
         <div class="home-banner">
-          <div class="home-banner__left">
-            <div class="home-banner__eyebrow">DEVECO DESIGN SYSTEM · PIXSO AST</div>
-            <h2>双端同源 · 面向 AI 时代的研发设计语言</h2>
-            <p>同一套语义契约驱动 <b>HarmonyOS NEXT (HDesign 2.0)</b> 与 <b>PC / Mac (IntelliJ NewUI)</b>，并内建 DevEco Code 48 类 Agent 对话与多智能体编排规范。</p>
+          <div class="home-banner__inner">
+            <div class="home-banner__eyebrow">DevEco Design System</div>
+            <h2>让创造回归直觉，让智能自然发生。</h2>
+            <p>在秩序与流动之间，为鸿蒙与桌面开发者构筑清晰、克制、与 AI 共生的设计语言。</p>
             <div class="home-banner__cta">
-              <button type="button" class="home-cta-btn home-cta-btn--primary" data-jump-domain="harmony">探索鸿蒙原生 →</button>
-              <button type="button" class="home-cta-btn" data-jump-domain="agent">查看 AI Agent (48)</button>
+              <button type="button" class="home-cta-btn home-cta-btn--primary" data-jump-domain="harmony">探索设计规范 →</button>
+              <button type="button" class="home-cta-btn" data-jump-domain="agent">走进 AI Agent 体验</button>
             </div>
-            <div class="home-stats">
-              <span><b>1,003</b> 图标</span>
-              <span><b>21</b> 基础组件</span>
-              <span><b>48</b> Agent 元件</span>
-              <span><b>12</b> 脚手架</span>
-              <span><b>34/34</b> 门禁</span>
-            </div>
-          </div>
-          <div class="home-banner__visual" aria-label="DevEco 品牌视觉矩阵">
-            <div class="home-banner__orbs">
+            <div class="home-banner__orbs" aria-label="DevEco Subagent 渐变视觉体系">
               <span class="home-banner__orb"><svg aria-hidden="true"><use href="../icons/sprite.svg#sa-grad-1"/></svg></span>
               <span class="home-banner__orb"><svg aria-hidden="true"><use href="../icons/sprite.svg#sa-grad-2"/></svg></span>
               <span class="home-banner__orb"><svg aria-hidden="true"><use href="../icons/sprite.svg#sa-grad-3"/></svg></span>
@@ -436,58 +426,54 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
               <span class="home-banner__orb"><svg aria-hidden="true"><use href="../icons/sprite.svg#sa-grad-7"/></svg></span>
               <span class="home-banner__orb"><svg aria-hidden="true"><use href="../icons/sprite.svg#sa-grad-8"/></svg></span>
             </div>
-            <div class="home-banner__chips">
-              <span>HDesign 2.0 · 16vp</span>
-              <span>NewUI · Gray 1–14</span>
-              <span>Stream First</span>
-              <span>Zero Redraw</span>
-            </div>
           </div>
         </div>
 
+        <p class="home-section-label">设计宣言 · Design Philosophy</p>
         <div class="home-pillars">
           <div class="home-pillar">
-            <span class="home-pillar__no">01 · NATIVE CRAFT</span>
-            <h3>双端同源，原生各美</h3>
-            <p>语义 Token 统一，平台质感各自保留：鸿蒙 16vp 呼吸感与毛玻璃，PC/Mac 13px 高密度精密色阶。</p>
+            <span class="home-pillar__no">01 · HARMONY IN DIVERSITY</span>
+            <h3>各美其美，和而不同</h3>
+            <p>尊重不同终端的生长土壤——鸿蒙的轻盈呼吸与桌面的精密高效并行不悖，体验始终如一。</p>
           </div>
           <div class="home-pillar">
-            <span class="home-pillar__no">02 · AST FIDELITY</span>
-            <h3>矢量真相，零漂移</h3>
-            <p>色板、1,003 枚图标与 12 套脚手架直取 Pixso 矢量 AST，34 项门禁确保代码与设计稿零偏差。</p>
+            <span class="home-pillar__no">02 · CLARITY BY RESTRAINT</span>
+            <h3>克制留白，信息有序</h3>
+            <p>把视觉重量留给真正重要的内容与决策，减少多余装饰，让复杂研发场景一眼即明。</p>
           </div>
           <div class="home-pillar">
-            <span class="home-pillar__no">03 · STREAM FIRST</span>
-            <h3>对话即流，卡片克制</h3>
-            <p>正文、思考与工具检索一律无卡片裸排 + 左竖线折叠，边框仅留给意图确认、Diff 与输入区。</p>
+            <span class="home-pillar__no">03 · EFFORTLESS FLOW</span>
+            <h3>对话如流，顺势而为</h3>
+            <p>打破冰冷的机械问答，让思考、检索与回答如水流般自然展开，静默守护专注心流。</p>
           </div>
           <div class="home-pillar">
-            <span class="home-pillar__no">04 · CONTROLLABLE</span>
-            <h3>人机协同，确定可控</h3>
-            <p>8 枚渐变 Subagent 形象、三类意图确认、静默压缩与检查点回滚，多智能体并行透明可停。</p>
+            <span class="home-pillar__no">04 · HUMAN IN COMMAND</span>
+            <h3>人机共创，透明可控</h3>
+            <p>智能可以自主前行，掌控始终归于开发者——每一步意图清晰可见，随时可停、可改、可回溯。</p>
           </div>
         </div>
 
+        <p class="home-section-label">快速入口 · Explore</p>
         <div class="home-entries">
           <button type="button" class="home-entry" data-jump-domain="harmony">
             <span class="home-entry__tag">01 · HARMONYOS NEXT</span>
-            <span class="home-entry__title">鸿蒙原生 (HDesign 2.0) →</span>
-            <span class="home-entry__desc">Token、鸿蒙图标、21 基础组件、脚手架与整窗。</span>
+            <span class="home-entry__title">鸿蒙原生 →</span>
+            <span class="home-entry__desc">轻盈通透的原生端视觉规范、基础组件与整窗。</span>
           </button>
           <button type="button" class="home-entry" data-jump-domain="pcmac">
-            <span class="home-entry__tag">02 · PC / MAC NEWUI</span>
-            <span class="home-entry__title">PC/Mac 当代 (NewUI) →</span>
-            <span class="home-entry__desc">8 色系色阶、桌面图标、21 组件与 Studio 整窗。</span>
+            <span class="home-entry__tag">02 · PC / MAC</span>
+            <span class="home-entry__title">PC / Mac 当代 →</span>
+            <span class="home-entry__desc">高密度专业桌面端色阶、组件与工作台模板。</span>
           </button>
           <button type="button" class="home-entry" data-jump-domain="agent">
-            <span class="home-entry__tag">03 · AI AGENTIC UI</span>
-            <span class="home-entry__title">AI Agent (48) →</span>
-            <span class="home-entry__desc">48 类对话元件、Session 侧栏树与 1.0/2.0 输出对比。</span>
+            <span class="home-entry__tag">03 · AI AGENT</span>
+            <span class="home-entry__title">AI Agent 体验 →</span>
+            <span class="home-entry__desc">对话流、多智能体协同、侧栏树与结构化输出。</span>
           </button>
           <button type="button" class="home-entry" data-jump-domain="guide">
-            <span class="home-entry__tag">04 · SPEC &amp; SKILL</span>
+            <span class="home-entry__tag">04 · GUIDE</span>
             <span class="home-entry__title">对照与指南 →</span>
-            <span class="home-entry__desc">系统归属、6 组原稿对照、实战测试与 Skill 接入。</span>
+            <span class="home-entry__desc">双端设计对照、实战样张与 Skill 接入指南。</span>
           </button>
         </div>
       </section>
