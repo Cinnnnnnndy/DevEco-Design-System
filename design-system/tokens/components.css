@@ -1254,12 +1254,25 @@
 }
 
 .de-nav__text,
-.de-nav__item > span:not(.de-counter):not(.de-tag):not(.de-icon):not(.de-dot-status):not(.de-badge):not(.de-context-ring) {
+.de-nav__item:not(:has(> .de-nav__text)) > span:not(.de-counter):not(.de-tag):not(.de-icon):not(.de-dot-status):not(.de-badge):not(.de-context-ring):not(.de-subagent-avatar):not(.de-nav__meta) {
   flex: 1;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.de-nav__meta {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.de-nav__item[aria-current="page"] .de-nav__meta {
+  color: var(--text-on-selected);
+  opacity: 0.85;
 }
 
 .de-nav__item:hover {
@@ -3391,6 +3404,64 @@
   .de-subagent-gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+}
+
+/* 大型复合组件：DevEco Code Session 侧栏树 (.de-session-sidebar) */
+.de-session-sidebar {
+  width: 100%;
+  max-width: 320px;
+  min-width: 260px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-window);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.de-session-sidebar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 6px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.de-session-sidebar__new {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--border-control);
+  background: var(--surface-field);
+  color: var(--text-primary);
+  font: 500 13px/1 var(--font-ui);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.de-session-sidebar__new:hover {
+  background: var(--surface-field-hover);
+  border-color: var(--border-control-hover);
+}
+
+.de-session-sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.de-session-sidebar__label {
+  padding: 6px 8px 2px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-tertiary);
 }
 
 
