@@ -6,9 +6,9 @@
 <title>DevEco 设计系统 · Pixso 矢量 AST 双系统规范与组件库</title>
 <meta name="description" content="从 7 份本地 Pixso 源文件（inner.pix 133,622 矢量节点）提取构建的 DevEco 双设计系统：鸿蒙原生端（HarmonyOS NEXT HDesign 2.0）与 PC/Mac 当代桌面端（IntelliJ NewUI），含 Token、双系统实时工作台、21 个组件文档、6 组原稿对照与 2 套整窗 Pattern。">
 <link rel="icon" type="image/svg+xml" href="./deveco-intui-kit/icons/deveco-code-logo.svg">
-<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127f">
-<link rel="stylesheet" href="./site/launcher.css?v=20261127f">
-<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127f">
+<link rel="stylesheet" href="./deveco-intui-kit/src/tokens.css?v=20261127g">
+<link rel="stylesheet" href="./site/launcher.css?v=20261127g">
+<link rel="stylesheet" href="./design-system/tokens/index.css?v=20261127g">
 <style>
 /* ---------- 框架：对齐仓库内其他规范卡片（复用 site/launcher.css 的 .page / .mast / .tbtn / .layout / .sidebar / .cat / section.grp / .card）。
    页面自身支持浅色 / 深色切换；样张画布（[data-system]）内的组件样式 100% 来自 ./design-system/tokens/index.css。 ---------- */
@@ -1964,6 +1964,7 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
           <button type="button" class="pill-btn" data-agent-filter="input" aria-pressed="false">03 输入区单元 (8)</button>
           <button type="button" class="pill-btn" data-agent-filter="page" aria-pressed="false">04 页面级元件 (10)</button>
           <button type="button" class="pill-btn" data-agent-filter="turn" aria-pressed="false">完整一轮实景组装</button>
+          <button type="button" class="pill-btn" data-agent-filter="structure" aria-pressed="false">AI 正文结构化处理 NEW</button>
         </div>
 
         <!-- 组 1：对话流基元（20 类） -->
@@ -2432,6 +2433,63 @@ section.grp>p.note{margin-bottom:22px;max-width:none;width:100%}
                   <span class="de-diff-changes"><span class="de-diff-changes__add">+14</span><span class="de-diff-changes__del">-4</span></span>
                 </div>
                 <span class="de-context-pill"><span class="de-context-ring" style="--pct:38%"></span><span>38% · 76k / 200k</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 组 6：AI 返回正文的结构性处理与渲染优化规范 (NEW) -->
+        <article class="card spec-card" data-agent-group="structure" data-demo>
+          <div class="spec-top">
+            <div>
+              <div class="badge-row">
+                <span class="sys-badge">AI RESPONSE STRUCTURE · POST-PROCESSING</span>
+                <code>正文结构化处理 · NEW</code>
+              </div>
+              <h4>AI 返回正文的结构性处理与渲染优化<span class="de-tag--new">NEW</span><small>解决长回复「Markdown 文本墙」难读、跳动、难操作问题</small></h4>
+              <p style="margin-top:4px">正文严格采用无卡片裸排，但内部必须按 <b>「1. 结论先行 → 2. 结构化依据（文件跳转芯片 / 紧致清单 / 指标表 / 5–10 行受限代码块）→ 3. 风险 Callout → 4. 可点击后续动作」</b> 固定节奏做后处理与流式防抖。</p>
+            </div>
+            <div class="spec-controls" role="group" aria-label="AI 正文结构化预览切换">
+              <button type="button" class="pill-btn" data-set-system="harmony">鸿蒙 2.0</button>
+              <button type="button" class="pill-btn" data-set-system="pc-mac">PC/Mac</button>
+              <span class="pill-sep"></span>
+              <button type="button" class="pill-btn" data-set-theme="dark">深色</button>
+              <button type="button" class="pill-btn" data-set-theme="light">浅色</button>
+              <button type="button" class="pill-btn" data-set-theme="light-contrast">高对比</button>
+            </div>
+          </div>
+          <div data-live="" class="stage comp-stage" data-system="pc-mac" data-theme="dark" style="padding:16px;flex-direction:column;align-items:stretch">
+            <div class="expui-grid">
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>01 · 四段式回复骨架 + 可点击文件行号芯片<span class="de-tag--new">NEW</span></span><span>结论先行 · 符号直跳编辑器</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch">
+                  <div class="de-unit-prose">
+                    <p><strong>结论</strong>：冷启动耗时已从 <code>412ms</code> 降至 <code>268ms</code>（-35%），主线程零阻塞。</p>
+                    <h5>核心改动</h5>
+                    <ul>
+                      <li>在 <span class="de-file-link">EntryAbility.ets:13</span> 改为 <code>taskpool.execute</code> 异步建表</li>
+                      <li>在 <span class="de-file-link">RdbHelper.ets:42</span> 补充 <code>@Sendable</code> 构造校验</li>
+                    </ul>
+                    <div class="de-prose-callout"><strong>破坏性提示</strong>：首次冷启动前 150ms 内若提前读库，需等待 <code>rdbReady</code> Promise。</div>
+                    <div class="de-next-actions">
+                      <button type="button" class="de-next-action">运行真机冷启动复测 →</button>
+                      <button type="button" class="de-next-action">补充 Sendable 单元测试</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="expui-cell expui-cell--6">
+                <span class="expui-cell__k"><span>02 · 结构化对比表 + 流式渲染防抖约束<span class="de-tag--new">NEW</span></span><span>tabular-nums 右对齐 · 未闭合占位</span></span>
+                <div class="expui-cell__body" style="flex-direction:column;align-items:stretch;gap:8px">
+                  <table class="de-prose-table">
+                    <thead><tr><th>阶段指标</th><th class="num">优化前</th><th class="num">优化后</th><th class="num">降幅</th></tr></thead>
+                    <tbody>
+                      <tr><td>首帧渲染 (TTFD)</td><td class="num">412 ms</td><td class="num">268 ms</td><td class="num" style="color:var(--color-success)">-35%</td></tr>
+                      <tr><td>主线程建表阻塞</td><td class="num">142 ms</td><td class="num">0 ms</td><td class="num" style="color:var(--color-success)">-100%</td></tr>
+                    </tbody>
+                  </table>
+                  <div class="de-setting-row" style="font-size:12px"><span><strong>流式防抖规则</strong>：未闭合代码块预占壳体（默认 5 行 / 展开上限 10 行）；超 10 行转 Artifact 产物卡；正文标题封顶 <code>H3/H4</code> 禁大号 H1。</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -4643,6 +4701,12 @@ node design-system/scripts/verify-fidelity.js &lt;你的页面路径.html&gt;
 7. **输入区与 Token 三段阈值**：模式分段 `Goal / Plan / Build` + 模型下拉 + `默认审批` + 4 类附件芯片 + 底部 `10px` 免责行；Token 圆环 `1%~75%` 亮灰 → `≥75%` 告警色（70%~80% 静默压缩）→ `100%` 输入框置灰禁用（悬浮支持编辑上限，最小 `50K`）。
 8. **Session 侧栏（最小宽 `300px`）与 AI 设置**：会话 5 态（未开始 / 运行中 / 已暂停待确认 / 已结束 / 异常未读）+ 4 鼠标态（失焦 / 悬浮出停止或删除 / 聚焦 / 锁定失焦），收藏区按收藏瞬时时间排序，普通区按天切分且运行中置顶。
 9. **补齐的 10 类 `NEW` 基本单元（共 4 层 48 类）**：对话流基元补齐检查点回滚（Checkpoint）、引用来源证据链（Citations）、末条提问原地编辑态、结构化产物卡（Artifact Card）；编排类补齐上下文压缩/记忆写入撤销条、并发审批队列批量决策条；输入区补齐生成中排队消息条（`.de-queued`）、`/` 斜杠命令补全浮层；页面级补齐模型供应商校验行、规则/记忆/归档管理行（均在预览页标注 `.de-tag--new` `NEW` 徽标）。
+10. **AI 输出内容的结构性处理与渲染优化（`NEW`）**：
+    - **固定四段节奏**：`结论先行（1–2 句）→ 结构化依据（文件行号芯片 / 紧致清单 / 指标表 / 受限代码块）→ 风险 Callout（左 3px 竖线轻量提示）→ 1–3 枚可点击后续动作芯片（.de-next-actions）`。
+    - **标题与排版克制**：AI 正文内标题封顶 `H3/H4`（`13.5px–14px` 粗体），禁止出现大号 `H1/H2` 抢占视觉层级。
+    - **实体自动链接化**：文件路径与行号（如 `EntryAbility.ets:13`）自动渲染为可点击 `.de-file-link` 芯片直跳编辑器，与普通行内 `&lt;code&gt;` 视觉分离。
+    - **代码块与表格治理**：代码块默认 **5 行**、展开上限 **10 行**，超长整文件输出自动转为 **Artifact 产物卡**；表格（`.de-prose-table`）支持横向滚动、数值列 `tabular-nums` 右对齐。
+    - **流式输出防抖**：未闭合代码块提前占位外壳、未闭合表格稳定行高；用户手动上滚时锁定视口不再抢焦点，底部浮现 `32×32` 去底部按钮。
 </pre>
         </article>
       </section>

@@ -3201,6 +3201,107 @@
   flex: none;
 }
 
+/* AI 返回正文结构性处理样式（无卡片裸流内的富内容约束） */
+.de-unit-prose h5 {
+  margin: 10px 0 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.de-unit-prose ul {
+  margin: 4px 0 8px;
+  padding-left: 18px;
+}
+
+.de-unit-prose li {
+  margin: 2px 0;
+}
+
+.de-file-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--surface-selected);
+  color: var(--color-info);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+.de-file-link:hover {
+  text-decoration: underline;
+}
+
+.de-prose-callout {
+  margin: 8px 0;
+  padding: 6px 10px;
+  border-left: 3px solid var(--color-warning);
+  background: var(--surface-hover);
+  border-radius: 0 6px 6px 0;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.de-prose-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 6px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.de-prose-table th,
+.de-prose-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.de-prose-table th {
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.de-prose-table td.num,
+.de-prose-table th.num {
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+.de-next-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.de-next-action {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border-control);
+  background: var(--surface-window);
+  color: var(--text-primary);
+  font: 500 12px/1 var(--font-ui);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.de-next-action:hover {
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
 
 
 
